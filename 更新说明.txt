@@ -1,3 +1,18 @@
+
+[4.1.19.1209]
+ [+] 增加 Ex_LoadImageFromMemory 的声明,可用于从内存中加载位图、图标句柄
+ [!] 修复 编辑框 控件无法设置背景图片的bug
+ [+] 增加 MenuButton 菜单即将弹出事件 MBN_POPUP
+ [+] 增加 _brush_createfromcanvas2 创建画布位图画刷,支持设置透明度
+ [!] 修复 当控件开启圆角模式时，透明度将失效的BUG
+ [+] 增加 _img_savetofile、_img_savetomemory 用于将位图数据保存(PNG格式)至文件、内存中
+ [!] 修改 控件 WM_ERASEBKGND 的lParam,需要判断一下是绘制区域还是绘图信息(判断方法为__get(lParam,0)是否等于wParam)
+ [!] 修复 调用绘图函数后可能会导致抗锯齿模式混乱的BUG
+ [!] 修复 D2D模式下控件圆角无法抗锯齿的问题（GDI模式区域无法抗锯齿所以暂时无法处理）
+ [+] 增加 自定义菜单功能 的相关demo
+ [!] 修复 ClearType模式可能导致文字无法显示的BUG
+ [!] 修正 _layout_destroy、_imglist_destroy 名字命名错误的问题
+
 [4.1.19.1024]
  [+] 增加 控件消息 WM_ERASEBKGND 用于自定义绘制控件背景
  [+] 增加 线性渐变画刷 _brush_createlinear、_brush_createlinear_ex

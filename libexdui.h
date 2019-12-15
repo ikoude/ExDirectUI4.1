@@ -1721,6 +1721,36 @@ extern "C" BOOL Ex_ObjGetClassInfo (int hObj,int lpClassInfo);
 extern "C" BOOL Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
 
 //======================================================
+// 函数名称：_canvas_destroy
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+//======================================================
+extern "C" BOOL _canvas_destroy (int hCanvas);
+
+//======================================================
+// 函数名称：_canvas_createfromobj
+// 返回类型：整数型
+// 函数说明：创建画布自组件句柄。成功返回画布句柄，失败返回0
+// 参数<1>：hObj
+// 参数<2>：uWidth
+// 参数<3>：uHeight
+// 参数<4>：dwFlags，CVF_
+// 参数<5>：nError
+//======================================================
+extern "C" int _canvas_createfromobj (int hObj,int uWidth,int uHeight,int dwFlags,int nError);
+
+//======================================================
+// 函数名称：_canvas_createfromexdui
+// 返回类型：整数型
+// 函数说明：创建画布自引擎句柄
+// 参数<1>：hExDui
+// 参数<2>：width
+// 参数<3>：height
+// 参数<4>：dwFlags，CVF_
+//======================================================
+extern "C" int _canvas_createfromexdui (int hExDui,int width,int height,int dwFlags);
+
+//======================================================
 // 函数名称：_canvas_resize
 // 返回类型：逻辑型
 // 函数说明：重新设置尺寸。
@@ -1730,6 +1760,139 @@ extern "C" BOOL Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
 // 参数<4>：fCopy
 //======================================================
 extern "C" BOOL _canvas_resize (int hCanvas,int width,int height,BOOL fCopy);
+
+//======================================================
+// 函数名称：_canvas_getcontext
+// 返回类型：整数型
+// 函数说明：获取canvas上下文相关信息
+// 参数<1>：hCanvas
+// 参数<2>：nType，#CVC_
+//======================================================
+extern "C" int _canvas_getcontext (int hCanvas,int nType);
+
+//======================================================
+// 函数名称：_canvas_begindraw
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+//======================================================
+extern "C" BOOL _canvas_begindraw (int hCanvas);
+
+//======================================================
+// 函数名称：_canvas_enddraw
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+//======================================================
+extern "C" BOOL _canvas_enddraw (int hCanvas);
+
+//======================================================
+// 函数名称：_canvas_clear
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：lColor
+//======================================================
+extern "C" BOOL _canvas_clear (int hCanvas,int lColor);
+
+//======================================================
+// 函数名称：_canvas_drawline
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：hBrush
+// 参数<3>：X1
+// 参数<4>：Y1
+// 参数<5>：X2
+// 参数<6>：Y2
+// 参数<7>：strokeWidth
+// 参数<8>：strokeStyle
+//======================================================
+extern "C" BOOL _canvas_drawline (int hCanvas,int hBrush,float X1,float Y1,float X2,float Y2,float strokeWidth,int strokeStyle);
+
+//======================================================
+// 函数名称：_canvas_drawrect
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：hBrush
+// 参数<3>：left
+// 参数<4>：top
+// 参数<5>：right
+// 参数<6>：bottom
+// 参数<7>：strokeWidth
+// 参数<8>：strokeStyle
+//======================================================
+extern "C" BOOL _canvas_drawrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float strokeWidth,int strokeStyle);
+
+//======================================================
+// 函数名称：_canvas_fillrect
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：hBrush
+// 参数<3>：left
+// 参数<4>：top
+// 参数<5>：right
+// 参数<6>：bottom
+//======================================================
+extern "C" BOOL _canvas_fillrect (int hCanvas,int hBrush,float left,float top,float right,float bottom);
+
+//======================================================
+// 函数名称：_canvas_drawroundedrect
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：hBrush
+// 参数<3>：left
+// 参数<4>：top
+// 参数<5>：right
+// 参数<6>：bottom
+// 参数<7>：radiusX
+// 参数<8>：radiusY
+// 参数<9>：strokeWidth
+// 参数<10>：strokeStyle
+//======================================================
+extern "C" BOOL _canvas_drawroundedrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float radiusX,float radiusY,float strokeWidth,int strokeStyle);
+
+//======================================================
+// 函数名称：_canvas_fillroundedrect
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：hBrush
+// 参数<3>：left
+// 参数<4>：top
+// 参数<5>：right
+// 参数<6>：bottom
+// 参数<7>：radiusX
+// 参数<8>：radiusY
+//======================================================
+extern "C" BOOL _canvas_fillroundedrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float radiusX,float radiusY);
+
+//======================================================
+// 函数名称：_canvas_drawellipse
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：hBrush
+// 参数<3>：x
+// 参数<4>：y
+// 参数<5>：radiusX
+// 参数<6>：radiusY
+// 参数<7>：strokeWidth
+// 参数<8>：strokeStyle
+//======================================================
+extern "C" BOOL _canvas_drawellipse (int hCanvas,int hBrush,float x,float y,float radiusX,float radiusY,float strokeWidth,int strokeStyle);
+
+//======================================================
+// 函数名称：_canvas_fillellipse
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：hBrush
+// 参数<3>：x
+// 参数<4>：y
+// 参数<5>：radiusX
+// 参数<6>：radiusY
+//======================================================
+extern "C" BOOL _canvas_fillellipse (int hCanvas,int hBrush,float x,float y,float radiusX,float radiusY);
 
 //======================================================
 // 函数名称：_canvas_drawpath
@@ -1750,6 +1913,41 @@ extern "C" int _canvas_drawpath (int hCanvas,int hPath,int hBrush,float strokeWi
 // 参数<3>：hBrush
 //======================================================
 extern "C" int _canvas_fillpath (int hCanvas,int hPath,int hBrush);
+
+//======================================================
+// 函数名称：_canvas_fillregion
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：hRgn
+// 参数<3>：hBrush
+//======================================================
+extern "C" BOOL _canvas_fillregion (int hCanvas,int hRgn,int hBrush);
+
+//======================================================
+// 函数名称：_canvas_drawimage
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas，0
+// 参数<2>：hImage，4
+// 参数<3>：left，8
+// 参数<4>：top，12
+// 参数<5>：alpha，16
+//======================================================
+extern "C" BOOL _canvas_drawimage (int hCanvas,int hImage,float left,float top,int alpha);
+
+//======================================================
+// 函数名称：_canvas_drawimagerect
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：hImage
+// 参数<3>：left
+// 参数<4>：top
+// 参数<5>：right
+// 参数<6>：bottom
+// 参数<7>：alpha
+//======================================================
+extern "C" BOOL _canvas_drawimagerect (int hCanvas,int hImage,float left,float top,float right,float bottom,int alpha);
 
 //======================================================
 // 函数名称：_canvas_drawimagerectrect
@@ -1791,6 +1989,152 @@ extern "C" BOOL _canvas_drawimagerectrect (int hCanvas,int hImage,float dstLeft,
 // 参数<16>：dwAlpha
 //======================================================
 extern "C" BOOL _canvas_drawimagefromgrid (int hCanvas,int hImage,float dstLeft,float dstTop,float dstRight,float dstBottom,float srcLeft,float srcTop,float srcRight,float srcBottom,float gridPaddingLeft,float gridPaddingTop,float gridPaddingRight,float gridPaddingBottom,int dwFlags,int dwAlpha);
+
+//======================================================
+// 函数名称：_canvas_cliprect
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：left
+// 参数<3>：top
+// 参数<4>：right
+// 参数<5>：bottom
+//======================================================
+extern "C" BOOL _canvas_cliprect (int hCanvas,int left,int top,int right,int bottom);
+
+//======================================================
+// 函数名称：_canvas_resetclip
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+//======================================================
+extern "C" BOOL _canvas_resetclip (int hCanvas);
+
+//======================================================
+// 函数名称：_canvas_flush
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+//======================================================
+extern "C" BOOL _canvas_flush (int hCanvas);
+
+//======================================================
+// 函数名称：_canvas_drawcanvas
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：sCanvas
+// 参数<3>：dstLeft
+// 参数<4>：dstTop
+// 参数<5>：dstRight
+// 参数<6>：dstBottom
+// 参数<7>：srcLeft
+// 参数<8>：srcTop
+// 参数<9>：dwAlpha
+// 参数<10>：dwCompositeMode，#CV_COMPOSITE_MODE_
+//======================================================
+extern "C" BOOL _canvas_drawcanvas (int hCanvas,int sCanvas,int dstLeft,int dstTop,int dstRight,int dstBottom,int srcLeft,int srcTop,int dwAlpha,int dwCompositeMode);
+
+//======================================================
+// 函数名称：_canvas_getsize
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：width
+// 参数<3>：height
+//======================================================
+extern "C" BOOL _canvas_getsize (int hCanvas,int width,int height);
+
+//======================================================
+// 函数名称：_canvas_drawtext
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：hFont，如果为0则使用默认字体句柄
+// 参数<3>：crText
+// 参数<4>：lpwzText
+// 参数<5>：dwLen，-1则自动计算尺寸(必须是指向空字符串的指针)
+// 参数<6>：dwDTFormat，#DT_
+// 参数<7>：left
+// 参数<8>：top
+// 参数<9>：right
+// 参数<10>：bottom
+//======================================================
+extern "C" BOOL _canvas_drawtext (int hCanvas,int hFont,int crText,int lpwzText,int dwLen,int dwDTFormat,float left,float top,float right,float bottom);
+
+//======================================================
+// 函数名称：_canvas_drawtextex
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：hFont
+// 参数<3>：crText
+// 参数<4>：lpwzText
+// 参数<5>：dwLen，-1则自动计算尺寸(必须是指向空字符串的指针)
+// 参数<6>：dwDTFormat
+// 参数<7>：left
+// 参数<8>：top
+// 参数<9>：right
+// 参数<10>：bottom
+// 参数<11>：iGlowsize
+// 参数<12>：crShadow
+// 参数<13>：lParam
+// 参数<14>：prclayout
+//======================================================
+extern "C" BOOL _canvas_drawtextex (int hCanvas,int hFont,int crText,int lpwzText,int dwLen,int dwDTFormat,float left,float top,float right,float bottom,int iGlowsize,int crShadow,int lParam,int prclayout);
+
+//======================================================
+// 函数名称：_canvas_calctextsize
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：hFont
+// 参数<3>：lpwzText
+// 参数<4>：dwLen
+// 参数<5>：dwDTFormat
+// 参数<6>：lParam
+// 参数<7>：layoutWidth
+// 参数<8>：layoutHeight
+// 参数<9>：lpWidth
+// 参数<10>：lpHeight
+//======================================================
+extern "C" BOOL _canvas_calctextsize (int hCanvas,int hFont,int lpwzText,int dwLen,int dwDTFormat,int lParam,float layoutWidth,float layoutHeight,int lpWidth,int lpHeight);
+
+//======================================================
+// 函数名称：_canvas_getdc
+// 返回类型：整数型
+// 参数<1>：hCanvas
+//======================================================
+extern "C" int _canvas_getdc (int hCanvas);
+
+//======================================================
+// 函数名称：_canvas_releasedc
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+//======================================================
+extern "C" BOOL _canvas_releasedc (int hCanvas);
+
+//======================================================
+// 函数名称：_canvas_blur
+// 返回类型：逻辑型
+// 函数说明：模糊
+// 参数<1>：hCanvas
+// 参数<2>：fDeviation
+// 参数<3>：lprc
+//======================================================
+extern "C" BOOL _canvas_blur (int hCanvas,float fDeviation,int lprc);
+
+//======================================================
+// 函数名称：_canvas_settransform
+// 返回类型：逻辑型
+// 参数<1>：hCanvas
+// 参数<2>：pMatrix，0.则重置
+//======================================================
+extern "C" BOOL _canvas_settransform (int hCanvas,int pMatrix);
+
+//======================================================
+// 函数名称：_canvas_rotate_hue
+// 返回类型：逻辑型
+// 函数说明：旋转色相
+// 参数<1>：hCanvas
+// 参数<2>：fAngle，0-360
+//======================================================
+extern "C" BOOL _canvas_rotate_hue (int hCanvas,float fAngle);
 
 //======================================================
 // 函数名称：_img_destroy
@@ -1876,6 +2220,23 @@ extern "C" int _img_createfromcanvas (int hCanvas,int hImg);
 // 参数<2>：hImg，返回图像指针
 //======================================================
 extern "C" int _img_createfromfile (int lpwzFilename,int hImg);
+
+//======================================================
+// 函数名称：_img_savetofile
+// 返回类型：整数型
+// 参数<1>：hImg
+// 参数<2>：lpwzFile
+//======================================================
+extern "C" int _img_savetofile (int hImg,int lpwzFile);
+
+//======================================================
+// 函数名称：_img_savetomemory
+// 返回类型：整数型
+// 函数说明：图像保存到内存.返回尺寸.
+// 参数<1>：hImg
+// 参数<2>：lpBuffer
+//======================================================
+extern "C" int _img_savetomemory (int hImg,int lpBuffer);
 
 //======================================================
 // 函数名称：_img_lock
@@ -2623,4 +2984,12 @@ extern "C" int _brush_createlinear_ex (float xs,float ys,float xe,float ye,int a
 // 参数<3>：y，起始坐标
 //======================================================
 extern "C" int _path_beginfigure2 (int hPath,float x,float y);
+
+//======================================================
+// 函数名称：_brush_createfromcanvas2
+// 返回类型：整数型
+// 参数<1>：hCanvas
+// 参数<2>：alpha
+//======================================================
+extern "C" int _brush_createfromcanvas2 (int hCanvas,int alpha);
 
