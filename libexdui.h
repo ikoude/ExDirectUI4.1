@@ -6,28 +6,6 @@
 #pragma comment(lib,"libexdui.lib")
 
 //======================================================
-// 函数名称：Ex_Init
-// 返回类型：逻辑型
-// 函数说明：初始化引擎.
-// 参数<1>：hInstance，(值可为0)
-// 参数<2>：dwGlobalFlags，相关常量:#EXGF_ .(值可为0)
-// 参数<3>：hDefaultCursor，默认鼠标指针.(值可为0)
-// 参数<4>：lpszDefaultClassName，默认窗口类名.(值可为0)
-// 参数<5>：lpDefaultTheme，默认主题包指针.
-// 参数<6>：dwDefaultThemeLen，默认主题包长度.
-// 参数<7>：lpDefaultI18N，默认语言包指针.(值可为0)
-// 参数<8>：dwDefaultI18NLen，默认语言包长度.(值可为0)
-//======================================================
-extern "C" BOOL Ex_Init (int hInstance,int dwGlobalFlags,int hDefaultCursor,int lpszDefaultClassName,int lpDefaultTheme,int dwDefaultThemeLen,int lpDefaultI18N,int dwDefaultI18NLen);
-
-//======================================================
-// 函数名称：Ex_UnInit
-// 返回类型：无返回值
-// 函数说明：反初始化引擎
-//======================================================
-extern "C" void Ex_UnInit ();
-
-//======================================================
 // 函数名称：Ex_GetLastError
 // 返回类型：整数型
 // 函数说明：获取最后错误代码.相关常量 :#ERROR_EX_
@@ -1316,6 +1294,15 @@ extern "C" int Ex_ObjGetParent (int hObj);
 extern "C" int Ex_ObjGetParentEx (int hObj,int phExDUI);
 
 //======================================================
+// 函数名称：Ex_ObjSetParent
+// 返回类型：整数型
+// 函数说明：设置父组件
+// 参数<1>：hObj
+// 参数<2>：hParent
+//======================================================
+extern "C" int Ex_ObjSetParent (int hObj,int hParent);
+
+//======================================================
 // 函数名称：Ex_ObjGetLong
 // 返回类型：整数型
 // 函数说明：获取组件数值
@@ -1742,6 +1729,21 @@ extern "C" BOOL Ex_ObjGetClassInfo (int hObj,int lpClassInfo);
 // 参数<2>：lpClassInfo，相关结构 EX_CLASSINFO
 //======================================================
 extern "C" BOOL Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
+
+//======================================================
+// 函数名称：_canvas_drawline
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：hBrush
+// 参数<3>：X1
+// 参数<4>：Y1
+// 参数<5>：X2
+// 参数<6>：Y2
+// 参数<7>：strokeWidth
+// 参数<8>：strokeStyle
+//======================================================
+extern "C" BOOL _canvas_drawline (int hCanvas,int hBrush,float X1,float Y1,float X2,float Y2,float strokeWidth,int strokeStyle);
 
 //======================================================
 // 函数名称：_img_destroy
@@ -2550,4 +2552,11 @@ extern "C" BOOL Ex_ObjSetIMEState (int hObjOrExDui,BOOL fOpen);
 // 参数<2>：fDisable
 //======================================================
 extern "C" BOOL Ex_ObjDisableTranslateSpaceAndEnterToClick (int hObj,BOOL fDisable);
+
+//======================================================
+// 函数名称：_rgn_createfrompath
+// 返回类型：整数型
+// 参数<1>：hPath
+//======================================================
+extern "C" int _rgn_createfrompath (int hPath);
 
