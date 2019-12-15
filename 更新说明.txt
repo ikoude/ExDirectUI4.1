@@ -1,3 +1,8 @@
+[4.1.19.803]
+ [!] 修复 在D2D模式下绘制虚线时，程序卡死的BUG
+ [!] 修复 ProgressBar控件绘制时可能导致的内存泄露
+
+
 [4.1.19.730]
  [!] 修复 树形框 TVM_GETCOUNT/TVM_GETVISIBLECOUNT 传参的错误
  [!] 修复 Ex_ObjSetColor 逻辑上的错误
