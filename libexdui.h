@@ -6,21 +6,6 @@
 #pragma comment(lib,"libexdui.lib")
 
 //======================================================
-// 函数名称：Ex_Init
-// 返回类型：逻辑型
-// 函数说明：初始化引擎.
-// 参数<1>：hInstance，(值可为0)
-// 参数<2>：dwGlobalFlags，相关常量:#EXGF_ .(值可为0)
-// 参数<3>：hDefaultCursor，默认鼠标指针.(值可为0)
-// 参数<4>：lpszDefaultClassName，默认窗口类名.(值可为0)
-// 参数<5>：lpDefaultTheme，默认主题包指针.
-// 参数<6>：dwDefaultThemeLen，默认主题包长度.
-// 参数<7>：lpDefaultI18N，默认语言包指针.(值可为0)
-// 参数<8>：dwDefaultI18NLen，默认语言包长度.(值可为0)
-//======================================================
-extern "C" BOOL Ex_Init (int hInstance,int dwGlobalFlags,int hDefaultCursor,int lpszDefaultClassName,int lpDefaultTheme,int dwDefaultThemeLen,int lpDefaultI18N,int dwDefaultI18NLen);
-
-//======================================================
 // 函数名称：Ex_GetLastError
 // 返回类型：整数型
 // 函数说明：获取最后错误代码.相关常量 :#ERROR_EX_
@@ -504,27 +489,6 @@ extern "C" int Ex_AllocBuffer (int dwLen);
 // 参数<1>：lpBuffer
 //======================================================
 extern "C" void Ex_FreeBuffer (int lpBuffer);
-
-//======================================================
-// 函数名称：_fmt_int
-// 返回类型：整数型
-// 函数说明：格式化_文本到整数
-// 参数<1>：lpValue，字符串指针
-// 参数<2>：lpdwPercentFlags，(out)返回是否为百分比单位
-//======================================================
-extern "C" int _fmt_int (int lpValue,int lpdwPercentFlags);
-
-//======================================================
-// 函数名称：_fmt_intary
-// 返回类型：整数型
-// 函数说明：格式化_文本到整数数组
-// 参数<1>：lpValue，字符串指针
-// 参数<2>：lpAry，数组指针
-// 参数<3>：nMaxCount，最大数量
-// 参数<4>：fZero，是否清空
-// 参数<5>：lpdwPercentFlags，(out)返回百分比标记位(0-31位)
-//======================================================
-extern "C" int _fmt_intary (int lpValue,int lpAry,int nMaxCount,BOOL fZero,int lpdwPercentFlags);
 
 //======================================================
 // 函数名称：_fmt_rect
@@ -1768,6 +1732,26 @@ extern "C" BOOL Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
 extern "C" BOOL _canvas_resize (int hCanvas,int width,int height,BOOL fCopy);
 
 //======================================================
+// 函数名称：_canvas_drawpath
+// 返回类型：整数型
+// 参数<1>：hCanvas
+// 参数<2>：hPath
+// 参数<3>：hBrush
+// 参数<4>：strokeWidth
+// 参数<5>：strokeStyle
+//======================================================
+extern "C" int _canvas_drawpath (int hCanvas,int hPath,int hBrush,float strokeWidth,int strokeStyle);
+
+//======================================================
+// 函数名称：_canvas_fillpath
+// 返回类型：整数型
+// 参数<1>：hCanvas
+// 参数<2>：hPath
+// 参数<3>：hBrush
+//======================================================
+extern "C" int _canvas_fillpath (int hCanvas,int hPath,int hBrush);
+
+//======================================================
 // 函数名称：_canvas_drawimagerectrect
 // 返回类型：逻辑型
 // 函数说明：ok
@@ -2185,50 +2169,6 @@ extern "C" BOOL _matrix_rotate3d (int pMatrix,float x,float y,float z,float fAng
 // 参数<4>：scaleZ
 //======================================================
 extern "C" BOOL _matrix_scale3d (int pMatrix,float scaleX,float scaleY,float scaleZ);
-
-//======================================================
-// 函数名称：_brush_create
-// 返回类型：整数型
-// 参数<1>：argb
-//======================================================
-extern "C" int _brush_create (int argb);
-
-//======================================================
-// 函数名称：_brush_destroy
-// 返回类型：整数型
-// 参数<1>：hBrush
-//======================================================
-extern "C" int _brush_destroy (int hBrush);
-
-//======================================================
-// 函数名称：_brush_setcolor
-// 返回类型：整数型
-// 参数<1>：hBrush
-// 参数<2>：argb
-//======================================================
-extern "C" int _brush_setcolor (int hBrush,int argb);
-
-//======================================================
-// 函数名称：_brush_createfromimg
-// 返回类型：整数型
-// 参数<1>：hImg
-//======================================================
-extern "C" int _brush_createfromimg (int hImg);
-
-//======================================================
-// 函数名称：_brush_createfromcanvas
-// 返回类型：整数型
-// 参数<1>：hCanvas
-//======================================================
-extern "C" int _brush_createfromcanvas (int hCanvas);
-
-//======================================================
-// 函数名称：_brush_settransform
-// 返回类型：整数型
-// 参数<1>：hBrush
-// 参数<2>：matrix
-//======================================================
-extern "C" int _brush_settransform (int hBrush,int matrix);
 
 //======================================================
 // 函数名称：_path_destroy
@@ -2649,4 +2589,38 @@ extern "C" BOOL _canvas_settextantialiasmode (int hCanvas,int textAntialiasMode)
 // 参数<1>：hPath
 //======================================================
 extern "C" int _rgn_createfrompath (int hPath);
+
+//======================================================
+// 函数名称：_brush_createlinear
+// 返回类型：整数型
+// 参数<1>：xs
+// 参数<2>：ys
+// 参数<3>：xe
+// 参数<4>：ye
+// 参数<5>：crBegin
+// 参数<6>：crEnd
+//======================================================
+extern "C" int _brush_createlinear (float xs,float ys,float xe,float ye,int crBegin,int crEnd);
+
+//======================================================
+// 函数名称：_brush_createlinear_ex
+// 返回类型：整数型
+// 参数<1>：xs
+// 参数<2>：ys
+// 参数<3>：xe
+// 参数<4>：ye
+// 参数<5>：arrStopPts
+// 参数<6>：cStopPts
+//======================================================
+extern "C" int _brush_createlinear_ex (float xs,float ys,float xe,float ye,int arrStopPts,int cStopPts);
+
+//======================================================
+// 函数名称：_path_beginfigure2
+// 返回类型：整数型
+// 函数说明：开始新图形
+// 参数<1>：hPath
+// 参数<2>：x，起始坐标
+// 参数<3>：y，起始坐标
+//======================================================
+extern "C" int _path_beginfigure2 (int hPath,float x,float y);
 
