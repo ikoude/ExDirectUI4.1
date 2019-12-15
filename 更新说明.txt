@@ -1,3 +1,25 @@
+
+[4.1.19.622]
+ [!] (删除)_canvas_alphablend/_canvas_bitblt 调整为 (增加)_canvas_drawcanvas 及相关常量 CV_COMPOSITE_MODE_SRCCOPY/CV_COMPOSITE_MODE_SRCOVER
+ [!] 修复 canvas一处句柄未关闭BUG
+ [!] 图像类调用格式调整.增加 _img_createfromcanvas/lock/unlock/getpixel/setpixel/rotateflip/getthumbnail
+ [+] 增加 TreeView(树形框) 控件，调用方式见demo
+ [+] 增加 ReportListView(报表列表框) 控件，调用方式见demo
+ [+] helper.ec 新增__ptr_index/__ptr_ins/__ptr_del，封装对指针模拟数组的相关操作
+ [!] helper.ec 宽文本指令增加空指针检查
+ [+] 增加 ProgressBar(进度条),GroupBox(分组框) 控件
+ [+] 增加 控件输入法管理接口 Ex_ObjEnableIME/Ex_ObjSetIMEState
+ [+] 增加 控件接口 Ex_ObjDisableTranslateSpaceAndEnterToClick 用于禁用控件把回车、空格转换为单击事件
+ [!] 修复 控件背景动画不会变化的BUG
+ [+] lib.helper 模块中增加部分常用常量
+ [+] 增加 设置画布抗锯齿模式的接口 _canvas_set[text/image/]antialiasmode
+ [+] 增加 图片组对象及相关接口 _imglist_***
+ [!] 修复 使用SetLong设置控件ID时可能导致的崩溃
+ [+] 增加 控件置父接口 Ex_ObjSetParent
+ [!] 修复 绑定模态对话框后 首次显示时编辑框等控件无法接受键盘消息的BUG
+ [!] 修复 置父的子控件设置圆角后 坐标显示不正常的情况
+
+
 [4.1.18.518]
  [!] 修复布局一处可能导致崩溃的BUG
  [!] 完善鼠标滚动消息的处理
