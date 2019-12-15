@@ -371,6 +371,17 @@ extern "C" int Ex_ThemeGetValuePtr (int hTheme,int atomClass,int atomProp);
 extern "C" int Ex_ThemeGetColor (int hTheme,int nIndex);
 
 //======================================================
+// 函数名称：_res_pack
+// 返回类型：无返回值
+// 参数<1>：root
+// 参数<2>：file
+// 参数<3>：fSubDir
+// 参数<4>：byteHeader
+// 参数<5>：bPntBits
+//======================================================
+extern "C" void _res_pack (char* root,char* file,BOOL fSubDir,unsigned char byteHeader,BOOL bPntBits);
+
+//======================================================
 // 函数名称：Ex_ResLoadFromFile
 // 返回类型：整数型
 // 函数说明：从文件加载资源
@@ -1731,21 +1742,6 @@ extern "C" BOOL Ex_ObjGetClassInfo (int hObj,int lpClassInfo);
 extern "C" BOOL Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
 
 //======================================================
-// 函数名称：_canvas_drawline
-// 返回类型：逻辑型
-// 函数说明：ok
-// 参数<1>：hCanvas
-// 参数<2>：hBrush
-// 参数<3>：X1
-// 参数<4>：Y1
-// 参数<5>：X2
-// 参数<6>：Y2
-// 参数<7>：strokeWidth
-// 参数<8>：strokeStyle
-//======================================================
-extern "C" BOOL _canvas_drawline (int hCanvas,int hBrush,float X1,float Y1,float X2,float Y2,float strokeWidth,int strokeStyle);
-
-//======================================================
 // 函数名称：_img_destroy
 // 返回类型：整数型
 // 函数说明：销毁图像
@@ -2552,6 +2548,33 @@ extern "C" BOOL Ex_ObjSetIMEState (int hObjOrExDui,BOOL fOpen);
 // 参数<2>：fDisable
 //======================================================
 extern "C" BOOL Ex_ObjDisableTranslateSpaceAndEnterToClick (int hObj,BOOL fDisable);
+
+//======================================================
+// 函数名称：_canvas_setantialias
+// 返回类型：逻辑型
+// 函数说明：设置图形抗锯齿
+// 参数<1>：hCanvas
+// 参数<2>：antialias
+//======================================================
+extern "C" BOOL _canvas_setantialias (int hCanvas,BOOL antialias);
+
+//======================================================
+// 函数名称：_canvas_setimageantialias
+// 返回类型：逻辑型
+// 函数说明：设置图像抗锯齿
+// 参数<1>：hCanvas
+// 参数<2>：antialias
+//======================================================
+extern "C" BOOL _canvas_setimageantialias (int hCanvas,BOOL antialias);
+
+//======================================================
+// 函数名称：_canvas_settextantialiasmode
+// 返回类型：逻辑型
+// 函数说明：设置文本抗锯齿模式
+// 参数<1>：hCanvas
+// 参数<2>：textAntialiasMode，0.不抗锯齿 1.抗锯齿 2.ClearType
+//======================================================
+extern "C" BOOL _canvas_settextantialiasmode (int hCanvas,int textAntialiasMode);
 
 //======================================================
 // 函数名称：_rgn_createfrompath
