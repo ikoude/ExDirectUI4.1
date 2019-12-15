@@ -1,3 +1,11 @@
+[4.1.19.730]
+ [!] 修复 树形框 TVM_GETCOUNT/TVM_GETVISIBLECOUNT 传参的错误
+ [!] 修复 Ex_ObjSetColor 逻辑上的错误
+ [!] 修复 树形框 删除所有表项后无法添加新项的错误
+ [+] lib.helper 添加 EX_PAINTSTRUCT2 结构
+ [!] 修复 当启用系统样式的情况下，弹出提示会导致控件重复产生移入移除消息的BUG
+ [!] 修复 Ex_ObjSetParent 未公开的BUG
+
 
 [4.1.19.622]
  [!] (删除)_canvas_alphablend/_canvas_bitblt 调整为 (增加)_canvas_drawcanvas 及相关常量 CV_COMPOSITE_MODE_SRCCOPY/CV_COMPOSITE_MODE_SRCOVER
