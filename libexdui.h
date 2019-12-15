@@ -1941,158 +1941,6 @@ extern "C" BOOL _fmt_getvalue (int lpValue,int atomDest);
 extern "C" int _fmt_getatom (int lpValue,int lpValueOffset);
 
 //======================================================
-// 函数名称：_layout_register
-// 返回类型：逻辑型
-// 参数<1>：nType，布局类型
-// 参数<2>：lpfnLayoutProc，布局管理器回调函数(lpLayout[有可能是NULL],nEevent,wParam,lParam)返回整数
-//======================================================
-extern "C" BOOL _layout_register (int nType,int lpfnLayoutProc);
-
-//======================================================
-// 函数名称：_layout_unregister
-// 返回类型：逻辑型
-// 参数<1>：nType，布局类型
-//======================================================
-extern "C" BOOL _layout_unregister (int nType);
-
-//======================================================
-// 函数名称：_layout_create
-// 返回类型：整数型
-// 函数说明：hLayout
-// 参数<1>：nType，#ELT_ 布局类型
-// 参数<2>：hObjBind，所绑定的HOBJ或HEXDUI
-//======================================================
-extern "C" int _layout_create (int nType,int hObjBind);
-
-//======================================================
-// 函数名称：_layout_destory
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-//======================================================
-extern "C" BOOL _layout_destory (int hLayout);
-
-//======================================================
-// 函数名称：_layout_addchild
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：hObj
-//======================================================
-extern "C" BOOL _layout_addchild (int hLayout,int hObj);
-
-//======================================================
-// 函数名称：_layout_addchildren
-// 返回类型：逻辑型
-// 函数说明：已被加入的不会重复添加(系统按钮不加入)
-// 参数<1>：hLayout
-// 参数<2>：fDesc，是否倒序
-// 参数<3>：dwObjClassATOM，0或空为所有
-// 参数<4>：nCount，加入的个数
-//======================================================
-extern "C" BOOL _layout_addchildren (int hLayout,BOOL fDesc,int dwObjClassATOM,int nCount);
-
-//======================================================
-// 函数名称：_layout_deletechild
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：hObj
-//======================================================
-extern "C" BOOL _layout_deletechild (int hLayout,int hObj);
-
-//======================================================
-// 函数名称：_layout_deletechildren
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：dwObjClassATOM，0或空为所有
-//======================================================
-extern "C" BOOL _layout_deletechildren (int hLayout,int dwObjClassATOM);
-
-//======================================================
-// 函数名称：_layout_setchildprop
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：hObj
-// 参数<3>：dwPropID
-// 参数<4>：pvValue
-//======================================================
-extern "C" BOOL _layout_setchildprop (int hLayout,int hObj,int dwPropID,int pvValue);
-
-//======================================================
-// 函数名称：_layout_getchildprop
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：hObj
-// 参数<3>：dwPropID
-// 参数<4>：pvValue
-//======================================================
-extern "C" BOOL _layout_getchildprop (int hLayout,int hObj,int dwPropID,int pvValue);
-
-//======================================================
-// 函数名称：_layout_getchildproplist
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：hObj
-// 参数<3>：lpProps，不释放
-//======================================================
-extern "C" BOOL _layout_getchildproplist (int hLayout,int hObj,int lpProps);
-
-//======================================================
-// 函数名称：_layout_getprop
-// 返回类型：整数型
-// 参数<1>：hLayout
-// 参数<2>：dwPropID
-//======================================================
-extern "C" int _layout_getprop (int hLayout,int dwPropID);
-
-//======================================================
-// 函数名称：_layout_setprop
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：dwPropID
-// 参数<3>：pvValue
-//======================================================
-extern "C" BOOL _layout_setprop (int hLayout,int dwPropID,int pvValue);
-
-//======================================================
-// 函数名称：_layout_getproplist
-// 返回类型：整数型
-// 参数<1>：hLayout
-//======================================================
-extern "C" int _layout_getproplist (int hLayout);
-
-//======================================================
-// 函数名称：_layout_update
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-//======================================================
-extern "C" BOOL _layout_update (int hLayout);
-
-//======================================================
-// 函数名称：_layout_gettype
-// 返回类型：整数型
-// 函数说明：重新设置type应当重新创建LM
-// 参数<1>：hLayout
-//======================================================
-extern "C" int _layout_gettype (int hLayout);
-
-//======================================================
-// 函数名称：_layout_enableupdate
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：fUpdateable
-//======================================================
-extern "C" BOOL _layout_enableupdate (int hLayout,BOOL fUpdateable);
-
-//======================================================
-// 函数名称：_layout_notify
-// 返回类型：整数型
-// 参数<1>：hLayout
-// 参数<2>：nEvent
-// 参数<3>：wParam
-// 参数<4>：lParam
-//======================================================
-extern "C" int _layout_notify (int hLayout,int nEvent,int wParam,int lParam);
-
-//======================================================
 // 函数名称：Ex_ObjGetParentEx
 // 返回类型：整数型
 // 函数说明：获取父组件和EXDUI句柄
@@ -2407,52 +2255,6 @@ extern "C" int Ex_JSGetParamFormatString (int lpParams,int nIndex);
 extern "C" BOOL Ex_ObjGetRectEx (int hObj,int lpRect,int nType);
 
 //======================================================
-// 函数名称：Ex_ObjLayoutGet
-// 返回类型：整数型
-// 函数说明：获取布局对象句柄
-// 参数<1>：handle
-//======================================================
-extern "C" int Ex_ObjLayoutGet (int handle);
-
-//======================================================
-// 函数名称：Ex_ObjLayoutSet
-// 返回类型：逻辑型
-// 函数说明：设置布局对象句柄
-// 参数<1>：handle
-// 参数<2>：hLayout
-// 参数<3>：fUpdate
-//======================================================
-extern "C" BOOL Ex_ObjLayoutSet (int handle,int hLayout,BOOL fUpdate);
-
-//======================================================
-// 函数名称：Ex_ObjLayoutUpdate
-// 返回类型：逻辑型
-// 函数说明：更新对象布局
-// 参数<1>：handle
-//======================================================
-extern "C" BOOL Ex_ObjLayoutUpdate (int handle);
-
-//======================================================
-// 函数名称：Ex_ObjLayoutClear
-// 返回类型：逻辑型
-// 函数说明：清空对象布局信息
-// 参数<1>：handle
-// 参数<2>：bChildren，是否清空所有子组件,否则为当前组件.
-//======================================================
-extern "C" BOOL Ex_ObjLayoutClear (int handle,BOOL bChildren);
-
-//======================================================
-// 函数名称：_layout_table_setinfo
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：aRowHeight
-// 参数<3>：cRows
-// 参数<4>：aCellWidth
-// 参数<5>：cCells
-//======================================================
-extern "C" BOOL _layout_table_setinfo (int hLayout,int aRowHeight,int cRows,int aCellWidth,int cCells);
-
-//======================================================
 // 函数名称：Ex_ObjSetPadding
 // 返回类型：逻辑型
 // 函数说明：设置组件偏移矩形
@@ -2569,32 +2371,6 @@ extern "C" void Ex_Sleep (int us);
 // 参数<1>：pEasing
 //======================================================
 extern "C" int _easing_getstate (int pEasing);
-
-//======================================================
-// 函数名称：_layout_absolute_setedge
-// 返回类型：逻辑型
-// 参数<1>：hLayout
-// 参数<2>：hObjChild
-// 参数<3>：dwEdge，#ELCP_ABSOLUTE_XXX
-// 参数<4>：dwType
-// 参数<5>：nValue
-//======================================================
-extern "C" BOOL _layout_absolute_setedge (int hLayout,int hObjChild,int dwEdge,int dwType,int nValue);
-
-//======================================================
-// 函数名称：_layout_absolute_lock
-// 返回类型：逻辑型
-// 函数说明：按当前位置锁定
-// 参数<1>：hLayout
-// 参数<2>：hObjChild
-// 参数<3>：tLeft，#ELCP_ABSOLUTE_XXX_TYPE 下同
-// 参数<4>：tTop
-// 参数<5>：tRight
-// 参数<6>：tBottom
-// 参数<7>：tWidth
-// 参数<8>：tHeight
-//======================================================
-extern "C" BOOL _layout_absolute_lock (int hLayout,int hObjChild,int tLeft,int tTop,int tRight,int tBottom,int tWidth,int tHeight);
 
 //======================================================
 // 函数名称：Ex_ObjInitPropList
@@ -2803,16 +2579,6 @@ extern "C" void Ex_JSLoadConst (char* szConst);
 extern "C" BOOL Ex_ObjSetFont (int hObj,int hFont,BOOL fRedraw);
 
 //======================================================
-// 函数名称：Ex_ObjHandleEvent
-// 返回类型：逻辑型
-// 函数说明：挂接事件回调
-// 参数<1>：hObj
-// 参数<2>：nEvent
-// 参数<3>：pfnCallback，(Bool) Handler(hObj,nID,nCode,wParam,lParam) 返回假继续分发事件,返回真则停止继续分发事件
-//======================================================
-extern "C" BOOL Ex_ObjHandleEvent (int hObj,int nEvent,int pfnCallback);
-
-//======================================================
 // 函数名称：Ex_ObjGetClassInfoEx
 // 返回类型：逻辑型
 // 函数说明：通过类名/类ATOM获取类信息
@@ -2820,4 +2586,14 @@ extern "C" BOOL Ex_ObjHandleEvent (int hObj,int nEvent,int pfnCallback);
 // 参数<2>：lpClassInfo，相关结构 EX_CLASSINFO
 //======================================================
 extern "C" BOOL Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
+
+//======================================================
+// 函数名称：Ex_ObjHandleEvent
+// 返回类型：逻辑型
+// 函数说明：挂接事件回调
+// 参数<1>：hObj
+// 参数<2>：nEvent，#NM_
+// 参数<3>：pfnCallback，(Bool) Handler(hObj,nID,nCode,wParam,lParam) 返回假继续分发事件,返回真则停止继续分发事件
+//======================================================
+extern "C" BOOL Ex_ObjHandleEvent (int hObj,int nEvent,int pfnCallback);
 

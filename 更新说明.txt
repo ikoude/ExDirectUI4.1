@@ -1,3 +1,11 @@
+[4.1.18.518]
+ [!] 修复布局一处可能导致崩溃的BUG
+ [!] 完善鼠标滚动消息的处理
+ [+] Ex_ObjHandleEvent (参考 组合框 调用例子)
+ [+] NM_NCHITTEST/NM_TOOLTIPSCREATED/NM_FONTCHANGED 及调整事件相关数值
+ [+] 增加 组合框 例子: Demo\object\combobox
+ [+] 增加 图形按钮 例子: Demo\object\[扩展]imagebutton
+
 [4.1.18.512]
  [!] 修复组件wm_nccalcsize客户区坐标BUG
  [!] 修复滚动条NM_SHOW事件未触发BUG
