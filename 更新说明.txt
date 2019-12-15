@@ -1,0 +1,119 @@
+[4.1.18.512]
+ [!] 修复组件wm_nccalcsize客户区坐标BUG
+ [!] 修复滚动条NM_SHOW事件未触发BUG
+ [!] 修复列表框 LVM_SETSELECTIONMARK 数值未更新BUG
+ [+] Ex_DUIGetObjFromPoint/Ex_ObjGetClassInfoEx
+
+
+[4.1.18.501]
+ [+] Ex_JSLoadConst 加载JS常量(参考: demo/window/demo.e)
+ [+] 增加组合框(相关常量: 组合框风格_[风格] / CB_[消息] /CBN_[事件].参考: demo/object/combobox/demo.e)
+ [+] EWS_POPUPWINDOW(弹出式窗口.参考: demo/window/demo.e )
+ [+] _font_copy()
+ [!] 接口/常量调整.可通过 Ex_ObjSetLong/Ex_ObjgetLong/ 进行相关操作:
+     )删除 EWS_BLUR/Ex_DUISetBlur -> EWL_BLUR
+     )删除 EOS_EX_BLUR/Ex_ObjSetBlur -> EOL_BLUR
+     )删除 Ex_ObjGetTextFormat/Ex_ObjSetTextFormat/ -> EOL_TEXTFORMAT
+
+
+ [!] 修复一处菜单切换可能导致退出的BUG
+
+
+[4.1.18.420]
+ [+] 完善模态窗口编辑框输入问题
+ [+] 完善菜单条目超出屏幕问题
+ [!] 编辑框
+        >修复一处内存泄漏BUG
+        >完善rtf处理
+ [!] 修复 Ex_ObjClientToScreen/Ex_ObjClientToWindow 坐标BUG
+ [!] 修复一处信息框高DPI模式显示错位BUG&完善信息框组件布局
+
+[4.1.18.329]
+ [!] 修复win10菜单黑底BUG
+ [!] 修复编辑框圆角BUG
+ [!] Ex_ObjFind 查找BUG
+ [!] Ex_ObjGetObj GW_HWNDLAST/GW_HWNDFIRST BUG
+ [+] 新增了控件属性相关接口 Ex_ObjInitPropList/Ex_ObjSetProp/Ex_ObjGetProp/Ex_ObjRemoveProp/Ex_ObjEnumProps
+ [+] 新增了线性布局属性：#ELP_LINEAR_DALIGN 表示布局方向的对齐方式
+ [+] 新增了绝对布局接口 _layout_absolute_setedge、_layout_absolute_lock
+ [!] _layout_settableinfo 更名为 _layout_table_setinfo
+ [!] _layout_eableupdate 更名为 _layout_enableupdate
+ [!] Ex_LayoutXXX  更名为 Ex_ObjLayoutXXX
+ [!] 删除 Ex_DUIXXX(背景相关函数) 由 Ex_ObjXXX(背景相关函数) 代替
+ [!] 信息框常量 EMF_ 修改为 EMBF_ 
+ [!] Ex_TrackPopupMenu() 新增菜单标记参数和常量 EMNF_
+ [+] 增加全局常量 EXGF_MENU_ALL (渲染全部菜单)
+ [!] Ex_ObjSetRgn 修改为 Ex_ObjSetPath
+ [+] Ex_ObjSetRadius
+ [+] 增加路径相关函数 _path_xxx()
+ [!] Ex_scaleX/Y 统一为 Ex_Scale()
+ [+] Ex_ObjScrollShow/Ex_ObjScrollEnable
+ [+] EOS_DISABLENOSCROLL (滚动条不可用时禁止而不隐藏)
+
+[4.1.18.313]
+ [+] 增加缓动机制,详见demo
+ [!] 修改了Ex_ObjCallProc的参数,新增最后一个参数
+ [+] 新增“脚本分发信息_Ex”结构,方便控件处理自定义JS函数
+ [+] demo中增加了布局和程序交互的例子
+ [!] 修复2处内存泄漏BUG
+ [!] 修复1处导致退出崩溃BUG
+ [!] 修复1处导致退出CPU占用BUG
+
+[4.1.18.309]
+ [+] 主窗口背景模糊支持 (EWS_BLUR/Ex_DUISetBlur)
+ [!] 主窗口图标显示修复
+ [!] 主窗口移动CPU占用修复
+ [+] 组件事件冒泡支持 (Ex_ObjEnableEventBubble)
+ [+] 组件坐标转换 (Ex_ObjPointTransform)
+ [+] Ex_ObjSetPadding/Ex_ObjSetFont/Ex_ObjGetFont
+ [!] 修复了通知机制的BUG
+ [!] 修复了ExFC中关于矩形传参的BUG
+
+[4.1.18.306]
+ [+] xml style/script/include 引用支持
+ [+] 模版列表支持
+ [!] 子窗口 继承父窗口背景信息 完善
+ [!] 滚动条 相关BUG
+ [!] 修复了ExFC中控件移动的参数错误
+ [!] 修复了demo中重复打开窗口导致的崩溃
+ [+] 增加控件扩展demo(滑块条)
+
+[4.1]
+综合:
+ [+] 布局支持(xml/css)
+ [+] 脚本支持(js)
+ [+] 主题包(窗口/组件/菜单)
+ [+] 多语言支持(i18n)
+ [+] dpi 支持
+ [+] apng动画支持
+
+窗口:
+ [+] 普通/分层/异型 窗口支持
+ [+] d2d/gdi(+) 渲染支持
+
+组件:
+ [+] 异型 组件支持
+ [+] 组件层 模糊支持
+
+其它:
+ [+] 信息框/菜单 改造
+ [+] 界面/逻辑 分离
+
+==========================================
+
+Ex_DirectUI 4.1
+
+本引擎贡献名单:
+
+1.泆寒(YHan): 整体/基础 框架构建
+2.暗の魔法使(Eternal): 整体/基础/功能 调整/完善/扩展
+3.你的名字? (主题分享/组件扩展/功能扩展/教程文档)
+
+==========================================
+
+欢淫入裙交流: (群文件有扩展例子和其它相关资源共享)
+
+QQ交流群①: 433859
+QQ交流群②: 155525070
+
+官方网站: http://www.exdui.com (暂未上线)
