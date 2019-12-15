@@ -6,6 +6,21 @@
 #pragma comment(lib,"libexdui.lib")
 
 //======================================================
+// 函数名称：Ex_Init
+// 返回类型：逻辑型
+// 函数说明：初始化引擎.
+// 参数<1>：hInstance，(值可为0)
+// 参数<2>：dwGlobalFlags，相关常量:#EXGF_ .(值可为0)
+// 参数<3>：hDefaultCursor，默认鼠标指针.(值可为0)
+// 参数<4>：lpszDefaultClassName，默认窗口类名.(值可为0)
+// 参数<5>：lpDefaultTheme，默认主题包指针.
+// 参数<6>：dwDefaultThemeLen，默认主题包长度.
+// 参数<7>：lpDefaultI18N，默认语言包指针.(值可为0)
+// 参数<8>：dwDefaultI18NLen，默认语言包长度.(值可为0)
+//======================================================
+extern "C" BOOL Ex_Init (int hInstance,int dwGlobalFlags,int hDefaultCursor,int lpszDefaultClassName,int lpDefaultTheme,int dwDefaultThemeLen,int lpDefaultI18N,int dwDefaultI18NLen);
+
+//======================================================
 // 函数名称：Ex_GetLastError
 // 返回类型：整数型
 // 函数说明：获取最后错误代码.相关常量 :#ERROR_EX_
@@ -1740,6 +1755,58 @@ extern "C" BOOL Ex_ObjGetClassInfo (int hObj,int lpClassInfo);
 // 参数<2>：lpClassInfo，相关结构 EX_CLASSINFO
 //======================================================
 extern "C" BOOL Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
+
+//======================================================
+// 函数名称：_canvas_resize
+// 返回类型：逻辑型
+// 函数说明：重新设置尺寸。
+// 参数<1>：hCanvas
+// 参数<2>：width
+// 参数<3>：height
+// 参数<4>：fCopy
+//======================================================
+extern "C" BOOL _canvas_resize (int hCanvas,int width,int height,BOOL fCopy);
+
+//======================================================
+// 函数名称：_canvas_drawimagerectrect
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas，0
+// 参数<2>：hImage，4
+// 参数<3>：dstLeft，8
+// 参数<4>：dstTop，12
+// 参数<5>：dstRight，16
+// 参数<6>：dstBottom，20
+// 参数<7>：srcLeft，24
+// 参数<8>：srcTop，28
+// 参数<9>：srcRight，32
+// 参数<10>：srcBottom，36
+// 参数<11>：alpha，40
+//======================================================
+extern "C" BOOL _canvas_drawimagerectrect (int hCanvas,int hImage,float dstLeft,float dstTop,float dstRight,float dstBottom,float srcLeft,float srcTop,float srcRight,float srcBottom,int alpha);
+
+//======================================================
+// 函数名称：_canvas_drawimagefromgrid
+// 返回类型：逻辑型
+// 函数说明：ok
+// 参数<1>：hCanvas
+// 参数<2>：hImage
+// 参数<3>：dstLeft
+// 参数<4>：dstTop
+// 参数<5>：dstRight
+// 参数<6>：dstBottom
+// 参数<7>：srcLeft
+// 参数<8>：srcTop
+// 参数<9>：srcRight
+// 参数<10>：srcBottom
+// 参数<11>：gridPaddingLeft
+// 参数<12>：gridPaddingTop
+// 参数<13>：gridPaddingRight
+// 参数<14>：gridPaddingBottom
+// 参数<15>：dwFlags，#bif_
+// 参数<16>：dwAlpha
+//======================================================
+extern "C" BOOL _canvas_drawimagefromgrid (int hCanvas,int hImage,float dstLeft,float dstTop,float dstRight,float dstBottom,float srcLeft,float srcTop,float srcRight,float srcBottom,float gridPaddingLeft,float gridPaddingTop,float gridPaddingRight,float gridPaddingBottom,int dwFlags,int dwAlpha);
 
 //======================================================
 // 函数名称：_img_destroy
