@@ -1,3 +1,19 @@
+[4.1.19.1229]
+ [+] 增加 组合框 CBN_POPUPLISTWINDOW 事件，显示下拉列表窗口前触发 
+ [+] 修改 组合框逻辑，组合框下拉列表文本默认的显示颜色与组合框一致（感谢车车的建议）
+ [!] 修改 demo.button.e 中自绘按钮需使用EX_PAINTSTRUCT2结构否则会导致崩溃或绘制错误的BUG（感谢群友提交的BUG和小雨的修改）
+ [+] 增加 树形框 TVM_SET/GETITEMTEXTW 消息,用于单独设置树形框表项文本，并修改 TVM_SETITEM 中注释的相关错误
+ [!] 修改 GDI 模式下的模糊算法，效果更好（感谢小雨的代码）
+
+[4.1.19.1215]
+ [+] 增加 纯色按钮 demo.colorbutton.e 的相关扩展例程
+ [!] 修正 生成RGB颜色指令 返回值错误的bug
+ [!] 修改 Lib.Helper模块中 关于矩阵相关命令声明错误的bug
+ [!] 修正 D2D模式下 矩阵无法使用的bug
+ [+] 增加 Ex_ObjBegin/EndPaint2和Ex_objBegin/EndPaintP 用于对 EX_PAINTSTRUCT2的支持(效果与原本的一致)
+ [+] 增加 Ex_ObjGetRectP 不规定必须传入EX_RECT
+ [+] 增加  Lib.Helper模块中 _canvas_drawcanvas 的声明
+ [+] 增加 异形窗口 demo.heteromorphic.e、矩阵使用方法 demo.matrix.e
 
 [4.1.19.1209]
  [+] 增加 Ex_LoadImageFromMemory 的声明,可用于从内存中加载位图、图标句柄

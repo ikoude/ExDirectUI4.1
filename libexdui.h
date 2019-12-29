@@ -585,11 +585,11 @@ extern "C" BOOL _layout_unregister (int nType);
 extern "C" int _layout_create (int nType,int hObjBind);
 
 //======================================================
-// 函数名称：_layout_destory
+// 函数名称：_layout_destroy
 // 返回类型：逻辑型
 // 参数<1>：hLayout
 //======================================================
-extern "C" BOOL _layout_destory (int hLayout);
+extern "C" BOOL _layout_destroy (int hLayout);
 
 //======================================================
 // 函数名称：Ex_ObjLayoutGet
@@ -2530,6 +2530,21 @@ extern "C" BOOL _matrix_rotate3d (int pMatrix,float x,float y,float z,float fAng
 // 参数<4>：scaleZ
 //======================================================
 extern "C" BOOL _matrix_scale3d (int pMatrix,float scaleX,float scaleY,float scaleZ);
+
+//======================================================
+// 函数名称：_brush_createfromcanvas
+// 返回类型：整数型
+// 参数<1>：hCanvas
+//======================================================
+extern "C" int _brush_createfromcanvas (int hCanvas);
+
+//======================================================
+// 函数名称：_brush_settransform
+// 返回类型：整数型
+// 参数<1>：hBrush
+// 参数<2>：matrix
+//======================================================
+extern "C" int _brush_settransform (int hBrush,int matrix);
 
 //======================================================
 // 函数名称：_path_destroy
