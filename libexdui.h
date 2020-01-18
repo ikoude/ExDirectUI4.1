@@ -6,36 +6,6 @@
 #pragma comment(lib,"libexdui.lib")
 
 //======================================================
-// 函数名称：Ex_GetLastError
-// 返回类型：整数型
-// 函数说明：获取最后错误代码.相关常量 :#ERROR_EX_
-//======================================================
-extern "C" int Ex_GetLastError ();
-
-//======================================================
-// 函数名称：Ex_SetLastError
-// 返回类型：无返回值
-// 函数说明：设置最后错误代码.相关常量 :#ERROR_EX_
-// 参数<1>：nError
-//======================================================
-extern "C" void Ex_SetLastError (int nError);
-
-//======================================================
-// 函数名称：Ex_IsDxRender
-// 返回类型：逻辑型
-// 函数说明：是否使用D2D渲染
-//======================================================
-extern "C" BOOL Ex_IsDxRender ();
-
-//======================================================
-// 函数名称：Ex_Atom
-// 返回类型：整数型
-// 函数说明：获取字符串唯一原子号
-// 参数<1>：lptstring
-//======================================================
-extern "C" int Ex_Atom (int lptstring);
-
-//======================================================
 // 函数名称：Ex_Scale
 // 返回类型：小数型
 // 参数<1>：n
@@ -489,76 +459,6 @@ extern "C" int Ex_AllocBuffer (int dwLen);
 // 参数<1>：lpBuffer
 //======================================================
 extern "C" void Ex_FreeBuffer (int lpBuffer);
-
-//======================================================
-// 函数名称：_fmt_rect
-// 返回类型：逻辑型
-// 函数说明：格式化_文本到矩形
-// 参数<1>：lpValue，字符串指针
-// 参数<2>：lpRect，矩形指针
-// 参数<3>：lpdwPercentFlags，(out)返回百分比标记位(0-31位)
-//======================================================
-extern "C" BOOL _fmt_rect (int lpValue,int lpRect,int lpdwPercentFlags);
-
-//======================================================
-// 函数名称：_fmt_string
-// 返回类型：逻辑型
-// 函数说明：格式化_文本到文本_语言包
-// 参数<1>：hRes，资源句柄.(值可为0)
-// 参数<2>：lpValue，字符串指针
-// 参数<3>：lpString，(out)
-// 参数<4>：bDispatchI18NCallback，(in/out)
-//======================================================
-extern "C" BOOL _fmt_string (int hRes,int lpValue,int lpString,BOOL bDispatchI18NCallback);
-
-//======================================================
-// 函数名称：_fmt_color
-// 返回类型：逻辑型
-// 函数说明：格式化_文本到颜色
-// 参数<1>：lpValue，字符串指针
-// 参数<2>：lpColor，(out)返回颜色
-//======================================================
-extern "C" BOOL _fmt_color (int lpValue,int lpColor);
-
-//======================================================
-// 函数名称：_fmt_bin
-// 返回类型：逻辑型
-// 函数说明：格式化_二进制数据
-// 参数<1>：hRes，资源句柄
-// 参数<2>：lpValue，数据指针
-// 参数<3>：lpBin，(out)返回二进制数据指针
-// 参数<4>：lpLen，(out)返回数据长度
-// 参数<5>：lpFreeBuffer，(out)返回是否需要释放数据
-//======================================================
-extern "C" BOOL _fmt_bin (int hRes,int lpValue,int lpBin,int lpLen,BOOL lpFreeBuffer);
-
-//======================================================
-// 函数名称：_fmt_getvalue
-// 返回类型：逻辑型
-// 函数说明：格式化_获取数据偏移地址
-// 参数<1>：lpValue
-// 参数<2>：atomDest
-//======================================================
-extern "C" BOOL _fmt_getvalue (int lpValue,int atomDest);
-
-//======================================================
-// 函数名称：_fmt_getatom
-// 返回类型：整数型
-// 函数说明：格式化_获取数据偏移地址
-// 参数<1>：lpValue
-// 参数<2>：lpValueOffset
-//======================================================
-extern "C" int _fmt_getatom (int lpValue,int lpValueOffset);
-
-//======================================================
-// 函数名称：_fmt_const
-// 返回类型：逻辑型
-// 参数<1>：const，in/out
-// 参数<2>：consts，atom
-// 参数<3>：values，value
-// 参数<4>：nCount
-//======================================================
-extern "C" BOOL _fmt_const (int const,int consts,int values,int nCount);
 
 //======================================================
 // 函数名称：_layout_register
@@ -1924,18 +1824,6 @@ extern "C" int _canvas_fillpath (int hCanvas,int hPath,int hBrush);
 extern "C" BOOL _canvas_fillregion (int hCanvas,int hRgn,int hBrush);
 
 //======================================================
-// 函数名称：_canvas_drawimage
-// 返回类型：逻辑型
-// 函数说明：ok
-// 参数<1>：hCanvas，0
-// 参数<2>：hImage，4
-// 参数<3>：left，8
-// 参数<4>：top，12
-// 参数<5>：alpha，16
-//======================================================
-extern "C" BOOL _canvas_drawimage (int hCanvas,int hImage,float left,float top,int alpha);
-
-//======================================================
 // 函数名称：_canvas_drawimagerect
 // 返回类型：逻辑型
 // 函数说明：ok
@@ -2532,6 +2420,35 @@ extern "C" BOOL _matrix_rotate3d (int pMatrix,float x,float y,float z,float fAng
 extern "C" BOOL _matrix_scale3d (int pMatrix,float scaleX,float scaleY,float scaleZ);
 
 //======================================================
+// 函数名称：_brush_create
+// 返回类型：整数型
+// 参数<1>：argb
+//======================================================
+extern "C" int _brush_create (int argb);
+
+//======================================================
+// 函数名称：_brush_destroy
+// 返回类型：整数型
+// 参数<1>：hBrush
+//======================================================
+extern "C" int _brush_destroy (int hBrush);
+
+//======================================================
+// 函数名称：_brush_setcolor
+// 返回类型：整数型
+// 参数<1>：hBrush
+// 参数<2>：argb
+//======================================================
+extern "C" int _brush_setcolor (int hBrush,int argb);
+
+//======================================================
+// 函数名称：_brush_createfromimg
+// 返回类型：整数型
+// 参数<1>：hImg
+//======================================================
+extern "C" int _brush_createfromimg (int hImg);
+
+//======================================================
 // 函数名称：_brush_createfromcanvas
 // 返回类型：整数型
 // 参数<1>：hCanvas
@@ -2610,9 +2527,9 @@ extern "C" int _path_beginfigure (int hPath);
 // 返回类型：整数型
 // 函数说明：结束当前图形
 // 参数<1>：hPath
-// 参数<2>：fCloseFigure，是否需要闭合图形
+// 参数<2>：bCloseFigure，是否需要闭合图形
 //======================================================
-extern "C" int _path_endfigure (int hPath,BOOL fCloseFigure);
+extern "C" int _path_endfigure (int hPath,BOOL bCloseFigure);
 
 //======================================================
 // 函数名称：_path_hittest
@@ -2635,21 +2552,6 @@ extern "C" BOOL _path_hittest (int hPath,float x,float y);
 // 参数<5>：y2
 //======================================================
 extern "C" int _path_addline (int hPath,float x1,float y1,float x2,float y2);
-
-//======================================================
-// 函数名称：_path_addarc
-// 返回类型：整数型
-// 函数说明：添加弧
-// 参数<1>：hPath
-// 参数<2>：x1，起始坐标X
-// 参数<3>：y1，起始坐标Y
-// 参数<4>：x2，终点坐标X
-// 参数<5>：y2，终点坐标Y
-// 参数<6>：radiusX，半径X
-// 参数<7>：radiusY，半径Y
-// 参数<8>：fClockwise，是否顺时针
-//======================================================
-extern "C" int _path_addarc (int hPath,float x1,float y1,float x2,float y2,float radiusX,float radiusY,BOOL fClockwise);
 
 //======================================================
 // 函数名称：_path_addrect
@@ -2993,7 +2895,7 @@ extern "C" int _brush_createlinear_ex (float xs,float ys,float xe,float ye,int a
 //======================================================
 // 函数名称：_path_beginfigure2
 // 返回类型：整数型
-// 函数说明：开始新图形
+// 函数说明：开始新图形 v2
 // 参数<1>：hPath
 // 参数<2>：x，起始坐标
 // 参数<3>：y，起始坐标
@@ -3007,4 +2909,109 @@ extern "C" int _path_beginfigure2 (int hPath,float x,float y);
 // 参数<2>：alpha
 //======================================================
 extern "C" int _brush_createfromcanvas2 (int hCanvas,int alpha);
+
+//======================================================
+// 函数名称：_fmt_int
+// 返回类型：整数型
+// 函数说明：格式化_文本到整数
+// 参数<1>：lpValue，字符串指针
+// 参数<2>：lpdwPercentFlags，(out)返回是否为百分比单位
+//======================================================
+extern "C" int _fmt_int (int lpValue,int lpdwPercentFlags);
+
+//======================================================
+// 函数名称：_fmt_intary
+// 返回类型：整数型
+// 函数说明：格式化_文本到整数数组
+// 参数<1>：lpValue，字符串指针
+// 参数<2>：lpAry，数组指针
+// 参数<3>：nMaxCount，最大数量
+// 参数<4>：fZero，是否清空
+// 参数<5>：lpdwPercentFlags，(out)返回百分比标记位(0-31位)
+//======================================================
+extern "C" int _fmt_intary (int lpValue,int lpAry,int nMaxCount,BOOL fZero,int lpdwPercentFlags);
+
+//======================================================
+// 函数名称：_fmt_rect
+// 返回类型：逻辑型
+// 函数说明：格式化_文本到矩形
+// 参数<1>：lpValue，字符串指针
+// 参数<2>：lpRect，矩形指针
+// 参数<3>：lpdwPercentFlags，(out)返回百分比标记位(0-31位)
+//======================================================
+extern "C" BOOL _fmt_rect (int lpValue,int lpRect,int lpdwPercentFlags);
+
+//======================================================
+// 函数名称：_fmt_string
+// 返回类型：逻辑型
+// 函数说明：格式化_文本到文本_语言包
+// 参数<1>：hRes，资源句柄.(值可为0)
+// 参数<2>：lpValue，字符串指针
+// 参数<3>：lpString，(out)
+// 参数<4>：bDispatchI18NCallback，(in/out)
+//======================================================
+extern "C" BOOL _fmt_string (int hRes,int lpValue,int lpString,BOOL bDispatchI18NCallback);
+
+//======================================================
+// 函数名称：_fmt_color
+// 返回类型：逻辑型
+// 函数说明：格式化_文本到颜色
+// 参数<1>：lpValue，字符串指针
+// 参数<2>：lpColor，(out)返回颜色
+//======================================================
+extern "C" BOOL _fmt_color (int lpValue,int lpColor);
+
+//======================================================
+// 函数名称：_fmt_bin
+// 返回类型：逻辑型
+// 函数说明：格式化_二进制数据
+// 参数<1>：hRes，资源句柄
+// 参数<2>：lpValue，数据指针
+// 参数<3>：lpBin，(out)返回二进制数据指针
+// 参数<4>：lpLen，(out)返回数据长度
+// 参数<5>：lpFreeBuffer，(out)返回是否需要释放数据
+//======================================================
+extern "C" BOOL _fmt_bin (int hRes,int lpValue,int lpBin,int lpLen,BOOL lpFreeBuffer);
+
+//======================================================
+// 函数名称：_fmt_getvalue
+// 返回类型：逻辑型
+// 函数说明：格式化_获取数据偏移地址
+// 参数<1>：lpValue
+// 参数<2>：atomDest
+//======================================================
+extern "C" BOOL _fmt_getvalue (int lpValue,int atomDest);
+
+//======================================================
+// 函数名称：_fmt_getatom
+// 返回类型：整数型
+// 函数说明：格式化_获取数据偏移地址
+// 参数<1>：lpValue
+// 参数<2>：lpValueOffset
+//======================================================
+extern "C" int _fmt_getatom (int lpValue,int lpValueOffset);
+
+//======================================================
+// 函数名称：_fmt_const
+// 返回类型：逻辑型
+// 参数<1>：const，in/out
+// 参数<2>：consts，atom
+// 参数<3>：values，value
+// 参数<4>：nCount
+//======================================================
+extern "C" BOOL _fmt_const (int const,int consts,int values,int nCount);
+
+//======================================================
+// 函数名称：_path_addarc2
+// 返回类型：整数型
+// 函数说明：添加弧 v2
+// 参数<1>：hPath
+// 参数<2>：x
+// 参数<3>：y
+// 参数<4>：width
+// 参数<5>：height
+// 参数<6>：startAngle
+// 参数<7>：sweepAngle
+//======================================================
+extern "C" int _path_addarc2 (int hPath,float x,float y,float width,float height,float startAngle,float sweepAngle);
 

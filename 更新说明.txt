@@ -1,9 +1,27 @@
+[4.1.20.117]
+ [!] 修正Direct2D和GDIplus _canvas_drawellipse 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_drawline 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_drawrect 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_drawroundedrect 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_fillellipse 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_fillrect 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_fillroundedrect 渲染效果不一致的问题
+ [!] 修正Direct2D模式下 _path_addarc 无效的问题
+ [+] 增加图形函数 _canvas_drawarc
+ [+] 增加图形函数 _path_addarc2
+ [!] 修正Direct2D和GDIplus _canvas_drawarc 渲染效果不一致的问题
+ 
+[4.1.20.116]
+ [!] 修改 代码整理优化
+ [!] 修正 函数名称错误 释放内存_内尺池 为 释放内存_内存池
+ 
 [4.1.19.1229]
  [+] 增加 组合框 CBN_POPUPLISTWINDOW 事件，显示下拉列表窗口前触发 
  [+] 修改 组合框逻辑，组合框下拉列表文本默认的显示颜色与组合框一致（感谢车车的建议）
  [!] 修改 demo.button.e 中自绘按钮需使用EX_PAINTSTRUCT2结构否则会导致崩溃或绘制错误的BUG（感谢群友提交的BUG和小雨的修改）
  [+] 增加 树形框 TVM_SET/GETITEMTEXTW 消息,用于单独设置树形框表项文本，并修改 TVM_SETITEM 中注释的相关错误
  [!] 修改 GDI 模式下的模糊算法，效果更好（感谢小雨的代码）
+ [!] 修正 tab demo中文字可能会重影的bug
 
 [4.1.19.1215]
  [+] 增加 纯色按钮 demo.colorbutton.e 的相关扩展例程
@@ -223,12 +241,15 @@ Ex_DirectUI 4.1
 1.泆寒(YHan): 整体/基础 框架构建
 2.暗の魔法使(Eternal): 整体/基础/功能 调整/完善/扩展
 3.你的名字? (主题分享/组件扩展/功能扩展/教程文档)
-
+4.小雨(NyanRabbit): 基础/功能/调整/完善 教程文档
 ==========================================
 
 欢淫入裙交流: (群文件有扩展例子和其它相关资源共享)
 
 QQ交流群①: 433859
 QQ交流群②: 155525070
+QQ交流群③: 537092206
 
 官方网站: http://www.exdui.com (暂未上线)
+官方社区: https://bbs.exdui.org
+
