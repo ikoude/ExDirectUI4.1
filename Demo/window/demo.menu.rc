@@ -1,0 +1,28 @@
+#define IDR_MENU1 10000
+#define IDM_ 10001
+#define IDM_ 10002
+#define IDM_ 10003
+#define IDM_ 10004
+#define IDM_ 10005
+#define IDM_ 10006
+#define IDM_ 10007
+#define IDM_ 10008
+
+LANGUAGE 4,2
+
+IDR_MENU1 MENU
+BEGIN
+  POPUP "弹出菜单"
+  BEGIN
+    POPUP "会员中心"
+    BEGIN
+      MENUITEM "会员官网",IDM_
+      MENUITEM "会员服务",IDM_
+    END
+    MENUITEM "安全",IDM_
+    MENUITEM "设置",IDM_
+    MENUITEM SEPARATOR
+    MENUITEM "退出",IDM_
+  END
+END
+

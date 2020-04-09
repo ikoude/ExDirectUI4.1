@@ -1,0 +1,268 @@
+[4.1.20.409]
+ [!] 修复了一个 ComboBox 创建时可能出现的异常
+ [!] 修正了 W2A / W2A_Addr 转换为UTF8失败的BUG
+ [!] 修复了GDI模式下 _canvas_drawroundedrect 和 _canvas_fillroundedrect 当圆角度为0时的渲染错误问题
+
+[4.1.20.408]
+ [?] 更新了版本号
+ [!] 使用最新黑月静态重编译器构建, 导出全新的.h文件和.lib文件
+
+[4.1.20.211]
+ [!] 修正Direct2D模式下 Ex_ObjSetRadius 的渲染错误问题
+ [!] 修正Direct2D模式下 _path_addroundedrect 的渲染错误问题
+
+[4.1.20.117]
+ [!] 修正Direct2D和GDIplus _canvas_drawellipse 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_drawline 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_drawrect 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_drawroundedrect 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_fillellipse 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_fillrect 渲染效果不一致的问题
+ [!] 修正Direct2D和GDIplus _canvas_fillroundedrect 渲染效果不一致的问题
+ [!] 修正Direct2D模式下 _path_addarc 无效的问题
+ [+] 增加图形函数 _canvas_drawarc
+ [+] 增加图形函数 _path_addarc2
+ [!] 修正Direct2D和GDIplus _canvas_drawarc 渲染效果不一致的问题
+ 
+[4.1.20.116]
+ [!] 修改 代码整理优化
+ [!] 修正 函数名称错误 释放内存_内尺池 为 释放内存_内存池
+ 
+[4.1.19.1229]
+ [+] 增加 组合框 CBN_POPUPLISTWINDOW 事件，显示下拉列表窗口前触发 
+ [+] 修改 组合框逻辑，组合框下拉列表文本默认的显示颜色与组合框一致（感谢车车的建议）
+ [!] 修改 demo.button.e 中自绘按钮需使用EX_PAINTSTRUCT2结构否则会导致崩溃或绘制错误的BUG（感谢群友提交的BUG和小雨的修改）
+ [+] 增加 树形框 TVM_SET/GETITEMTEXTW 消息,用于单独设置树形框表项文本，并修改 TVM_SETITEM 中注释的相关错误
+ [!] 修改 GDI 模式下的模糊算法，效果更好（感谢小雨的代码）
+ [!] 修正 tab demo中文字可能会重影的bug
+
+[4.1.19.1215]
+ [+] 增加 纯色按钮 demo.colorbutton.e 的相关扩展例程
+ [!] 修正 生成RGB颜色指令 返回值错误的bug
+ [!] 修改 Lib.Helper模块中 关于矩阵相关命令声明错误的bug
+ [!] 修正 D2D模式下 矩阵无法使用的bug
+ [+] 增加 Ex_ObjBegin/EndPaint2和Ex_objBegin/EndPaintP 用于对 EX_PAINTSTRUCT2的支持(效果与原本的一致)
+ [+] 增加 Ex_ObjGetRectP 不规定必须传入EX_RECT
+ [+] 增加  Lib.Helper模块中 _canvas_drawcanvas 的声明
+ [+] 增加 异形窗口 demo.heteromorphic.e、矩阵使用方法 demo.matrix.e
+
+[4.1.19.1209]
+ [+] 增加 Ex_LoadImageFromMemory 的声明,可用于从内存中加载位图、图标句柄
+ [!] 修复 编辑框 控件无法设置背景图片的bug
+ [+] 增加 MenuButton 菜单即将弹出事件 MBN_POPUP
+ [+] 增加 _brush_createfromcanvas2 创建画布位图画刷,支持设置透明度
+ [!] 修复 当控件开启圆角模式时，透明度将失效的BUG
+ [+] 增加 _img_savetofile、_img_savetomemory 用于将位图数据保存(PNG格式)至文件、内存中
+ [!] 修改 控件 WM_ERASEBKGND 的lParam,需要判断一下是绘制区域还是绘图信息(判断方法为__get(lParam,0)是否等于wParam)
+ [!] 修复 调用绘图函数后可能会导致抗锯齿模式混乱的BUG
+ [!] 修复 D2D模式下控件圆角无法抗锯齿的问题（GDI模式区域无法抗锯齿所以暂时无法处理）
+ [+] 增加 自定义菜单功能 的相关demo
+ [!] 修复 ClearType模式可能导致文字无法显示的BUG
+ [!] 修正 _layout_destroy、_imglist_destroy 名字命名错误的问题
+
+[4.1.19.1024]
+ [+] 增加 控件消息 WM_ERASEBKGND 用于自定义绘制控件背景
+ [+] 增加 线性渐变画刷 _brush_createlinear、_brush_createlinear_ex
+ [!] 修复 图像画刷 无法在D2D模式下使用的BUG
+ [+] 增加 _path_beginfigure2 可以设置路径图形起始点(D2D)
+ [!] 修复 线性布局中 对控件可见状态处理逻辑错误的BUG
+ [+] 增加 线性、流式、相对、绝对、表格布局 的demo
+
+[4.1.19.909]
+ [!] 修复 控件尺寸为0时 可能会崩溃的BUG
+ [!] 修复 GDI 模式下 图像抗锯齿的有关BUG
+ [!] 修复 GDI 模式下 图像不抗锯齿时 九宫图像绘制错位的BUG
+ [+] 树形框 实现绘制连接线的相关功能（感谢 NewPeople），并添加常量 #树形框风格_显示连接线
+ [+] 增加 启用Aero 的demo
+
+[4.1.19.904]
+ [!] 修复 Ex_DUIGetObjFromPoint 返回值错误的BUG
+ [+] 增加 MenuButton (菜单按钮) 控件及相关例程
+ [+] 实现控件边框的绘制
+ [!] 修改 _canvas_drawpath 的参数，并修改其无法绘制的BUG
+ [!] 修复 画布对象 抗锯齿的相关逻辑错误
+ [!] 修改了主题包中 菜单相关参数
+ [+] 临时增加一个 资源/主题 打包函数 _res_pack ，可将文件夹整体打包为资源包或主题包
+
+[4.1.19.827]
+ [!] 修复 lib.helper 模块中函数声明错误的BUG
+ [+] 增加 demo.iconlistview 图标列表框
+
+[4.1.19.824]
+ [!] 修复 缓动机制 始终使用线程的BUG
+ [!] 修复 D2D绘图模式下 绘制虚线 无法生效的BUG
+ [!] 修改 lib.helper 模块中某些常量注释错误
+ [!] 修复 子控件设置圆角的情况下会超出父控件范围的BUG
+ [+] 添加 _rgn_createfrompath 函数，可从路径创建区域
+ [!?] 尝试性修复了 列表类控件 高DPI模式下的显示异常情况，可能仍存在BUG
+ [+] 增加以下demo
+       1. demo.aniwindow.exdui  窗口动画进出效果
+       2. demo.switch  开关控件
+       3. demo.navbtn.exdui  导航按钮控件 (及选择夹的控制)
+       4. demo.easing.0 简单的缓动例程
+
+[4.1.19.803]
+ [!] 修复 在D2D模式下绘制虚线时，程序卡死的BUG
+ [!] 修复 ProgressBar控件绘制时可能导致的内存泄露
+
+
+[4.1.19.730]
+ [!] 修复 树形框 TVM_GETCOUNT/TVM_GETVISIBLECOUNT 传参的错误
+ [!] 修复 Ex_ObjSetColor 逻辑上的错误
+ [!] 修复 树形框 删除所有表项后无法添加新项的错误
+ [+] lib.helper 添加 EX_PAINTSTRUCT2 结构
+ [!] 修复 当启用系统样式的情况下，弹出提示会导致控件重复产生移入移除消息的BUG
+ [!] 修复 Ex_ObjSetParent 未公开的BUG
+
+
+[4.1.19.622]
+ [!] (删除)_canvas_alphablend/_canvas_bitblt 调整为 (增加)_canvas_drawcanvas 及相关常量 CV_COMPOSITE_MODE_SRCCOPY/CV_COMPOSITE_MODE_SRCOVER
+ [!] 修复 canvas一处句柄未关闭BUG
+ [!] 图像类调用格式调整.增加 _img_createfromcanvas/lock/unlock/getpixel/setpixel/rotateflip/getthumbnail
+ [+] 增加 TreeView(树形框) 控件，调用方式见demo
+ [+] 增加 ReportListView(报表列表框) 控件，调用方式见demo
+ [+] helper.ec 新增__ptr_index/__ptr_ins/__ptr_del，封装对指针模拟数组的相关操作
+ [!] helper.ec 宽文本指令增加空指针检查
+ [+] 增加 ProgressBar(进度条),GroupBox(分组框) 控件
+ [+] 增加 控件输入法管理接口 Ex_ObjEnableIME/Ex_ObjSetIMEState
+ [+] 增加 控件接口 Ex_ObjDisableTranslateSpaceAndEnterToClick 用于禁用控件把回车、空格转换为单击事件
+ [!] 修复 控件背景动画不会变化的BUG
+ [+] lib.helper 模块中增加部分常用常量
+ [+] 增加 设置画布抗锯齿模式的接口 _canvas_set[text/image/]antialiasmode
+ [+] 增加 图片组对象及相关接口 _imglist_***
+ [!] 修复 使用SetLong设置控件ID时可能导致的崩溃
+ [+] 增加 控件置父接口 Ex_ObjSetParent
+ [!] 修复 绑定模态对话框后 首次显示时编辑框等控件无法接受键盘消息的BUG
+ [!] 修复 置父的子控件设置圆角后 坐标显示不正常的情况
+
+
+[4.1.18.518]
+ [!] 修复布局一处可能导致崩溃的BUG
+ [!] 完善鼠标滚动消息的处理
+ [+] Ex_ObjHandleEvent (参考 组合框 调用例子)
+ [+] NM_NCHITTEST/NM_TOOLTIPSCREATED/NM_FONTCHANGED 及调整事件相关数值
+ [+] 增加 组合框 例子: Demo\object\combobox
+ [+] 增加 图形按钮 例子: Demo\object\[扩展]imagebutton
+
+[4.1.18.512]
+ [!] 修复组件wm_nccalcsize客户区坐标BUG
+ [!] 修复滚动条NM_SHOW事件未触发BUG
+ [!] 修复列表框 LVM_SETSELECTIONMARK 数值未更新BUG
+ [+] Ex_DUIGetObjFromPoint/Ex_ObjGetClassInfoEx
+
+
+[4.1.18.501]
+ [+] Ex_JSLoadConst 加载JS常量(参考: demo/window/demo.e)
+ [+] 增加组合框(相关常量: 组合框风格_[风格] / CB_[消息] /CBN_[事件].参考: demo/object/combobox/demo.e)
+ [+] EWS_POPUPWINDOW(弹出式窗口.参考: demo/window/demo.e )
+ [+] _font_copy()
+ [!] 接口/常量调整.可通过 Ex_ObjSetLong/Ex_ObjgetLong/ 进行相关操作:
+     )删除 EWS_BLUR/Ex_DUISetBlur -> EWL_BLUR
+     )删除 EOS_EX_BLUR/Ex_ObjSetBlur -> EOL_BLUR
+     )删除 Ex_ObjGetTextFormat/Ex_ObjSetTextFormat/ -> EOL_TEXTFORMAT
+
+
+ [!] 修复一处菜单切换可能导致退出的BUG
+
+
+[4.1.18.420]
+ [+] 完善模态窗口编辑框输入问题
+ [+] 完善菜单条目超出屏幕问题
+ [!] 编辑框
+        >修复一处内存泄漏BUG
+        >完善rtf处理
+ [!] 修复 Ex_ObjClientToScreen/Ex_ObjClientToWindow 坐标BUG
+ [!] 修复一处信息框高DPI模式显示错位BUG&完善信息框组件布局
+
+[4.1.18.329]
+ [!] 修复win10菜单黑底BUG
+ [!] 修复编辑框圆角BUG
+ [!] Ex_ObjFind 查找BUG
+ [!] Ex_ObjGetObj GW_HWNDLAST/GW_HWNDFIRST BUG
+ [+] 新增了控件属性相关接口 Ex_ObjInitPropList/Ex_ObjSetProp/Ex_ObjGetProp/Ex_ObjRemoveProp/Ex_ObjEnumProps
+ [+] 新增了线性布局属性：#ELP_LINEAR_DALIGN 表示布局方向的对齐方式
+ [+] 新增了绝对布局接口 _layout_absolute_setedge、_layout_absolute_lock
+ [!] _layout_settableinfo 更名为 _layout_table_setinfo
+ [!] _layout_eableupdate 更名为 _layout_enableupdate
+ [!] Ex_LayoutXXX  更名为 Ex_ObjLayoutXXX
+ [!] 删除 Ex_DUIXXX(背景相关函数) 由 Ex_ObjXXX(背景相关函数) 代替
+ [!] 信息框常量 EMF_ 修改为 EMBF_ 
+ [!] Ex_TrackPopupMenu() 新增菜单标记参数和常量 EMNF_
+ [+] 增加全局常量 EXGF_MENU_ALL (渲染全部菜单)
+ [!] Ex_ObjSetRgn 修改为 Ex_ObjSetPath
+ [+] Ex_ObjSetRadius
+ [+] 增加路径相关函数 _path_xxx()
+ [!] Ex_scaleX/Y 统一为 Ex_Scale()
+ [+] Ex_ObjScrollShow/Ex_ObjScrollEnable
+ [+] EOS_DISABLENOSCROLL (滚动条不可用时禁止而不隐藏)
+
+[4.1.18.313]
+ [+] 增加缓动机制,详见demo
+ [!] 修改了Ex_ObjCallProc的参数,新增最后一个参数
+ [+] 新增“脚本分发信息_Ex”结构,方便控件处理自定义JS函数
+ [+] demo中增加了布局和程序交互的例子
+ [!] 修复2处内存泄漏BUG
+ [!] 修复1处导致退出崩溃BUG
+ [!] 修复1处导致退出CPU占用BUG
+
+[4.1.18.309]
+ [+] 主窗口背景模糊支持 (EWS_BLUR/Ex_DUISetBlur)
+ [!] 主窗口图标显示修复
+ [!] 主窗口移动CPU占用修复
+ [+] 组件事件冒泡支持 (Ex_ObjEnableEventBubble)
+ [+] 组件坐标转换 (Ex_ObjPointTransform)
+ [+] Ex_ObjSetPadding/Ex_ObjSetFont/Ex_ObjGetFont
+ [!] 修复了通知机制的BUG
+ [!] 修复了ExFC中关于矩形传参的BUG
+
+[4.1.18.306]
+ [+] xml style/script/include 引用支持
+ [+] 模版列表支持
+ [!] 子窗口 继承父窗口背景信息 完善
+ [!] 滚动条 相关BUG
+ [!] 修复了ExFC中控件移动的参数错误
+ [!] 修复了demo中重复打开窗口导致的崩溃
+ [+] 增加控件扩展demo(滑块条)
+
+[4.1]
+综合:
+ [+] 布局支持(xml/css)
+ [+] 脚本支持(js)
+ [+] 主题包(窗口/组件/菜单)
+ [+] 多语言支持(i18n)
+ [+] dpi 支持
+ [+] apng动画支持
+
+窗口:
+ [+] 普通/分层/异型 窗口支持
+ [+] d2d/gdi(+) 渲染支持
+
+组件:
+ [+] 异型 组件支持
+ [+] 组件层 模糊支持
+
+其它:
+ [+] 信息框/菜单 改造
+ [+] 界面/逻辑 分离
+
+==========================================
+
+Ex_DirectUI 4.1
+
+本引擎贡献名单:
+
+1.泆寒(YHan): 整体/基础 框架构建
+2.暗の魔法使(Eternal): 整体/基础/功能 调整/完善/扩展
+3.你的名字? (主题分享/组件扩展/功能扩展/教程文档)
+4.小雨(NyanRabbit): 基础/功能/调整/完善 教程文档
+==========================================
+
+欢淫入裙交流: (群文件有扩展例子和其它相关资源共享)
+
+QQ交流群①: 433859
+QQ交流群②: 155525070
+QQ交流群③: 537092206
+
+官方网站: http://www.exdui.com (暂未上线)
+官方社区: https://bbs.exdui.org
+

@@ -1,0 +1,3 @@
+[易语言]
+
+> 复制/替换 Source\0.YHan.Helper.ec & 0.LibExDui.Helper.ec 到 %易语言安装目录%\ecom\ 文件夹内
