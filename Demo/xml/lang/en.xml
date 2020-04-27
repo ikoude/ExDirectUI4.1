@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<StringBundle>
+    <String name="S_TITLE">ExDirectUI - Login</String>
+    <String name="S_WELCOME">Welcome To ExDirectUI</String>
+    <String name="S_EDIT_USERNAME">Username</String>
+    <String name="S_EDIT_PASSWORD">Password</String>
+    <String name="S_CHECK_REMEMBER">Remember</String>
+    <String name="S_CHECK_AUTO_LOGIN">Auto Login</String>
+    <String name="S_BUTTON_LOGIN">Login</String>
+    <String name="S_MSG_LOGIN_TITLE">You clicked the login button, the information is</String>
+    <String name="S_MSG_LOGIN_NAME_IS">Username:</String>
+    <String name="S_MSG_LOGIN_PWD_IS">Password:</String>
+</StringBundle>

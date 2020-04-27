@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="gbk" ?>
+
+<!--
+    ExDirectUI 皮肤窗口
+
+    ExWindow 为窗口类名,系统自行注册
+
+    属性表：
+    rect：左,顶,宽,高[四个整数]
+    text：标题文本[文本]
+    
+    style-window：窗口风格(由WS_开头的常量位或而成),0为默认[整数]
+    styleex-window：窗口扩展风格(由WS_EX_开头的常量位或而成),0为默认[整数]
+    style-directui：皮肤风格(由EWS_开头的常量位或而成)[整数]
+    
+    onmessage：消息回调函数名,在窗口创建前由Ex_XmlRegisterCallback绑定[函数名]
+    lparam：附加参数,传入WM_CREATE消息中[整数]
+    script：脚本文件,与皮肤窗口绑定的脚本文件,注意编码为GBK[数据]
+    
+    background-color：背景色[颜色]
+    background-image：背景图片[数据]
+    background-position:背景图片偏移 x,y[两个整数,允许使用百分比]
+    background-repeat:背景重复模式(BIR_开头的常量)[整数]
+    background-grid:背景图九宫矩形[四个整数]
+    background-flags:背景图标识(BIF_开头的常量位或组合)[整数]
+    background-alpha:背景图片透明度[整数0-255]
+
+    layout：(布局机制部分具体见2.xml)
+    style：风格文件,可以理解成css文件[数据]
+-->
+<ExWindow rect="0,0,650,400" text="布局文件Demo - ExDirectUI" style-window="0" styleex-window="0" style-directui="231813" background-color="rgba(0,0,0,160)" script="file(./Demo/xml/1.js)" onmessage="onWndProc" >
+
+    <!--
+        形式：
+        <控件类名 属性="属性值" />
+        <控件类名 属性="属性值">
+            <子控件类名 属性="属性值" />
+        </控件类名>
+
+        控件通用的属性：
+        
+        id：窗口唯一的控件编号[整数]
+        name：窗口唯一的控件名称[文本]
+        node-id：同层唯一的控件编号[整数]
+
+        rect：相对父容器的坐标(左,顶,宽,高)[四个整数]
+        text：控件文本[文本]
+        style-object：控件风格(EOS_开头的常量组合)[整数]
+        styleex-object：控件扩展风格(EOS_EX_开头的常量组合)[整数]
+        text-format：控件文本格式(DT_开头的常量组合)[整数]
+
+        style：风格名,对应窗口风格文件中的风格[文本]
+        background-xxx 背景与窗口类似,不重复写了
+        theme：主题文件[数据]
+        onmessage：控件消息回调函数名,在窗口创建前由Ex_XmlRegisterCallback绑定[函数名]
+        lparam：控件附加参数,传入EOL_LPARAM中[整数]
+
+        blur：模糊度[整数]
+        alpha：透明度[整数,0-255]
+
+        padding-text：文本相对四边向内偏移量(左,顶,右,底)[四个整数]
+        tips：提示文本内容[文本]
+        cursor：光标文件[数据]
+
+        font-family：字体名称[文本]
+        font-size：字体尺寸[整数]
+        font-style：字体风格(粗体,斜体,下划线,删除线)[整数]
+
+        background-color/color-background:背景色[颜色]
+        border-color/color-border:边框色[颜色]
+        color/color-normal:正常文本色[颜色]
+        color-hover:点燃文本色[颜色]
+        color-down:按下文本色[颜色]
+        color-focus:焦点文本色[颜色]
+        color-checked:选中文本色[颜色]
+        color-selected:选择文本色[颜色]
+        color-hot:热区文本色[颜色]
+        color-visted:访问过文本色[颜色]
+        color-shadow:阴影色[颜色]
+
+
+        //圆角暂未做处理
+
+        layout：(布局机制部分具体见2.xml)
+
+        其他自定义的属性将会分发WM_EX_XML_PROPDISPATCH(wParam为属性名原子号,lParam为属性值宽文本指针)至控件消息回调函数上,由控件自行处理
+
+        通用控件JS事件：
+        onload：创建事件[JS函数名]
+        onunload：销毁事件[JS函数名]
+        onfocus：获取焦点[JS函数名]
+        onblur：失去焦点[JS函数名]
+        onmousedown：鼠标按下[JS函数名]
+        onmouseup：鼠标放开[JS函数名]
+        onmouseover：进入控件[JS函数名]
+        onmouseout：离开控件[JS函数名]
+        onclick：单击控件[JS函数名]
+        ondblclick：双击控件[JS函数名]
+        ontimer：时钟事件[JS函数名]
+
+        内置的控件类名及特殊属性/事件：
+        Static 标签/图片
+        Button 按钮
+        RadioButton 单选框
+            check：选中状态(0未选中,1选中)[整数]
+            oncheck：选中控件事件[JS函数名]
+        CheckButton 复选框
+            check：选中状态(0未选中,1选中,2半选)[整数]
+            oncheck：选中控件事件[JS函数名]
+        Edit 编辑框
+            text-banner：预留文本[文本]
+            color-banner：预留文本色[颜色]
+            passwordchar：密码遮掩符[文本,1个字符]
+            color-caret：插入符颜色[颜色]
+        SysLink 链接框
+        SysButton 系统按钮(如关闭/最大化/最小化/皮肤等)
+        Page 页面容器
+        GroupBox 分组框
+        ScrollBar 滚动条
+        SoliderBar 滑块条
+        ProgressBar 进度条
+        MenuButton 菜单按钮
+        ListView 列表框
+        TListView 模板列表框
+        ReportListView 报表列表框
+        TreeView 树形框
+        ComboBox 组合框
+
+        注意，有几个例外标签：
+        风格标签(仅可在xml顶层出现) <style src="风格文件[数据]"/> 
+        脚本标签(仅可在xml顶层出现) <script src="脚本文件[数据]" run="入口函数名,可无"/>
+        引入标签(可出现在子层中) <include src="另一个布局文件[数据]" />
+        
+    -->
+
+    <Static rect="25,30,125,40" text="标签123" id="1000" color="rgb(255,255,0)" background-color="rgba(0,0,255,150)" font-family="隶书" font-size="22" text-format="37" />
+    <Static rect="25,80,125,125" background-image="file(./Res/bkg.png)" background-flags="1" />
+    <Static rect="25,80,125,125" id="1001" blur="10" style-object="0"/>
+
+    <Button rect="25,220,125,35" text="按钮1(ID)" id="101" />
+    <Button rect="25,260,125,35" text="按钮2(Name)" name="btn2" />
+    <Button rect="25,300,125,35" text="按钮3(JS)" onclick="onBtn3Clicked"/>
+
+    <GroupBox rect="160,30,125,150" text="单选框" background-color="rgba(255,255,255,50)">
+        <RadioButton rect="10,20,100,25" text="单选框1" />
+        <RadioButton rect="10,50,100,25" text="单选框2" check="1" />
+        <RadioButton rect="10,80,100,25" text="单选框3" />
+        <RadioButton rect="10,110,100,25" text="单选框4" />
+    </GroupBox>
+
+    <GroupBox rect="300,30,125,150" text="复选框" background-color="rgba(255,255,255,50)">
+        <CheckButton rect="10,20,100,25" text="复选框1" check="1" />
+        <CheckButton rect="10,50,100,25" text="复选框2" check="2" />
+        <CheckButton rect="10,80,100,25" text="选中则模糊" oncheck="onChk3Checked"/>
+        <CheckButton rect="10,110,100,25" text="选中开始时钟" oncheck="onChk4Checked" ontimer="onChk4Timer"/>
+    </GroupBox>
+
+    <Edit rect="160,200,265,30" text="单行编辑框" id="201" />
+    <Edit rect="160,235,265,100" text="多行编辑框" id="202" text-format="0" style-object="-805306368" />
+
+    <ListView id="301" rect="430,30,200,200" background-color="rgba(255,0,0,200)" color="rgb(255,255,0)" />
+    
+</ExWindow>

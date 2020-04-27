@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<StringBundle>
+    <String name="S_TITLE">ExDirectUI - ログイン</String>
+    <String name="S_WELCOME">ExDirectUIへようこそ</String>
+    <String name="S_EDIT_USERNAME">ユーザー名</String>
+    <String name="S_EDIT_PASSWORD">パスワード</String>
+    <String name="S_CHECK_REMEMBER">覚えて</String>
+    <String name="S_CHECK_AUTO_LOGIN">自動ログイン</String>
+    <String name="S_BUTTON_LOGIN">ログイン</String>
+    <String name="S_MSG_LOGIN_TITLE">ログインボタンをクリックすると、以下のようになります.</String>
+    <String name="S_MSG_LOGIN_NAME_IS">ユーザー名：</String>
+    <String name="S_MSG_LOGIN_PWD_IS">パスワード：</String>
+</StringBundle>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    窗口节点通过style属性载入风格文件
+    文本属性使用I18N(ID)的形式引用多语言文件中对应的文本
+-->
+
+<!--
+    窗口使用了一个垂直方向的线性布局,并内间距为0,50,0,0
+-->
+
+<ExWindow rect="0,0,400,300" text="I18N(S_TITLE)" style-window="0" styleex-window="0" style-directui="231813" background-color="rgba(0,100,255,255)" 
+layout="1" layout-direction="1" layout-padding="0,50,0,0" style="file(./Demo/xml/3.css)" script="file(./Demo/xml/3.js)">
+
+    <!--
+        控件节点通过style属性指定本控件使用的风格
+    -->
+    <Static rect="0,0,650,50" text="I18N(S_WELCOME)" style="LoginTitle" layout-margin="0,10,0,0"/>
+
+    <Edit id="233" rect="0,0,100,30" text-banner="I18N(S_EDIT_USERNAME)" style="LoginEdit" layout-margin="0,0,0,0"/>
+    <Edit id="234" rect="0,0,100,30" text-banner="I18N(S_EDIT_PASSWORD)" style="LoginEdit" layout-margin="0,0,0,10"/>
+
+    <!--
+        页面容器指定了一个水平的线性布局，并让子控件居中
+    -->
+    <Page rect="0,0,0,30" layout="1" layout-direction="0" layout-dalign="1"  layout-margin="0,0,0,10">
+        <CheckButton id="101" rect="0,0,200,40" text="I18N(S_CHECK_REMEMBER)" layout-margin="0,0,70,0" style="LoginCheckBox" oncheck="OnRememberMeChecked"/>
+        <CheckButton id="102" rect="0,0,200,40" text="I18N(S_CHECK_AUTO_LOGIN)" style="LoginCheckBox" oncheck="OnAutoLoginChecked"/>
+    </Page>
+
+    <!--
+        按钮设置了自适应尺寸并居中对齐
+    -->
+    <Button rect="0,0,200,40" text="I18N(S_BUTTON_LOGIN)" styleex-object="406847488" layout-align="2" padding-text="50,10,50,10" onclick="OnLoginBtnClick"/>
+
+</ExWindow>

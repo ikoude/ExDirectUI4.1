@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+
+<ExWindow rect="0,0,650,400" text="布局文件Demo - ExDirectUI" style-window="0" styleex-window="0" style-directui="231813" background-color="rgba(0,0,0,160)" script="file(./Demo/xml/1.js)" onmessage="onWndProc" >
+    
+    <Static rect="25,30,125,40" text="标签123" id="1000" color="rgb(255,255,0)" background-color="rgba(0,0,255,150)" font-family="隶书" font-size="22" text-format="37" />
+    <Static rect="25,80,125,125" background-image="file(./Res/bkg.png)" background-flags="1" />
+    <Static rect="25,80,125,125" id="1001" blur="10" style-object="0"/>
+
+    <Button rect="25,220,125,35" text="按钮1(ID)" id="101" />
+    <Button rect="25,260,125,35" text="按钮2(Name)" name="btn2" />
+    <Button rect="25,300,125,35" text="按钮3(JS)" onclick="onBtn3Clicked"/>
+
+    <GroupBox rect="160,30,125,150" text="单选框" background-color="rgba(255,255,255,50)">
+        <RadioButton rect="10,20,100,25" text="单选框1" />
+        <RadioButton rect="10,50,100,25" text="单选框2" check="1" />
+        <RadioButton rect="10,80,100,25" text="单选框3" />
+        <RadioButton rect="10,110,100,25" text="单选框4" />
+    </GroupBox>
+
+    <GroupBox rect="300,30,125,150" text="复选框" background-color="rgba(255,255,255,50)">
+        <CheckButton rect="10,20,100,25" text="复选框1" check="1" />
+        <CheckButton rect="10,50,100,25" text="复选框2" check="2" />
+        <CheckButton rect="10,80,100,25" text="选中则模糊" oncheck="onChk3Checked"/>
+        <CheckButton rect="10,110,100,25" text="选中开始时钟" oncheck="onChk4Checked" ontimer="onChk4Timer"/>
+    </GroupBox>
+
+    <Edit rect="160,200,265,30" text="单行编辑框" id="201" />
+    <Edit rect="160,235,265,100" text="多行编辑框" id="202" text-format="0" style-object="-805306368" />
+
+    <ListView id="301" rect="430,30,200,200" background-color="rgba(255,0,0,200)" color="rgb(255,255,0)" />
+    
+</ExWindow>

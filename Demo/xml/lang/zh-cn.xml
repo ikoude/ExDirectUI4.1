@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<StringBundle>
+    <String name="S_TITLE">ExDirectUI - 登录</String>
+    <String name="S_WELCOME">欢迎使用ExDirectUI</String>
+    <String name="S_EDIT_USERNAME">在此输入用户名</String>
+    <String name="S_EDIT_PASSWORD">在此输入密码</String>
+    <String name="S_CHECK_REMEMBER">记住密码</String>
+    <String name="S_CHECK_AUTO_LOGIN">自动登录</String>
+    <String name="S_BUTTON_LOGIN">登  录</String>
+    <String name="S_MSG_LOGIN_TITLE">您点击了登录按钮，信息如下</String>
+    <String name="S_MSG_LOGIN_NAME_IS">用户名：</String>
+    <String name="S_MSG_LOGIN_PWD_IS">密码：</String>
+</StringBundle>

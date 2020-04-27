@@ -1,0 +1,38 @@
+/*
+    风格类型的语法为
+    类型名
+    {
+        属性名:属性值;
+        属性名:属性值;
+    }
+    此处的类型名对应xml中控件的style属性
+    此处的属性名和属性值对应xml中控件的所有支持的属性
+*/
+
+LoginTitle
+{
+    font-size:25;
+    text-format:37;
+    color:rgba(255,255,0,255);
+}
+
+LoginEdit
+{
+    styleex-object:-671088640;
+    color-banner:rgba(0,0,0,200);
+    padding-text:10,0,10,0;
+    background-color:rgba(255,255,255,200);
+}
+
+LoginCheckBox
+{
+    color-normal:rgba(255,255,255,255);
+    color-hover:rgba(255,255,255,255);
+    color-down:rgba(255,255,255,255);
+    color-focus:rgba(255,255,255,255);
+    color-checked:rgba(255,255,255,255);
+
+    styleex-object:406847488;
+    padding-text:20,0,10,0;
+}
+

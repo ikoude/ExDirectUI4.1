@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ListItem layout="6">
+    <ProgressBar nodeid="101" layout-left="0" layout-height="3" layout-right="0" layout-bottom="0" style-object="268435456" />
+    <Static nodeid="1" text="主标题" layout-left="75" layout-top="5" layout-right="60" layout-height="22" font-style="1" font-size="20" />
+    <Static nodeid="2" text="副标题" layout-left="75" layout-top="30" layout-right="60" layout-bottom="5" text-format="0" color="rgb(50,50,50)"/>
+    <Static nodeid="3" layout-left="20" layout-top="50%" layout-offsetV="-50*" layout-width="32" layout-height="32" border-radius="32" />
+    <Button nodeid="102" layout-width="24" layout-height="24" layout-top="50%" layout-offsetV="-50*" layout-right="15" styleex-object="-2013265920"/>
+</ListItem>

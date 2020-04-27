@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<StringBundle>
+    <String name="S_TITLE">ExDirectUI - 로그인</String>
+    <String name="S_WELCOME">ExDirectUI에 오신 것을 환영합니다</String>
+    <String name="S_EDIT_USERNAME">아이디</String>
+    <String name="S_EDIT_PASSWORD">비밀번호</String>
+    <String name="S_CHECK_REMEMBER">기억해</String>
+    <String name="S_CHECK_AUTO_LOGIN">자동 로그인</String>
+    <String name="S_BUTTON_LOGIN">로그인</String>
+    <String name="S_MSG_LOGIN_TITLE">로그인 버튼을 클릭하면 정보는 다음과 같습니다.</String>
+    <String name="S_MSG_LOGIN_NAME_IS">아이디 :</String>
+    <String name="S_MSG_LOGIN_PWD_IS">비밀번호 :</String>
+</StringBundle>

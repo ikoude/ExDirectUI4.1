@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<!--
+    布局父容器通用属性
+
+    layout：布局类型 [整数,取值详见ELT_开头的相关常量值]
+    layout-padding：容器内边距[四个整数]
+
+    布局子控件通用属性
+
+    layout-margin： 容器外边距[四个整数]
+    layout-notChild： 强制不由父容器布局管理[取值为1]
+
+-->
+
+<Window rect="0,0,800,600" text="Hello World" background-color="rgba(255,255,255,128)" style-directui="249095" style-window="-1777729536" styleex-window="786440"
+layout="4" layout-padding="20,30,20,20" layout-rows="-5,-20,-5,-20,-25,-25" layout-cells="-100" >
+
+    <!--
+        线性布局：子控件按顺序依次排入容器中
+        容器相关属性：
+            layout-direction： 排布方向 [0为横向排布，1为纵向排布]
+            layout-dalign： 排布方向对齐方式 [默认：0为左/顶,1为居中,2为右/底]
+        子控件相关属性：
+            layout-align： 子控件非排布方向对齐方式 [默认：0为填充,1为左/顶,2为居中,3为右/底]
+            layout-size： 排布方向尺寸 [整数,默认按控件宽高处理]
+    -->
+
+    <Static id="101" layout-row="1" layout-cell="1" text="Linear Layout" background-color="rgba(200,200,200,100)" font-size="16" layout="1" layout-direction="0" layout-padding="125,0,0,0">
+        <Static id="10101" layout-size="100" background-color="rgba(255,0,0,50)" text="layout-size"/>
+        <Static id="10102" rect="0,0,100,15" background-color="rgba(0,255,0,50)" text="rect"/>
+        <Static id="10103" rect="0,0,100,15" background-color="rgba(0,0,255,50)" layout-align="1" text="align:left"/>
+        <Static id="10104" rect="0,0,100,15" background-color="rgba(255,0,255,50)" layout-align="2" text="align:center"/>
+        <Static id="10105" rect="0,0,100,15" background-color="rgba(0,0,0,50)" layout-align="3" text="align:right"/>
+    </Static>
+    
+    <!--
+        流式布局：子控件按顺序依次排入容器中，若一行/列放不下则转至下一行/列继续排列
+        容器相关属性：
+            layout-direction： 排布方向 [0为横向排布，1为纵向排布]
+        子控件相关属性：
+            layout-align： 子控件非排布方向对齐方式 [默认：0为填充,1为左/顶,2为居中,3为右/底]
+            layout-size： 排布方向尺寸 [整数,默认按控件宽高处理]
+            layout-newline： 强制转到下一行/列显示 [取值为1]
+    -->
+    <Static id="102" layout-row="2" text="Flow Layout" background-color="rgba(255,0,0,100)" font-size="16" layout="2" layout-direction="1" >
+        <Static id="10201" rect="0,0,100" layout-size="100" background-color="rgba(255,0,0,50)" text="layout-size" />
+        <Static id="10202" rect="0,0,60,25" background-color="rgba(0,255,0,50)" text="rect"/>
+        <Static id="10203" rect="0,0,80,50" background-color="rgba(0,0,255,50)" layout-align="1" text="rect"/>
+        <Static id="10204" rect="0,0,110,60" background-color="rgba(255,0,255,50)" layout-align="2" text="layout-newline" layout-newLine="1"/>
+        <Static id="10205" rect="0,0,50,40" background-color="rgba(0,0,0,50)" layout-align="3" text="rect"/>
+    </Static>
+    
+    <!--
+        页面布局：页面布局根据索引，只显示其中的一个子控件
+        容器相关属性：
+            layout-current: 当前页面索引 [整数]
+        子控件相关属性：
+            layout-fill： 是否填充整个容器 [0为不填充,1为填充]
+    -->
+    <Static id="103" layout-row="3" text="Page Layout" background-color="rgba(0,255,0,100)" font-size="16" layout="3" layout-current="3" >
+        <Static id="10301" rect="0,0,0,0" layout-fill="1" text="page1" background-color="rgba(255,0,0,200)" />
+        <Static id="10301" rect="20,0,70,50" layout-fill="0" text="page2" background-color="rgba(0,255,0,200)" />
+        <Static id="10301" rect="0,0,0,0" layout-fill="1" text="page3" background-color="rgba(0,0,255,200)" />
+    </Static>
+    
+    <!--
+        表格布局：容器被分割为多个行列，每个子控件占据并对齐于某一个或多个单元格
+        容器相关属性：
+            layout-rows： 表格行信息[对应每行的高度,正值为像素,负值为百分比]
+            layout-cells：表格列信息[对应每列的宽度,正值为像素,负值为百分比]
+        子控件相关属性：
+            layout-row：所属单元格行索引 [整数]
+            layout-cell：所属单元格列索引 [整数]
+            layout-rowspan：控件跨行数 [整数]
+            layout-cellspan：控件跨列数 [整数]
+    -->
+    <Static id="104" layout-row="4" text="Table Layout" background-color="rgba(0,0,255,100)" font-size="16" layout="4" layout-rows="50,-30,25" layout-cells="50,-50,100">
+        <Static id="10401" layout-cell="1" layout-row="1" text="1,1" background-color="rgba(0,0,0,100)"/>
+        <Static id="10402" layout-cell="2" layout-row="1" text="1,2" background-color="rgba(255,0,0,100)"/>
+        <Static id="10403" layout-cell="3" layout-row="1" text="1,3" background-color="rgba(0,255,0,100)"/>
+        <Static id="10404" layout-cell="1" layout-row="2" layout-rowspan="2" text="2-3,1" background-color="rgba(0,0,255,100)"/>
+        <Static id="10405" layout-cell="2" layout-row="2" layout-cellspan="2" text="2,2-3" background-color="rgba(255,255,255,100)"/>
+        <Static id="10408" layout-cell="2" layout-row="3" text="3,2" background-color="rgba(255,0,255,100)"/>
+        <Static id="10406" layout-cell="3" layout-row="3" text="3,3" background-color="rgba(0,255,255,100)"/>
+    </Static>
+    
+    <!--
+        相对布局：控件由相邻的兄弟控件和父容器的位置关系进行定位
+        子控件相关属性：
+            layout-centerH： 水平居中于父 [取值为1]
+            layout-centerV： 垂直居中于父 [取值为1]
+            layout-leftOf： 置于某某左侧 [控件ID]
+            layout-topOf： 置于某某上侧 [控件ID]
+            layout-rightOf： 置于某某右侧 [控件ID]
+            layout-bottomOf： 置于某某下侧 [控件ID]
+            layout-leftAlignOf  左边与某某对齐 [控件ID,-1为父容器]
+            layout-topAlignOf  顶边与某某对齐 [控件ID,-1为父容器]
+            layout-rightAlignOf  右边与某某对齐 [控件ID,-1为父容器]
+            layout-bottomAlignOf  底边与某某对齐 [控件ID,-1为父容器]
+    -->
+    <Static id="105" layout-row="5" text="Relative Layout" background-color="rgba(255,0,255,100)" font-size="16" layout="5">
+        <Static id="10501" rect="0,0,100,50" layout-centerH="1" layout-centerV="1" text="1:center" background-color="rgba(255,255,255,200)"/>
+        <Static id="10502" rect="0,0,100,0" layout-leftOf="10501" layout-topAlignOf="10501" layout-bottomAlignOf="10501" text="2:left->1" background-color="rgba(0,0,255,200)"/>
+        <Static id="10503" rect="0,0,200,0" layout-rightOf="10501" layout-topAlignOf="10501" layout-bottomAlignOf="10501" text="3:right->1" background-color="rgba(255,0,0,200)"/>
+        <Static id="10504" layout-rightAlignOf="10503" layout-bottomOf="10501" layout-bottomAlignOf="-1" layout-leftAlignOf="10501" text="4:bottom->1,between->1-3" background-color="rgba(0,255,0,200)"/>
+        <Static id="10505" rect="0,0,200,100" layout-rightAlignOf="-1" layout-bottomAlignOf="-1" text="5:right bottom of parent" background-color="rgba(255,0,255,200)"/>
+        <Static id="10506" layout-leftAlignOf="-1" layout-topAlignOf="-1" layout-leftOf="10502" layout-topOf="10501" text="6:between parent-2" background-color="rgba(0,255,255,200)"/>
+        <Static id="10507" layout-leftAlignOf="10502" layout-bottomAlignOf="-1" layout-leftOf="10504" layout-topAlignOf="10501" text="7:between 2-4" background-color="rgba(255,255,255,50)"/>
+    </Static>
+    
+    <!--
+        绝对布局：控件由四边距离或宽高数值进行定位
+        子控件相关属性：
+            layout-left： 左边距离[像素(整数) 或 百分比(%结尾)]
+            layout-top：  顶边距离[像素(整数) 或 百分比(%结尾)]
+            layout-right： 右边距离[像素(整数) 或 百分比(%结尾)]
+            layout-bottom： 底边距离[像素(整数) 或 百分比(%结尾)]
+            layout-width： 宽度[像素(整数) 或 百分比(%结尾)]
+            layout-height： 高度[像素(整数) 或 百分比(%结尾)]
+            layout-offsetH： 水平偏移量[像素(整数) 或 百分比(%结尾) 或 本控件宽度百分比(*结尾)]
+            layout-offsetV： 垂直偏移量[像素(整数) 或 百分比(%结尾) 或 本控件高度百分比(*结尾)]
+    -->
+    <Static id="106" layout-row="6" text="Absolute Layout" background-color="rgba(255,255,0,100)" font-size="16" layout="6">
+        <Static id="10601" layout-left="10" layout-top="0" layout-right="20" layout-height="25" text="left:10,right:20,top:0,height:25" background-color="rgba(255,255,255,100)"/>
+        <Static id="10602" layout-left="10%" layout-top="25" layout-right="20%" layout-height="25" text="left:10%,right:20%,top:25,height:25" background-color="rgba(255,0,255,100)"/>
+        <Static id="10603" layout-left="50%" layout-top="50%" layout-width="400" layout-height="15%" layout-offsetH="-50*" layout-offsetV="-50*" 
+        text="left:50%,top:50%,width:400,height:15%;offsetH:-50*,offsetV:-50*" background-color="rgba(0,0,255,100)"/>        
+        <Static id="10604" layout-left="50" layout-top="60%" layout-right="5%" layout-bottom="10" text="left:50,top:60%,right:5%,bottom:10" background-color="rgba(255,255,0,100)"/>
+    </Static>
+</Window>

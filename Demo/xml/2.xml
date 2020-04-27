@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Window rect="0,0,800,600" text="Hello World" background-color="rgba(255,255,255,128)" style-directui="249095" style-window="-1777729536" styleex-window="786440"
+layout="4" layout-padding="20,30,20,20" layout-rows="-5,-20,-5,-20,-25,-25" layout-cells="-100" >
+    <Static id="101" layout-row="1" layout-cell="1" text="Linear Layout" background-color="rgba(200,200,200,100)" font-size="16" layout="1" layout-direction="0" layout-padding="125,0,0,0">
+        <Static id="10101" layout-size="100" background-color="rgba(255,0,0,50)" text="layout-size"/>
+        <Static id="10102" rect="0,0,100,15" background-color="rgba(0,255,0,50)" text="rect"/>
+        <Static id="10103" rect="0,0,100,15" background-color="rgba(0,0,255,50)" layout-align="1" text="align:left"/>
+        <Static id="10104" rect="0,0,100,15" background-color="rgba(255,0,255,50)" layout-align="2" text="align:center"/>
+        <Static id="10105" rect="0,0,100,15" background-color="rgba(0,0,0,50)" layout-align="3" text="align:right"/>
+    </Static>
+    <Static id="102" layout-row="2" text="Flow Layout" background-color="rgba(255,0,0,100)" font-size="16" layout="2" layout-direction="1" >
+        <Static id="10201" rect="0,0,100" layout-size="100" background-color="rgba(255,0,0,50)" text="layout-size" />
+        <Static id="10202" rect="0,0,60,25" background-color="rgba(0,255,0,50)" text="rect"/>
+        <Static id="10203" rect="0,0,80,50" background-color="rgba(0,0,255,50)" layout-align="1" text="rect"/>
+        <Static id="10204" rect="0,0,110,60" background-color="rgba(255,0,255,50)" layout-align="2" text="layout-newline" layout-newLine="1"/>
+        <Static id="10205" rect="0,0,50,40" background-color="rgba(0,0,0,50)" layout-align="3" text="rect"/>
+    </Static>
+    <Static id="103" layout-row="3" text="Page Layout" background-color="rgba(0,255,0,100)" font-size="16" layout="3" layout-current="3" >
+        <Static id="10301" rect="0,0,0,0" layout-fill="1" text="page1" background-color="rgba(255,0,0,200)" />
+        <Static id="10301" rect="20,0,70,50" layout-fill="0" text="page2" background-color="rgba(0,255,0,200)" />
+        <Static id="10301" rect="0,0,0,0" layout-fill="1" text="page3" background-color="rgba(0,0,255,200)" />
+    </Static>
+    <Static id="104" layout-row="4" text="Table Layout" background-color="rgba(0,0,255,100)" font-size="16" layout="4" layout-rows="50,-30,25" layout-cells="50,-50,100">
+        <Static id="10401" layout-cell="1" layout-row="1" text="1,1" background-color="rgba(0,0,0,100)"/>
+        <Static id="10402" layout-cell="2" layout-row="1" text="1,2" background-color="rgba(255,0,0,100)"/>
+        <Static id="10403" layout-cell="3" layout-row="1" text="1,3" background-color="rgba(0,255,0,100)"/>
+        <Static id="10404" layout-cell="1" layout-row="2" layout-rowspan="2" text="2-3,1" background-color="rgba(0,0,255,100)"/>
+        <Static id="10405" layout-cell="2" layout-row="2" layout-cellspan="2" text="2,2-3" background-color="rgba(255,255,255,100)"/>
+        <Static id="10408" layout-cell="2" layout-row="3" text="3,2" background-color="rgba(255,0,255,100)"/>
+        <Static id="10406" layout-cell="3" layout-row="3" text="3,3" background-color="rgba(0,255,255,100)"/>
+    </Static>
+    <Static id="105" layout-row="5" text="Relative Layout" background-color="rgba(255,0,255,100)" font-size="16" layout="5">
+        <Static id="10501" rect="0,0,100,50" layout-centerH="1" layout-centerV="1" text="1:center" background-color="rgba(255,255,255,200)"/>
+        <Static id="10502" rect="0,0,100,0" layout-leftOf="10501" layout-topAlignOf="10501" layout-bottomAlignOf="10501" text="2:left->1" background-color="rgba(0,0,255,200)"/>
+        <Static id="10503" rect="0,0,200,0" layout-rightOf="10501" layout-topAlignOf="10501" layout-bottomAlignOf="10501" text="3:right->1" background-color="rgba(255,0,0,200)"/>
+        <Static id="10504" layout-rightAlignOf="10503" layout-bottomOf="10501" layout-bottomAlignOf="-1" layout-leftAlignOf="10501" text="4:bottom->1,between->1-3" background-color="rgba(0,255,0,200)"/>
+        <Static id="10505" rect="0,0,200,100" layout-rightAlignOf="-1" layout-bottomAlignOf="-1" text="5:right bottom of parent" background-color="rgba(255,0,255,200)"/>
+        <Static id="10506" layout-leftAlignOf="-1" layout-topAlignOf="-1" layout-leftOf="10502" layout-topOf="10501" text="6:between parent-2" background-color="rgba(0,255,255,200)"/>
+        <Static id="10507" layout-leftAlignOf="10502" layout-bottomAlignOf="-1" layout-leftOf="10504" layout-topAlignOf="10501" text="7:between 2-4" background-color="rgba(255,255,255,50)"/>
+    </Static>
+    <Static id="106" layout-row="6" text="Absolute Layout" background-color="rgba(255,255,0,100)" font-size="16" layout="6">
+        <Static id="10601" layout-left="10" layout-top="0" layout-right="20" layout-height="25" text="left:10,right:20,top:0,height:25" background-color="rgba(255,255,255,100)"/>
+        <Static id="10602" layout-left="10%" layout-top="25" layout-right="20%" layout-height="25" text="left:10%,right:20%,top:25,height:25" background-color="rgba(255,0,255,100)"/>
+        <Static id="10603" layout-left="50%" layout-top="50%" layout-width="400" layout-height="15%" layout-offsetH="-50*" layout-offsetV="-50*" 
+        text="left:50%,top:50%,width:400,height:15%;offsetH:-50*,offsetV:-50*" background-color="rgba(0,0,255,100)"/>        
+        <Static id="10604" layout-left="50" layout-top="60%" layout-right="5%" layout-bottom="10" text="left:50,top:60%,right:5%,bottom:10" background-color="rgba(255,255,0,100)"/>
+    </Static>
+</Window>
