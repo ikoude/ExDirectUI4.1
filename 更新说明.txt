@@ -1,3 +1,10 @@
+[4.1.21.302]
+ [+] Lib.Helper模块中新增相关常量
+  [+] 新增函数 _path_beginfigure3 在 _path_beginfigure2 基础上添加 figureBegin 参数
+  [+] 新增函数 _path_addbezier 添加贝塞尔
+
+
+
 [4.1.20.430]
  [!] 修复D2D模式下无法绘制点线的BUG
  [!] 修复字体对象释放时可能导致的崩溃
