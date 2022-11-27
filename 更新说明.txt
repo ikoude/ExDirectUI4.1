@@ -1,9 +1,19 @@
+[4.1.21.314]
+ [+] 新增函数 Ex_ObjDestroyBackground 用于销毁背景图
+ [+] 新增函数 _canvas_drawtext2 用于绘制文本 文本颜色支持刷子
+ [+] 新增函数 _brush_createradial_ex 创建径向渐变刷子 // 目前还不成熟,属于测试阶段
+ [+] 新增常量 LVM_CANCELTHEME 用于取消列表的主题
+ [!]  修正参数说明 Ex_ObjSetBackgroundImage -> dwImageLen 为 0 时也可销毁背景图
+ [!]  修复 D2D 无法正确测量空格结尾文本宽度
+ [!]  修复 GroupBox 顶部是2像素，左右底部都是1像素，不统一的问题
+ [!]  修复 列表-报表 设置了边框，但是表头并没有边框
+ [!]  修复 列表-报表 排序有"空值"时 会崩溃
+ [!]  修改 列表-报表 横向线宽 由 1.5 改为 1
+
 [4.1.21.302]
  [+] Lib.Helper模块中新增相关常量
-  [+] 新增函数 _path_beginfigure3 在 _path_beginfigure2 基础上添加 figureBegin 参数
-  [+] 新增函数 _path_addbezier 添加贝塞尔
-
-
+ [+] 新增函数 _path_beginfigure3 在 _path_beginfigure2 基础上添加 figureBegin 参数
+ [+] 新增函数 _path_addbezier 添加贝塞尔
 
 [4.1.20.430]
  [!] 修复D2D模式下无法绘制点线的BUG
