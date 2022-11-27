@@ -3,29 +3,28 @@
 // libexdui.lib 要和本文件在同一目录
 // 编译后的EXE必须带上 libexdui.dll
 //======================================================
-#pragma comment(lib, "libexdui.lib")
-
+#pragma comment(lib,"libexdui.lib")
 
 //======================================================
 // 函数名称：Ex_Scale
 // 返回类型：小数型
 // 参数<1>：n
 //======================================================
-extern "C" float __stdcall Ex_Scale (float n);
+extern "C" float Ex_Scale (float n);
 
 //======================================================
 // 函数名称：F2I
 // 返回类型：整数型
 // 参数<1>：f
 //======================================================
-extern "C" int __stdcall F2I (float f);
+extern "C" int F2I (float f);
 
 //======================================================
 // 函数名称：I2F
 // 返回类型：小数型
 // 参数<1>：int
 //======================================================
-extern "C" float __stdcall I2F (int int);
+extern "C" float I2F (int int);
 
 //======================================================
 // 函数名称：Ex_LoadImageFromMemory
@@ -36,14 +35,14 @@ extern "C" float __stdcall I2F (int int);
 // 参数<3>：uType，#IMAGE_
 // 参数<4>：nIndex
 //======================================================
-extern "C" int __stdcall Ex_LoadImageFromMemory (int lpData,int dwLen,int uType,int nIndex);
+extern "C" int Ex_LoadImageFromMemory (int lpData,int dwLen,int uType,int nIndex);
 
 //======================================================
 // 函数名称：Ex_Sleep
 // 返回类型：无返回值
 // 参数<1>：us
 //======================================================
-extern "C" void __stdcall Ex_Sleep (int us);
+extern "C" void Ex_Sleep (int us);
 
 //======================================================
 // 函数名称：Ex_WndRegisterClass
@@ -54,7 +53,7 @@ extern "C" void __stdcall Ex_Sleep (int us);
 // 参数<3>：hIconsm
 // 参数<4>：hCursor
 //======================================================
-extern "C" int __stdcall Ex_WndRegisterClass (int lpwzClassName,int hIcon,int hIconsm,int hCursor);
+extern "C" int Ex_WndRegisterClass (int lpwzClassName,int hIcon,int hIconsm,int hCursor);
 
 //======================================================
 // 函数名称：Ex_WndCreate
@@ -70,14 +69,14 @@ extern "C" int __stdcall Ex_WndRegisterClass (int lpwzClassName,int hIcon,int hI
 // 参数<8>：dwStyle
 // 参数<9>：dwStyleEx
 //======================================================
-extern "C" int __stdcall Ex_WndCreate (int hWndParent,int lpwzClassName,int lpwzWindowName,int x,int y,int Width,int Height,int dwStyle,int dwStyleEx);
+extern "C" int Ex_WndCreate (int hWndParent,int lpwzClassName,int lpwzWindowName,int x,int y,int Width,int Height,int dwStyle,int dwStyleEx);
 
 //======================================================
 // 函数名称：Ex_WndMsgLoop
 // 返回类型：整数型
 // 函数说明：窗口消息循环
 //======================================================
-extern "C" int __stdcall Ex_WndMsgLoop ();
+extern "C" int Ex_WndMsgLoop ();
 
 //======================================================
 // 函数名称：Ex_WndCenterFrom
@@ -87,7 +86,7 @@ extern "C" int __stdcall Ex_WndMsgLoop ();
 // 参数<2>：hWndFrom，预居中的目标窗口,如果为0则为屏幕居中.
 // 参数<3>：bFullScreen，是否全屏模式
 //======================================================
-extern "C" void __stdcall Ex_WndCenterFrom (int hWnd,int hWndFrom,BOOL bFullScreen);
+extern "C" void Ex_WndCenterFrom (int hWnd,int hWndFrom,BOOL bFullScreen);
 
 //======================================================
 // 函数名称：Ex_JSLoadConst
@@ -95,7 +94,7 @@ extern "C" void __stdcall Ex_WndCenterFrom (int hWnd,int hWndFrom,BOOL bFullScre
 // 函数说明：加载JS常量
 // 参数<1>：szConst
 //======================================================
-extern "C" void __stdcall Ex_JSLoadConst (char* szConst);
+extern "C" void Ex_JSLoadConst (char* szConst);
 
 //======================================================
 // 函数名称：Ex_JSBindObject
@@ -106,7 +105,7 @@ extern "C" void __stdcall Ex_JSLoadConst (char* szConst);
 // 参数<3>：lpfnDispatch，HRESULT DispatchFunc (this,atomName,hExDUI,pvParam,wFlags,pDispParams,pVarResult,lpDispInfo)
 // 参数<4>：pvParam
 //======================================================
-extern "C" int __stdcall Ex_JSBindObject (int hExDUI_hObj,int szObjName,int lpfnDispatch,int pvParam);
+extern "C" int Ex_JSBindObject (int hExDUI_hObj,int szObjName,int lpfnDispatch,int pvParam);
 
 //======================================================
 // 函数名称：Ex_JSEval
@@ -116,7 +115,7 @@ extern "C" int __stdcall Ex_JSBindObject (int hExDUI_hObj,int szObjName,int lpfn
 // 参数<3>：fUseThis，为真时表达式中this代表参数1对应的JS对象
 // 参数<4>：pVarResult，不为NULL时会将返回值写入,注意释放
 //======================================================
-extern "C" int __stdcall Ex_JSEval (int hExDUI_hObj,int szExpression,BOOL fUseThis,int pVarResult);
+extern "C" int Ex_JSEval (int hExDUI_hObj,int szExpression,BOOL fUseThis,int pVarResult);
 
 //======================================================
 // 函数名称：Ex_JSAddCode
@@ -124,7 +123,7 @@ extern "C" int __stdcall Ex_JSEval (int hExDUI_hObj,int szExpression,BOOL fUseTh
 // 参数<1>：hExDUI_hObj
 // 参数<2>：szCode
 //======================================================
-extern "C" BOOL __stdcall Ex_JSAddCode (int hExDUI_hObj,char* szCode);
+extern "C" BOOL Ex_JSAddCode (int hExDUI_hObj,char* szCode);
 
 //======================================================
 // 函数名称：Ex_JSGetLastError
@@ -134,7 +133,7 @@ extern "C" BOOL __stdcall Ex_JSAddCode (int hExDUI_hObj,char* szCode);
 // 参数<3>：nErrLine
 // 参数<4>：szErrMsg，char[1024]
 //======================================================
-extern "C" BOOL __stdcall Ex_JSGetLastError (int hExDUI_hObj,int nErrCode,int nErrLine,int szErrMsg);
+extern "C" BOOL Ex_JSGetLastError (int hExDUI_hObj,int nErrCode,int nErrLine,int szErrMsg);
 
 //======================================================
 // 函数名称：Ex_JSRegisterFunction
@@ -143,7 +142,7 @@ extern "C" BOOL __stdcall Ex_JSGetLastError (int hExDUI_hObj,int nErrCode,int nE
 // 参数<2>：notyfiCode
 // 参数<3>：szFuncName
 //======================================================
-extern "C" BOOL __stdcall Ex_JSRegisterFunction (int hObj,int notyfiCode,int szFuncName);
+extern "C" BOOL Ex_JSRegisterFunction (int hObj,int notyfiCode,int szFuncName);
 
 //======================================================
 // 函数名称：Ex_JSSetVariant
@@ -152,7 +151,7 @@ extern "C" BOOL __stdcall Ex_JSRegisterFunction (int hObj,int notyfiCode,int szF
 // 参数<2>：nType
 // 参数<3>：dwValue
 //======================================================
-extern "C" void __stdcall Ex_JSSetVariant (int pVariant,short nType,int dwValue);
+extern "C" void Ex_JSSetVariant (int pVariant,short nType,int dwValue);
 
 //======================================================
 // 函数名称：Ex_JSSetVariantPtr
@@ -162,14 +161,14 @@ extern "C" void __stdcall Ex_JSSetVariant (int pVariant,short nType,int dwValue)
 // 参数<3>：pValue
 // 参数<4>：cbSize，1,2,4,8
 //======================================================
-extern "C" void __stdcall Ex_JSSetVariantPtr (int pVariant,short nType,int pValue,int cbSize);
+extern "C" void Ex_JSSetVariantPtr (int pVariant,short nType,int pValue,int cbSize);
 
 //======================================================
 // 函数名称：Ex_JSGetParamCount
 // 返回类型：整数型
 // 参数<1>：lpParams
 //======================================================
-extern "C" int __stdcall Ex_JSGetParamCount (int lpParams);
+extern "C" int Ex_JSGetParamCount (int lpParams);
 
 //======================================================
 // 函数名称：Ex_JSGetParamType
@@ -177,7 +176,7 @@ extern "C" int __stdcall Ex_JSGetParamCount (int lpParams);
 // 参数<1>：lpParams
 // 参数<2>：nIndex
 //======================================================
-extern "C" int __stdcall Ex_JSGetParamType (int lpParams,int nIndex);
+extern "C" int Ex_JSGetParamType (int lpParams,int nIndex);
 
 //======================================================
 // 函数名称：Ex_JSGetParam
@@ -186,7 +185,7 @@ extern "C" int __stdcall Ex_JSGetParamType (int lpParams,int nIndex);
 // 参数<1>：lpParams
 // 参数<2>：nIndex
 //======================================================
-extern "C" int __stdcall Ex_JSGetParam (int lpParams,int nIndex);
+extern "C" int Ex_JSGetParam (int lpParams,int nIndex);
 
 //======================================================
 // 函数名称：Ex_JSGetParamNumber
@@ -196,7 +195,7 @@ extern "C" int __stdcall Ex_JSGetParam (int lpParams,int nIndex);
 // 参数<3>：nDefault
 // 参数<4>：pType
 //======================================================
-extern "C" double __stdcall Ex_JSGetParamNumber (int lpParams,int nIndex,double nDefault,int pType);
+extern "C" double Ex_JSGetParamNumber (int lpParams,int nIndex,double nDefault,int pType);
 
 //======================================================
 // 函数名称：Ex_JSGetParamInt
@@ -205,7 +204,7 @@ extern "C" double __stdcall Ex_JSGetParamNumber (int lpParams,int nIndex,double 
 // 参数<2>：nIndex
 // 参数<3>：nDefault
 //======================================================
-extern "C" int __stdcall Ex_JSGetParamInt (int lpParams,int nIndex,int nDefault);
+extern "C" int Ex_JSGetParamInt (int lpParams,int nIndex,int nDefault);
 
 //======================================================
 // 函数名称：Ex_JSGetParamFloat
@@ -214,7 +213,7 @@ extern "C" int __stdcall Ex_JSGetParamInt (int lpParams,int nIndex,int nDefault)
 // 参数<2>：nIndex
 // 参数<3>：nDefault
 //======================================================
-extern "C" float __stdcall Ex_JSGetParamFloat (int lpParams,int nIndex,float nDefault);
+extern "C" float Ex_JSGetParamFloat (int lpParams,int nIndex,float nDefault);
 
 //======================================================
 // 函数名称：Ex_JSGetParamDouble
@@ -223,7 +222,7 @@ extern "C" float __stdcall Ex_JSGetParamFloat (int lpParams,int nIndex,float nDe
 // 参数<2>：nIndex
 // 参数<3>：nDefault
 //======================================================
-extern "C" double __stdcall Ex_JSGetParamDouble (int lpParams,int nIndex,double nDefault);
+extern "C" double Ex_JSGetParamDouble (int lpParams,int nIndex,double nDefault);
 
 //======================================================
 // 函数名称：Ex_JSGetParamString
@@ -232,7 +231,7 @@ extern "C" double __stdcall Ex_JSGetParamDouble (int lpParams,int nIndex,double 
 // 参数<1>：lpParams
 // 参数<2>：nIndex
 //======================================================
-extern "C" int __stdcall Ex_JSGetParamString (int lpParams,int nIndex);
+extern "C" int Ex_JSGetParamString (int lpParams,int nIndex);
 
 //======================================================
 // 函数名称：Ex_JSGetParamFormatString
@@ -241,7 +240,7 @@ extern "C" int __stdcall Ex_JSGetParamString (int lpParams,int nIndex);
 // 参数<1>：lpParams
 // 参数<2>：nIndex
 //======================================================
-extern "C" int __stdcall Ex_JSGetParamFormatString (int lpParams,int nIndex);
+extern "C" int Ex_JSGetParamFormatString (int lpParams,int nIndex);
 
 //======================================================
 // 函数名称：Ex_JSGetParamToString
@@ -253,7 +252,7 @@ extern "C" int __stdcall Ex_JSGetParamFormatString (int lpParams,int nIndex);
 // 参数<4>：pType
 // 参数<5>：fFormat
 //======================================================
-extern "C" int __stdcall Ex_JSGetParamToString (int lpParams,int nIndex,int wzDefault,int pType,BOOL fFormat);
+extern "C" int Ex_JSGetParamToString (int lpParams,int nIndex,int wzDefault,int pType,BOOL fFormat);
 
 //======================================================
 // 函数名称：Ex_ThemeFree
@@ -261,7 +260,7 @@ extern "C" int __stdcall Ex_JSGetParamToString (int lpParams,int nIndex,int wzDe
 // 函数说明：释放主题
 // 参数<1>：hTheme
 //======================================================
-extern "C" BOOL __stdcall Ex_ThemeFree (int hTheme);
+extern "C" BOOL Ex_ThemeFree (int hTheme);
 
 //======================================================
 // 函数名称：Ex_ThemeLoadFromFile
@@ -272,7 +271,7 @@ extern "C" BOOL __stdcall Ex_ThemeFree (int hTheme);
 // 参数<3>：dwKeyLen
 // 参数<4>：bDefault
 //======================================================
-extern "C" int __stdcall Ex_ThemeLoadFromFile (int lptszFile,int lpKey,int dwKeyLen,BOOL bDefault);
+extern "C" int Ex_ThemeLoadFromFile (int lptszFile,int lpKey,int dwKeyLen,BOOL bDefault);
 
 //======================================================
 // 函数名称：Ex_ThemeLoadFromMemory
@@ -284,7 +283,7 @@ extern "C" int __stdcall Ex_ThemeLoadFromFile (int lptszFile,int lpKey,int dwKey
 // 参数<4>：dwKeyLen
 // 参数<5>：bDefault
 //======================================================
-extern "C" int __stdcall Ex_ThemeLoadFromMemory (int lpData,int dwDataLen,int lpKey,int dwKeyLen,BOOL bDefault);
+extern "C" int Ex_ThemeLoadFromMemory (int lpData,int dwDataLen,int lpKey,int dwKeyLen,BOOL bDefault);
 
 //======================================================
 // 函数名称：Ex_ThemeDrawControl
@@ -300,7 +299,7 @@ extern "C" int __stdcall Ex_ThemeLoadFromMemory (int lpData,int dwDataLen,int lp
 // 参数<8>：atomSrcRect
 // 参数<9>：dwAlpha，透明度(0-255)
 //======================================================
-extern "C" BOOL __stdcall Ex_ThemeDrawControl (int hTheme,int hCanvas,float dstLeft,float dstTop,float dstRight,float dstBottom,int atomClass,int atomSrcRect,int dwAlpha);
+extern "C" BOOL Ex_ThemeDrawControl (int hTheme,int hCanvas,float dstLeft,float dstTop,float dstRight,float dstBottom,int atomClass,int atomSrcRect,int dwAlpha);
 
 //======================================================
 // 函数名称：Ex_ThemeDrawControlEx
@@ -320,7 +319,7 @@ extern "C" BOOL __stdcall Ex_ThemeDrawControl (int hTheme,int hCanvas,float dstL
 // 参数<12>：atomBackgroundFlags
 // 参数<13>：dwAlpha，透明度(0-255)
 //======================================================
-extern "C" BOOL __stdcall Ex_ThemeDrawControlEx (int hTheme,int hCanvas,float dstLeft,float dstTop,float dstRight,float dstBottom,int atomClass,int atomSrcRect,int atomBackgroundRepeat,int atomBackgroundPositon,int atomBackgroundGrid,int atomBackgroundFlags,int dwAlpha);
+extern "C" BOOL Ex_ThemeDrawControlEx (int hTheme,int hCanvas,float dstLeft,float dstTop,float dstRight,float dstBottom,int atomClass,int atomSrcRect,int atomBackgroundRepeat,int atomBackgroundPositon,int atomBackgroundGrid,int atomBackgroundFlags,int dwAlpha);
 
 //======================================================
 // 函数名称：Ex_ThemeGetValuePtr
@@ -330,7 +329,7 @@ extern "C" BOOL __stdcall Ex_ThemeDrawControlEx (int hTheme,int hCanvas,float ds
 // 参数<2>：atomClass
 // 参数<3>：atomProp
 //======================================================
-extern "C" int __stdcall Ex_ThemeGetValuePtr (int hTheme,int atomClass,int atomProp);
+extern "C" int Ex_ThemeGetValuePtr (int hTheme,int atomClass,int atomProp);
 
 //======================================================
 // 函数名称：Ex_ThemeGetColor
@@ -339,7 +338,7 @@ extern "C" int __stdcall Ex_ThemeGetValuePtr (int hTheme,int atomClass,int atomP
 // 参数<1>：hTheme，主题句柄
 // 参数<2>：nIndex，#COLOR_EX_
 //======================================================
-extern "C" int __stdcall Ex_ThemeGetColor (int hTheme,int nIndex);
+extern "C" int Ex_ThemeGetColor (int hTheme,int nIndex);
 
 //======================================================
 // 函数名称：_res_pack
@@ -350,7 +349,7 @@ extern "C" int __stdcall Ex_ThemeGetColor (int hTheme,int nIndex);
 // 参数<4>：byteHeader
 // 参数<5>：bPntBits
 //======================================================
-extern "C" void __stdcall _res_pack (char* root,char* file,BOOL fSubDir,unsigned char byteHeader,BOOL bPntBits);
+extern "C" void _res_pack (char* root,char* file,BOOL fSubDir,unsigned char byteHeader,BOOL bPntBits);
 
 //======================================================
 // 函数名称：Ex_ResLoadFromFile
@@ -358,7 +357,7 @@ extern "C" void __stdcall _res_pack (char* root,char* file,BOOL fSubDir,unsigned
 // 函数说明：从文件加载资源
 // 参数<1>：lpwzFile
 //======================================================
-extern "C" int __stdcall Ex_ResLoadFromFile (int lpwzFile);
+extern "C" int Ex_ResLoadFromFile (int lpwzFile);
 
 //======================================================
 // 函数名称：Ex_ResLoadFromMemory
@@ -367,7 +366,7 @@ extern "C" int __stdcall Ex_ResLoadFromFile (int lpwzFile);
 // 参数<1>：lpData
 // 参数<2>：dwDataLen
 //======================================================
-extern "C" int __stdcall Ex_ResLoadFromMemory (int lpData,int dwDataLen);
+extern "C" int Ex_ResLoadFromMemory (int lpData,int dwDataLen);
 
 //======================================================
 // 函数名称：Ex_ResFree
@@ -375,7 +374,7 @@ extern "C" int __stdcall Ex_ResLoadFromMemory (int lpData,int dwDataLen);
 // 函数说明：释放资源
 // 参数<1>：hRes
 //======================================================
-extern "C" void __stdcall Ex_ResFree (int hRes);
+extern "C" void Ex_ResFree (int hRes);
 
 //======================================================
 // 函数名称：Ex_ResGetFile
@@ -386,7 +385,7 @@ extern "C" void __stdcall Ex_ResFree (int hRes);
 // 参数<3>：lpFile，[out]文件数据指针.用户不应该释放该内存.
 // 参数<4>：dwFileLen，[out]文件尺寸.
 //======================================================
-extern "C" BOOL __stdcall Ex_ResGetFile (int hRes,int lpwzPath,int lpFile,int dwFileLen);
+extern "C" BOOL Ex_ResGetFile (int hRes,int lpwzPath,int lpFile,int dwFileLen);
 
 //======================================================
 // 函数名称：Ex_ResGetFileFromAtom
@@ -397,7 +396,7 @@ extern "C" BOOL __stdcall Ex_ResGetFile (int hRes,int lpwzPath,int lpFile,int dw
 // 参数<3>：lpFile，[out]文件数据指针.用户不应该释放该内存.
 // 参数<4>：dwFileLen，[out]文件尺寸.
 //======================================================
-extern "C" BOOL __stdcall Ex_ResGetFileFromAtom (int hRes,int atomPath,int lpFile,int dwFileLen);
+extern "C" BOOL Ex_ResGetFileFromAtom (int hRes,int atomPath,int lpFile,int dwFileLen);
 
 //======================================================
 // 函数名称：Ex_XmlRegisterCallback
@@ -406,7 +405,7 @@ extern "C" BOOL __stdcall Ex_ResGetFileFromAtom (int hRes,int atomPath,int lpFil
 // 参数<1>：atomValue
 // 参数<2>：pfnCallback
 //======================================================
-extern "C" void __stdcall Ex_XmlRegisterCallback (int atomValue,int pfnCallback);
+extern "C" void Ex_XmlRegisterCallback (int atomValue,int pfnCallback);
 
 //======================================================
 // 函数名称：Ex_I18NGetString
@@ -416,7 +415,7 @@ extern "C" void __stdcall Ex_XmlRegisterCallback (int atomValue,int pfnCallback)
 // 参数<2>：lpString，[out]指向字符串指针.如果已被格式化,用户需调用 Ex_I18NFreeString() 进行释放.
 // 参数<3>：bFormat，[in/out]是否需要格式化
 //======================================================
-extern "C" BOOL __stdcall Ex_I18NGetString (int lpwzID,int lpString,BOOL bFormat);
+extern "C" BOOL Ex_I18NGetString (int lpwzID,int lpString,BOOL bFormat);
 
 //======================================================
 // 函数名称：Ex_I18NGetStringFromAtom
@@ -426,7 +425,7 @@ extern "C" BOOL __stdcall Ex_I18NGetString (int lpwzID,int lpString,BOOL bFormat
 // 参数<2>：lpString，[out]指向字符串指针.如果已被格式化,用户需调用 Ex_FreeBuffer() 进行释放.
 // 参数<3>：bFormat，[in/out]是否需要格式化
 //======================================================
-extern "C" BOOL __stdcall Ex_I18NGetStringFromAtom (int atomID,int lpString,BOOL bFormat);
+extern "C" BOOL Ex_I18NGetStringFromAtom (int atomID,int lpString,BOOL bFormat);
 
 //======================================================
 // 函数名称：Ex_I18NRegisterCallback
@@ -434,7 +433,7 @@ extern "C" BOOL __stdcall Ex_I18NGetStringFromAtom (int atomID,int lpString,BOOL
 // 函数说明：语言包_注册回调
 // 参数<1>：pfnStringFormatCallback，[bool]callback(atomID,lppString)
 //======================================================
-extern "C" void __stdcall Ex_I18NRegisterCallback (int pfnStringFormatCallback);
+extern "C" void Ex_I18NRegisterCallback (int pfnStringFormatCallback);
 
 //======================================================
 // 函数名称：Ex_I18NStringFormat
@@ -443,7 +442,7 @@ extern "C" void __stdcall Ex_I18NRegisterCallback (int pfnStringFormatCallback);
 // 参数<1>：lppStringSrc
 // 参数<2>：lpStringFormated
 //======================================================
-extern "C" void __stdcall Ex_I18NStringFormat (int lppStringSrc,int lpStringFormated);
+extern "C" void Ex_I18NStringFormat (int lppStringSrc,int lpStringFormated);
 
 //======================================================
 // 函数名称：Ex_AllocBuffer
@@ -451,7 +450,7 @@ extern "C" void __stdcall Ex_I18NStringFormat (int lppStringSrc,int lpStringForm
 // 函数说明：申请内存
 // 参数<1>：dwLen
 //======================================================
-extern "C" int __stdcall Ex_AllocBuffer (int dwLen);
+extern "C" int Ex_AllocBuffer (int dwLen);
 
 //======================================================
 // 函数名称：Ex_FreeBuffer
@@ -459,7 +458,7 @@ extern "C" int __stdcall Ex_AllocBuffer (int dwLen);
 // 函数说明：释放内存
 // 参数<1>：lpBuffer
 //======================================================
-extern "C" void __stdcall Ex_FreeBuffer (int lpBuffer);
+extern "C" void Ex_FreeBuffer (int lpBuffer);
 
 //======================================================
 // 函数名称：_layout_register
@@ -467,14 +466,14 @@ extern "C" void __stdcall Ex_FreeBuffer (int lpBuffer);
 // 参数<1>：nType，布局类型
 // 参数<2>：lpfnLayoutProc，布局管理器回调函数(lpLayout[有可能是NULL],nEevent,wParam,lParam)返回整数
 //======================================================
-extern "C" BOOL __stdcall _layout_register (int nType,int lpfnLayoutProc);
+extern "C" BOOL _layout_register (int nType,int lpfnLayoutProc);
 
 //======================================================
 // 函数名称：_layout_unregister
 // 返回类型：逻辑型
 // 参数<1>：nType，布局类型
 //======================================================
-extern "C" BOOL __stdcall _layout_unregister (int nType);
+extern "C" BOOL _layout_unregister (int nType);
 
 //======================================================
 // 函数名称：_layout_create
@@ -483,14 +482,14 @@ extern "C" BOOL __stdcall _layout_unregister (int nType);
 // 参数<1>：nType，#ELT_ 布局类型
 // 参数<2>：hObjBind，所绑定的HOBJ或HEXDUI
 //======================================================
-extern "C" int __stdcall _layout_create (int nType,int hObjBind);
+extern "C" int _layout_create (int nType,int hObjBind);
 
 //======================================================
 // 函数名称：_layout_destroy
 // 返回类型：逻辑型
 // 参数<1>：hLayout
 //======================================================
-extern "C" BOOL __stdcall _layout_destroy (int hLayout);
+extern "C" BOOL _layout_destroy (int hLayout);
 
 //======================================================
 // 函数名称：Ex_ObjLayoutGet
@@ -498,7 +497,7 @@ extern "C" BOOL __stdcall _layout_destroy (int hLayout);
 // 函数说明：获取布局对象句柄
 // 参数<1>：handle
 //======================================================
-extern "C" int __stdcall Ex_ObjLayoutGet (int handle);
+extern "C" int Ex_ObjLayoutGet (int handle);
 
 //======================================================
 // 函数名称：Ex_ObjLayoutSet
@@ -508,7 +507,7 @@ extern "C" int __stdcall Ex_ObjLayoutGet (int handle);
 // 参数<2>：hLayout
 // 参数<3>：fUpdate
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjLayoutSet (int handle,int hLayout,BOOL fUpdate);
+extern "C" BOOL Ex_ObjLayoutSet (int handle,int hLayout,BOOL fUpdate);
 
 //======================================================
 // 函数名称：Ex_ObjLayoutUpdate
@@ -516,7 +515,7 @@ extern "C" BOOL __stdcall Ex_ObjLayoutSet (int handle,int hLayout,BOOL fUpdate);
 // 函数说明：更新对象布局
 // 参数<1>：handle
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjLayoutUpdate (int handle);
+extern "C" BOOL Ex_ObjLayoutUpdate (int handle);
 
 //======================================================
 // 函数名称：Ex_ObjLayoutClear
@@ -525,7 +524,7 @@ extern "C" BOOL __stdcall Ex_ObjLayoutUpdate (int handle);
 // 参数<1>：handle
 // 参数<2>：bChildren，是否清空所有子组件,否则为当前组件.
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjLayoutClear (int handle,BOOL bChildren);
+extern "C" BOOL Ex_ObjLayoutClear (int handle,BOOL bChildren);
 
 //======================================================
 // 函数名称：_layout_addchild
@@ -533,7 +532,7 @@ extern "C" BOOL __stdcall Ex_ObjLayoutClear (int handle,BOOL bChildren);
 // 参数<1>：hLayout
 // 参数<2>：hObj
 //======================================================
-extern "C" BOOL __stdcall _layout_addchild (int hLayout,int hObj);
+extern "C" BOOL _layout_addchild (int hLayout,int hObj);
 
 //======================================================
 // 函数名称：_layout_addchildren
@@ -544,7 +543,7 @@ extern "C" BOOL __stdcall _layout_addchild (int hLayout,int hObj);
 // 参数<3>：dwObjClassATOM，0或空为所有
 // 参数<4>：nCount，加入的个数
 //======================================================
-extern "C" BOOL __stdcall _layout_addchildren (int hLayout,BOOL fDesc,int dwObjClassATOM,int nCount);
+extern "C" BOOL _layout_addchildren (int hLayout,BOOL fDesc,int dwObjClassATOM,int nCount);
 
 //======================================================
 // 函数名称：_layout_deletechild
@@ -552,7 +551,7 @@ extern "C" BOOL __stdcall _layout_addchildren (int hLayout,BOOL fDesc,int dwObjC
 // 参数<1>：hLayout
 // 参数<2>：hObj
 //======================================================
-extern "C" BOOL __stdcall _layout_deletechild (int hLayout,int hObj);
+extern "C" BOOL _layout_deletechild (int hLayout,int hObj);
 
 //======================================================
 // 函数名称：_layout_deletechildren
@@ -560,7 +559,7 @@ extern "C" BOOL __stdcall _layout_deletechild (int hLayout,int hObj);
 // 参数<1>：hLayout
 // 参数<2>：dwObjClassATOM，0或空为所有
 //======================================================
-extern "C" BOOL __stdcall _layout_deletechildren (int hLayout,int dwObjClassATOM);
+extern "C" BOOL _layout_deletechildren (int hLayout,int dwObjClassATOM);
 
 //======================================================
 // 函数名称：_layout_setchildprop
@@ -570,7 +569,7 @@ extern "C" BOOL __stdcall _layout_deletechildren (int hLayout,int dwObjClassATOM
 // 参数<3>：dwPropID
 // 参数<4>：pvValue
 //======================================================
-extern "C" BOOL __stdcall _layout_setchildprop (int hLayout,int hObj,int dwPropID,int pvValue);
+extern "C" BOOL _layout_setchildprop (int hLayout,int hObj,int dwPropID,int pvValue);
 
 //======================================================
 // 函数名称：_layout_getchildprop
@@ -580,7 +579,7 @@ extern "C" BOOL __stdcall _layout_setchildprop (int hLayout,int hObj,int dwPropI
 // 参数<3>：dwPropID
 // 参数<4>：pvValue
 //======================================================
-extern "C" BOOL __stdcall _layout_getchildprop (int hLayout,int hObj,int dwPropID,int pvValue);
+extern "C" BOOL _layout_getchildprop (int hLayout,int hObj,int dwPropID,int pvValue);
 
 //======================================================
 // 函数名称：_layout_getchildproplist
@@ -589,7 +588,7 @@ extern "C" BOOL __stdcall _layout_getchildprop (int hLayout,int hObj,int dwPropI
 // 参数<2>：hObj
 // 参数<3>：lpProps，不释放
 //======================================================
-extern "C" BOOL __stdcall _layout_getchildproplist (int hLayout,int hObj,int lpProps);
+extern "C" BOOL _layout_getchildproplist (int hLayout,int hObj,int lpProps);
 
 //======================================================
 // 函数名称：_layout_getprop
@@ -597,7 +596,7 @@ extern "C" BOOL __stdcall _layout_getchildproplist (int hLayout,int hObj,int lpP
 // 参数<1>：hLayout
 // 参数<2>：dwPropID
 //======================================================
-extern "C" int __stdcall _layout_getprop (int hLayout,int dwPropID);
+extern "C" int _layout_getprop (int hLayout,int dwPropID);
 
 //======================================================
 // 函数名称：_layout_setprop
@@ -606,21 +605,21 @@ extern "C" int __stdcall _layout_getprop (int hLayout,int dwPropID);
 // 参数<2>：dwPropID
 // 参数<3>：pvValue
 //======================================================
-extern "C" BOOL __stdcall _layout_setprop (int hLayout,int dwPropID,int pvValue);
+extern "C" BOOL _layout_setprop (int hLayout,int dwPropID,int pvValue);
 
 //======================================================
 // 函数名称：_layout_getproplist
 // 返回类型：整数型
 // 参数<1>：hLayout
 //======================================================
-extern "C" int __stdcall _layout_getproplist (int hLayout);
+extern "C" int _layout_getproplist (int hLayout);
 
 //======================================================
 // 函数名称：_layout_update
 // 返回类型：逻辑型
 // 参数<1>：hLayout
 //======================================================
-extern "C" BOOL __stdcall _layout_update (int hLayout);
+extern "C" BOOL _layout_update (int hLayout);
 
 //======================================================
 // 函数名称：_layout_gettype
@@ -628,7 +627,7 @@ extern "C" BOOL __stdcall _layout_update (int hLayout);
 // 函数说明：重新设置type应当重新创建LM
 // 参数<1>：hLayout
 //======================================================
-extern "C" int __stdcall _layout_gettype (int hLayout);
+extern "C" int _layout_gettype (int hLayout);
 
 //======================================================
 // 函数名称：_layout_enableupdate
@@ -636,7 +635,7 @@ extern "C" int __stdcall _layout_gettype (int hLayout);
 // 参数<1>：hLayout
 // 参数<2>：fUpdateable
 //======================================================
-extern "C" BOOL __stdcall _layout_enableupdate (int hLayout,BOOL fUpdateable);
+extern "C" BOOL _layout_enableupdate (int hLayout,BOOL fUpdateable);
 
 //======================================================
 // 函数名称：_layout_notify
@@ -646,7 +645,7 @@ extern "C" BOOL __stdcall _layout_enableupdate (int hLayout,BOOL fUpdateable);
 // 参数<3>：wParam
 // 参数<4>：lParam
 //======================================================
-extern "C" int __stdcall _layout_notify (int hLayout,int nEvent,int wParam,int lParam);
+extern "C" int _layout_notify (int hLayout,int nEvent,int wParam,int lParam);
 
 //======================================================
 // 函数名称：_layout_table_setinfo
@@ -657,7 +656,7 @@ extern "C" int __stdcall _layout_notify (int hLayout,int nEvent,int wParam,int l
 // 参数<4>：aCellWidth
 // 参数<5>：cCells
 //======================================================
-extern "C" BOOL __stdcall _layout_table_setinfo (int hLayout,int aRowHeight,int cRows,int aCellWidth,int cCells);
+extern "C" BOOL _layout_table_setinfo (int hLayout,int aRowHeight,int cRows,int aCellWidth,int cCells);
 
 //======================================================
 // 函数名称：_layout_absolute_setedge
@@ -668,7 +667,7 @@ extern "C" BOOL __stdcall _layout_table_setinfo (int hLayout,int aRowHeight,int 
 // 参数<4>：dwType
 // 参数<5>：nValue
 //======================================================
-extern "C" BOOL __stdcall _layout_absolute_setedge (int hLayout,int hObjChild,int dwEdge,int dwType,int nValue);
+extern "C" BOOL _layout_absolute_setedge (int hLayout,int hObjChild,int dwEdge,int dwType,int nValue);
 
 //======================================================
 // 函数名称：_layout_absolute_lock
@@ -683,7 +682,7 @@ extern "C" BOOL __stdcall _layout_absolute_setedge (int hLayout,int hObjChild,in
 // 参数<7>：tWidth
 // 参数<8>：tHeight
 //======================================================
-extern "C" BOOL __stdcall _layout_absolute_lock (int hLayout,int hObjChild,int tLeft,int tTop,int tRight,int tBottom,int tWidth,int tHeight);
+extern "C" BOOL _layout_absolute_lock (int hLayout,int hObjChild,int tLeft,int tTop,int tRight,int tBottom,int tWidth,int tHeight);
 
 //======================================================
 // 函数名称：Ex_DUIBindWindow
@@ -693,7 +692,7 @@ extern "C" BOOL __stdcall _layout_absolute_lock (int hLayout,int hObjChild,int t
 // 参数<2>：hTheme，主题句柄.(值可为0)
 // 参数<3>：dwStyle，相关常量:#EWS_
 //======================================================
-extern "C" int __stdcall Ex_DUIBindWindow (int hWnd,int hTheme,int dwStyle);
+extern "C" int Ex_DUIBindWindow (int hWnd,int hTheme,int dwStyle);
 
 //======================================================
 // 函数名称：Ex_DUIBindWindowEx
@@ -705,7 +704,7 @@ extern "C" int __stdcall Ex_DUIBindWindow (int hWnd,int hTheme,int dwStyle);
 // 参数<4>：lParam，附加参数.(值可为0)
 // 参数<5>：lpfnMsgProc，(BOOL)MsgProc(hWnd,hExDui,uMsg,wParam,lParam,lpResult).
 //======================================================
-extern "C" int __stdcall Ex_DUIBindWindowEx (int hWnd,int hTheme,int dwStyle,int lParam,int lpfnMsgProc);
+extern "C" int Ex_DUIBindWindowEx (int hWnd,int hTheme,int dwStyle,int lParam,int lpfnMsgProc);
 
 //======================================================
 // 函数名称：Ex_DUIShowWindow
@@ -717,7 +716,7 @@ extern "C" int __stdcall Ex_DUIBindWindowEx (int hWnd,int hTheme,int dwStyle,int
 // 参数<4>：dwFrames，动画总帧数.
 // 参数<5>：dwFlags，动画标记.#EXA_
 //======================================================
-extern "C" BOOL __stdcall Ex_DUIShowWindow (int hExDui,int nCmdShow,int dwTimer,int dwFrames,int dwFlags);
+extern "C" BOOL Ex_DUIShowWindow (int hExDui,int nCmdShow,int dwTimer,int dwFrames,int dwFlags);
 
 //======================================================
 // 函数名称：Ex_DUIShowWindowEx
@@ -732,7 +731,7 @@ extern "C" BOOL __stdcall Ex_DUIShowWindow (int hExDui,int nCmdShow,int dwTimer,
 // 参数<7>：wParam，参数1
 // 参数<8>：lParam，参数2
 //======================================================
-extern "C" BOOL __stdcall Ex_DUIShowWindowEx (int hExDui,int nCmdShow,int dwTimer,int dwFrames,int dwFlags,int uEasing,int wParam,int lParam);
+extern "C" BOOL Ex_DUIShowWindowEx (int hExDui,int nCmdShow,int dwTimer,int dwFrames,int dwFlags,int uEasing,int wParam,int lParam);
 
 //======================================================
 // 函数名称：Ex_DUISetLong
@@ -742,7 +741,7 @@ extern "C" BOOL __stdcall Ex_DUIShowWindowEx (int hExDui,int nCmdShow,int dwTime
 // 参数<2>：nIndex，#EWL_
 // 参数<3>：dwNewlong
 //======================================================
-extern "C" int __stdcall Ex_DUISetLong (int hExDui,int nIndex,int dwNewlong);
+extern "C" int Ex_DUISetLong (int hExDui,int nIndex,int dwNewlong);
 
 //======================================================
 // 函数名称：Ex_DUIGetLong
@@ -751,7 +750,7 @@ extern "C" int __stdcall Ex_DUISetLong (int hExDui,int nIndex,int dwNewlong);
 // 参数<1>：hExDui，引擎句柄
 // 参数<2>：nIndex，相关常量: EWL_
 //======================================================
-extern "C" int __stdcall Ex_DUIGetLong (int hExDui,int nIndex);
+extern "C" int Ex_DUIGetLong (int hExDui,int nIndex);
 
 //======================================================
 // 函数名称：Ex_DUIGetClientRect
@@ -760,7 +759,7 @@ extern "C" int __stdcall Ex_DUIGetLong (int hExDui,int nIndex);
 // 参数<1>：hExDui，引擎句柄
 // 参数<2>：lpClientRect，矩形指针
 //======================================================
-extern "C" BOOL __stdcall Ex_DUIGetClientRect (int hExDui,int lpClientRect);
+extern "C" BOOL Ex_DUIGetClientRect (int hExDui,int lpClientRect);
 
 //======================================================
 // 函数名称：Ex_DUICreateFromHRes
@@ -773,7 +772,7 @@ extern "C" BOOL __stdcall Ex_DUIGetClientRect (int hExDui,int lpClientRect);
 // 参数<5>：hWnd，(out)返回窗口句柄
 // 参数<6>：hExDui，(out)返回引擎句柄
 //======================================================
-extern "C" BOOL __stdcall Ex_DUICreateFromHRes (int hParent,int hTheme,int hRes,int atomLayout,int hWnd,int hExDui);
+extern "C" BOOL Ex_DUICreateFromHRes (int hParent,int hTheme,int hRes,int atomLayout,int hWnd,int hExDui);
 
 //======================================================
 // 函数名称：Ex_DUICreateFromLayout
@@ -786,7 +785,7 @@ extern "C" BOOL __stdcall Ex_DUICreateFromHRes (int hParent,int hTheme,int hRes,
 // 参数<5>：hWnd，(out)返回窗口句柄
 // 参数<6>：hExDui，(out)返回引擎句柄
 //======================================================
-extern "C" BOOL __stdcall Ex_DUICreateFromLayout (int hParent,int hTheme,int lpLayout,int cbLayout,int hWnd,int hExDui);
+extern "C" BOOL Ex_DUICreateFromLayout (int hParent,int hTheme,int lpLayout,int cbLayout,int hWnd,int hExDui);
 
 //======================================================
 // 函数名称：Ex_DUIGetObjFromPoint
@@ -796,7 +795,7 @@ extern "C" BOOL __stdcall Ex_DUICreateFromLayout (int hParent,int hTheme,int lpL
 // 参数<2>：x
 // 参数<3>：y
 //======================================================
-extern "C" int __stdcall Ex_DUIGetObjFromPoint (int handle,int x,int y);
+extern "C" int Ex_DUIGetObjFromPoint (int handle,int x,int y);
 
 //======================================================
 // 函数名称：Ex_DUITrayIconSet
@@ -806,7 +805,7 @@ extern "C" int __stdcall Ex_DUIGetObjFromPoint (int handle,int x,int y);
 // 参数<2>：hIcon，图标句柄
 // 参数<3>：lpwzTips，提示文本指针
 //======================================================
-extern "C" BOOL __stdcall Ex_DUITrayIconSet (int hExdui,int hIcon,int lpwzTips);
+extern "C" BOOL Ex_DUITrayIconSet (int hExdui,int hIcon,int lpwzTips);
 
 //======================================================
 // 函数名称：Ex_DUITrayIconPopup
@@ -817,7 +816,7 @@ extern "C" BOOL __stdcall Ex_DUITrayIconSet (int hExdui,int hIcon,int lpwzTips);
 // 参数<3>：lpwzInfoTitle，弹出标题文本
 // 参数<4>：dwInfoFlags，相关常量 #NIIF_
 //======================================================
-extern "C" BOOL __stdcall Ex_DUITrayIconPopup (int hExDui,int lpwzInfo,int lpwzInfoTitle,int dwInfoFlags);
+extern "C" BOOL Ex_DUITrayIconPopup (int hExDui,int lpwzInfo,int lpwzInfoTitle,int dwInfoFlags);
 
 //======================================================
 // 函数名称：Ex_DUIFromWindow
@@ -825,7 +824,7 @@ extern "C" BOOL __stdcall Ex_DUITrayIconPopup (int hExDui,int lpwzInfo,int lpwzI
 // 函数说明：从窗口句柄获取引擎句柄
 // 参数<1>：hWnd
 //======================================================
-extern "C" int __stdcall Ex_DUIFromWindow (int hWnd);
+extern "C" int Ex_DUIFromWindow (int hWnd);
 
 //======================================================
 // 函数名称：Ex_MessageBox
@@ -837,7 +836,7 @@ extern "C" int __stdcall Ex_DUIFromWindow (int hWnd);
 // 参数<4>：uType，相关常量 #MB_
 // 参数<5>：dwFlags，相关常量 #EMF_
 //======================================================
-extern "C" int __stdcall Ex_MessageBox (int handle,int lpText,int lpCaption,int uType,int dwFlags);
+extern "C" int Ex_MessageBox (int handle,int lpText,int lpCaption,int uType,int dwFlags);
 
 //======================================================
 // 函数名称：Ex_MessageBoxEx
@@ -853,7 +852,7 @@ extern "C" int __stdcall Ex_MessageBox (int handle,int lpText,int lpCaption,int 
 // 参数<8>：dwFlags，相关常量 #EMF_
 // 参数<9>：lpfnMsgProc，(BOOL)MsgProc(hWnd,hExDui,uMsg,wParam,lParam,lpResult).
 //======================================================
-extern "C" int __stdcall Ex_MessageBoxEx (int handle,int lpText,int lpCaption,int uType,int lpCheckBox,BOOL lpCheckBoxChecked,int dwMilliseconds,int dwFlags,int lpfnMsgProc);
+extern "C" int Ex_MessageBoxEx (int handle,int lpText,int lpCaption,int uType,int lpCheckBox,BOOL lpCheckBoxChecked,int dwMilliseconds,int dwFlags,int lpfnMsgProc);
 
 //======================================================
 // 函数名称：Ex_TrackPopupMenu
@@ -869,7 +868,7 @@ extern "C" int __stdcall Ex_MessageBoxEx (int handle,int lpText,int lpCaption,in
 // 参数<8>：pfnCallback，(BOOL)MsgProc(hWnd,hExDui,uMsg,wParam,lParam,lpResult).
 // 参数<9>：dwFlags，相关常量 EMNF_
 //======================================================
-extern "C" BOOL __stdcall Ex_TrackPopupMenu (int hMenu,int uFlags,int x,int y,int nReserved,int handle,int lpRc,int pfnCallback,int dwFlags);
+extern "C" BOOL Ex_TrackPopupMenu (int hMenu,int uFlags,int x,int y,int nReserved,int handle,int lpRc,int pfnCallback,int dwFlags);
 
 //======================================================
 // 函数名称：Ex_ObjRegister
@@ -884,7 +883,7 @@ extern "C" BOOL __stdcall Ex_TrackPopupMenu (int hMenu,int uFlags,int x,int y,in
 // 参数<7>：dwFlags，类标志 #ECF_(值可为0)
 // 参数<8>：pfnObjProc，组件默认回调
 //======================================================
-extern "C" int __stdcall Ex_ObjRegister (int lptszClassName,int dwStyle,int dwStyleEx,int dwTextFormat,int cbObjExtra,int hCursor,int dwFlags,int pfnObjProc);
+extern "C" int Ex_ObjRegister (int lptszClassName,int dwStyle,int dwStyleEx,int dwTextFormat,int cbObjExtra,int hCursor,int dwFlags,int pfnObjProc);
 
 //======================================================
 // 函数名称：Ex_ObjCallProc
@@ -898,7 +897,7 @@ extern "C" int __stdcall Ex_ObjRegister (int lptszClassName,int dwStyle,int dwSt
 // 参数<6>：lParam
 // 参数<7>：pvData
 //======================================================
-extern "C" int __stdcall Ex_ObjCallProc (int lpPrevObjProc,int hWnd,int hObj,int uMsg,int wParam,int lParam,int pvData);
+extern "C" int Ex_ObjCallProc (int lpPrevObjProc,int hWnd,int hObj,int uMsg,int wParam,int lParam,int pvData);
 
 //======================================================
 // 函数名称：Ex_ObjDefProc
@@ -910,7 +909,7 @@ extern "C" int __stdcall Ex_ObjCallProc (int lpPrevObjProc,int hWnd,int hObj,int
 // 参数<4>：wParam
 // 参数<5>：lParam
 //======================================================
-extern "C" int __stdcall Ex_ObjDefProc (int hWnd,int hObj,int uMsg,int wParam,int lParam);
+extern "C" int Ex_ObjDefProc (int hWnd,int hObj,int uMsg,int wParam,int lParam);
 
 //======================================================
 // 函数名称：Ex_ObjDispatchMessage
@@ -921,7 +920,7 @@ extern "C" int __stdcall Ex_ObjDefProc (int hWnd,int hObj,int uMsg,int wParam,in
 // 参数<3>：wParam
 // 参数<4>：lParam
 //======================================================
-extern "C" int __stdcall Ex_ObjDispatchMessage (int hObj,int uMsg,int wParam,int lParam);
+extern "C" int Ex_ObjDispatchMessage (int hObj,int uMsg,int wParam,int lParam);
 
 //======================================================
 // 函数名称：Ex_ObjDispatchNotify
@@ -932,7 +931,7 @@ extern "C" int __stdcall Ex_ObjDispatchMessage (int hObj,int uMsg,int wParam,int
 // 参数<3>：wParam
 // 参数<4>：lParam
 //======================================================
-extern "C" int __stdcall Ex_ObjDispatchNotify (int hObj,int nCode,int wParam,int lParam);
+extern "C" int Ex_ObjDispatchNotify (int hObj,int nCode,int wParam,int lParam);
 
 //======================================================
 // 函数名称：Ex_ObjHandleEvent
@@ -942,7 +941,7 @@ extern "C" int __stdcall Ex_ObjDispatchNotify (int hObj,int nCode,int wParam,int
 // 参数<2>：nEvent，#NM_
 // 参数<3>：pfnCallback，(Bool) Handler(hObj,nID,nCode,wParam,lParam) 返回假继续分发事件,返回真则停止继续分发事件
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjHandleEvent (int hObj,int nEvent,int pfnCallback);
+extern "C" BOOL Ex_ObjHandleEvent (int hObj,int nEvent,int pfnCallback);
 
 //======================================================
 // 函数名称：Ex_ObjSendMessage
@@ -953,7 +952,7 @@ extern "C" BOOL __stdcall Ex_ObjHandleEvent (int hObj,int nEvent,int pfnCallback
 // 参数<3>：wParam
 // 参数<4>：lParam
 //======================================================
-extern "C" int __stdcall Ex_ObjSendMessage (int hObj,int uMsg,int wParam,int lParam);
+extern "C" int Ex_ObjSendMessage (int hObj,int uMsg,int wParam,int lParam);
 
 //======================================================
 // 函数名称：Ex_ObjPostMessage
@@ -964,7 +963,7 @@ extern "C" int __stdcall Ex_ObjSendMessage (int hObj,int uMsg,int wParam,int lPa
 // 参数<3>：wParam
 // 参数<4>：lParam
 //======================================================
-extern "C" int __stdcall Ex_ObjPostMessage (int hObj,int uMsg,int wParam,int lParam);
+extern "C" int Ex_ObjPostMessage (int hObj,int uMsg,int wParam,int lParam);
 
 //======================================================
 // 函数名称：Ex_ObjDestroy
@@ -972,7 +971,7 @@ extern "C" int __stdcall Ex_ObjPostMessage (int hObj,int uMsg,int wParam,int lPa
 // 函数说明：销毁组件
 // 参数<1>：hObj
 //======================================================
-extern "C" int __stdcall Ex_ObjDestroy (int hObj);
+extern "C" int Ex_ObjDestroy (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjCreate
@@ -987,7 +986,7 @@ extern "C" int __stdcall Ex_ObjDestroy (int hObj);
 // 参数<7>：height，高度
 // 参数<8>：hParent，父组件句柄
 //======================================================
-extern "C" int __stdcall Ex_ObjCreate (int lptszClassName,int lptszObjTitle,int dwStyle,int x,int y,int width,int height,int hParent);
+extern "C" int Ex_ObjCreate (int lptszClassName,int lptszObjTitle,int dwStyle,int x,int y,int width,int height,int hParent);
 
 //======================================================
 // 函数名称：Ex_ObjCreateEx
@@ -1008,7 +1007,7 @@ extern "C" int __stdcall Ex_ObjCreate (int lptszClassName,int lptszObjTitle,int 
 // 参数<13>：hTheme，主题句柄.0为默认
 // 参数<14>：lpfnMsgProc，(BOOL)MsgProc(hWnd,hObj,uMsg,wParam,lParam,lpReturn).
 //======================================================
-extern "C" int __stdcall Ex_ObjCreateEx (int dwStyleEx,int lptszClassName,int lptszObjTitle,int dwStyle,int x,int y,int width,int height,int hParent,int nID,int dwTextFormat,int lParam,int hTheme,int lpfnMsgProc);
+extern "C" int Ex_ObjCreateEx (int dwStyleEx,int lptszClassName,int lptszObjTitle,int dwStyle,int x,int y,int width,int height,int hParent,int nID,int dwTextFormat,int lParam,int hTheme,int lpfnMsgProc);
 
 //======================================================
 // 函数名称：Ex_ObjBeginPaint
@@ -1017,7 +1016,7 @@ extern "C" int __stdcall Ex_ObjCreateEx (int dwStyleEx,int lptszClassName,int lp
 // 参数<1>：hObj
 // 参数<2>：lpPS
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjBeginPaint (int hObj,int lpPS);
+extern "C" BOOL Ex_ObjBeginPaint (int hObj,int lpPS);
 
 //======================================================
 // 函数名称：Ex_ObjDrawBackgroundProc
@@ -1027,7 +1026,7 @@ extern "C" BOOL __stdcall Ex_ObjBeginPaint (int hObj,int lpPS);
 // 参数<2>：hCanvas
 // 参数<3>：lprcPaint
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjDrawBackgroundProc (int hObj,int hCanvas,int lprcPaint);
+extern "C" BOOL Ex_ObjDrawBackgroundProc (int hObj,int hCanvas,int lprcPaint);
 
 //======================================================
 // 函数名称：Ex_ObjEndPaint
@@ -1036,7 +1035,7 @@ extern "C" BOOL __stdcall Ex_ObjDrawBackgroundProc (int hObj,int hCanvas,int lpr
 // 参数<1>：hObj
 // 参数<2>：lpPS
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjEndPaint (int hObj,int lpPS);
+extern "C" BOOL Ex_ObjEndPaint (int hObj,int lpPS);
 
 //======================================================
 // 函数名称：Ex_ObjInvalidateRect
@@ -1045,7 +1044,7 @@ extern "C" BOOL __stdcall Ex_ObjEndPaint (int hObj,int lpPS);
 // 参数<1>：hObj
 // 参数<2>：lprcRedraw
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjInvalidateRect (int hObj,int lprcRedraw);
+extern "C" BOOL Ex_ObjInvalidateRect (int hObj,int lprcRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjUpdate
@@ -1053,7 +1052,7 @@ extern "C" BOOL __stdcall Ex_ObjInvalidateRect (int hObj,int lprcRedraw);
 // 函数说明：立即更新组件
 // 参数<1>：hObj
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjUpdate (int hObj);
+extern "C" BOOL Ex_ObjUpdate (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjSetRedraw
@@ -1062,7 +1061,7 @@ extern "C" BOOL __stdcall Ex_ObjUpdate (int hObj);
 // 参数<1>：hObj，组件句柄
 // 参数<2>：fCanbeRedraw，是否可重画
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetRedraw (int hObj,BOOL fCanbeRedraw);
+extern "C" BOOL Ex_ObjSetRedraw (int hObj,BOOL fCanbeRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjGetRect
@@ -1071,7 +1070,7 @@ extern "C" BOOL __stdcall Ex_ObjSetRedraw (int hObj,BOOL fCanbeRedraw);
 // 参数<1>：hObj
 // 参数<2>：lpRect
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjGetRect (int hObj,int lpRect);
+extern "C" BOOL Ex_ObjGetRect (int hObj,int lpRect);
 
 //======================================================
 // 函数名称：Ex_ObjGetClientRect
@@ -1080,7 +1079,7 @@ extern "C" BOOL __stdcall Ex_ObjGetRect (int hObj,int lpRect);
 // 参数<1>：hObj
 // 参数<2>：lpRect
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjGetClientRect (int hObj,int lpRect);
+extern "C" BOOL Ex_ObjGetClientRect (int hObj,int lpRect);
 
 //======================================================
 // 函数名称：Ex_ObjGetTextRect
@@ -1089,7 +1088,7 @@ extern "C" BOOL __stdcall Ex_ObjGetClientRect (int hObj,int lpRect);
 // 参数<1>：hObj
 // 参数<2>：lpRect
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjGetTextRect (int hObj,int lpRect);
+extern "C" BOOL Ex_ObjGetTextRect (int hObj,int lpRect);
 
 //======================================================
 // 函数名称：Ex_ObjSetPadding
@@ -1103,7 +1102,7 @@ extern "C" BOOL __stdcall Ex_ObjGetTextRect (int hObj,int lpRect);
 // 参数<6>：bottom
 // 参数<7>：fRedraw
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetPadding (int hObj,int nPaddingType,int left,int top,int right,int bottom,BOOL fRedraw);
+extern "C" BOOL Ex_ObjSetPadding (int hObj,int nPaddingType,int left,int top,int right,int bottom,BOOL fRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjClientToWindow
@@ -1113,7 +1112,7 @@ extern "C" BOOL __stdcall Ex_ObjSetPadding (int hObj,int nPaddingType,int left,i
 // 参数<2>：x
 // 参数<3>：y
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjClientToWindow (int hObj,int x,int y);
+extern "C" BOOL Ex_ObjClientToWindow (int hObj,int x,int y);
 
 //======================================================
 // 函数名称：Ex_ObjClientToScreen
@@ -1123,7 +1122,7 @@ extern "C" BOOL __stdcall Ex_ObjClientToWindow (int hObj,int x,int y);
 // 参数<2>：x
 // 参数<3>：y
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjClientToScreen (int hObj,int x,int y);
+extern "C" BOOL Ex_ObjClientToScreen (int hObj,int x,int y);
 
 //======================================================
 // 函数名称：Ex_ObjEnable
@@ -1132,7 +1131,7 @@ extern "C" BOOL __stdcall Ex_ObjClientToScreen (int hObj,int x,int y);
 // 参数<1>：hObj，组件句柄
 // 参数<2>：fEnable，是否可用
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjEnable (int hObj,BOOL fEnable);
+extern "C" BOOL Ex_ObjEnable (int hObj,BOOL fEnable);
 
 //======================================================
 // 函数名称：Ex_ObjIsEnable
@@ -1140,7 +1139,7 @@ extern "C" BOOL __stdcall Ex_ObjEnable (int hObj,BOOL fEnable);
 // 函数说明：组件是否可用
 // 参数<1>：hObj
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjIsEnable (int hObj);
+extern "C" BOOL Ex_ObjIsEnable (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjIsVisible
@@ -1148,7 +1147,7 @@ extern "C" BOOL __stdcall Ex_ObjIsEnable (int hObj);
 // 函数说明：判断组件是否可视.
 // 参数<1>：hObj，组件句柄
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjIsVisible (int hObj);
+extern "C" BOOL Ex_ObjIsVisible (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjShow
@@ -1157,7 +1156,7 @@ extern "C" BOOL __stdcall Ex_ObjIsVisible (int hObj);
 // 参数<1>：hObj
 // 参数<2>：fShow
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjShow (int hObj,BOOL fShow);
+extern "C" BOOL Ex_ObjShow (int hObj,BOOL fShow);
 
 //======================================================
 // 函数名称：Ex_ObjIsValidate
@@ -1165,7 +1164,7 @@ extern "C" BOOL __stdcall Ex_ObjShow (int hObj,BOOL fShow);
 // 函数说明：是否有效的组件
 // 参数<1>：hObj
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjIsValidate (int hObj);
+extern "C" BOOL Ex_ObjIsValidate (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjGetParent
@@ -1173,7 +1172,7 @@ extern "C" BOOL __stdcall Ex_ObjIsValidate (int hObj);
 // 函数说明：获取父组件
 // 参数<1>：hObj
 //======================================================
-extern "C" int __stdcall Ex_ObjGetParent (int hObj);
+extern "C" int Ex_ObjGetParent (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjGetParentEx
@@ -1182,7 +1181,7 @@ extern "C" int __stdcall Ex_ObjGetParent (int hObj);
 // 参数<1>：hObj
 // 参数<2>：phExDUI
 //======================================================
-extern "C" int __stdcall Ex_ObjGetParentEx (int hObj,int phExDUI);
+extern "C" int Ex_ObjGetParentEx (int hObj,int phExDUI);
 
 //======================================================
 // 函数名称：Ex_ObjSetParent
@@ -1191,7 +1190,7 @@ extern "C" int __stdcall Ex_ObjGetParentEx (int hObj,int phExDUI);
 // 参数<1>：hObj
 // 参数<2>：hParent
 //======================================================
-extern "C" int __stdcall Ex_ObjSetParent (int hObj,int hParent);
+extern "C" int Ex_ObjSetParent (int hObj,int hParent);
 
 //======================================================
 // 函数名称：Ex_ObjGetLong
@@ -1200,7 +1199,7 @@ extern "C" int __stdcall Ex_ObjSetParent (int hObj,int hParent);
 // 参数<1>：hObj
 // 参数<2>：nIndex，相关常量 #EOL_
 //======================================================
-extern "C" int __stdcall Ex_ObjGetLong (int hObj,int nIndex);
+extern "C" int Ex_ObjGetLong (int hObj,int nIndex);
 
 //======================================================
 // 函数名称：Ex_ObjSetLong
@@ -1210,7 +1209,7 @@ extern "C" int __stdcall Ex_ObjGetLong (int hObj,int nIndex);
 // 参数<2>：nIndex，#EOL_
 // 参数<3>：dwNewLong
 //======================================================
-extern "C" int __stdcall Ex_ObjSetLong (int hObj,int nIndex,int dwNewLong);
+extern "C" int Ex_ObjSetLong (int hObj,int nIndex,int dwNewLong);
 
 //======================================================
 // 函数名称：Ex_ObjSetPos
@@ -1224,7 +1223,7 @@ extern "C" int __stdcall Ex_ObjSetLong (int hObj,int nIndex,int dwNewLong);
 // 参数<6>：height
 // 参数<7>：flags，相关常量 #SWP_
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetPos (int hObj,int hObjInsertAfter,int x,int y,int width,int height,int flags);
+extern "C" BOOL Ex_ObjSetPos (int hObj,int hObjInsertAfter,int x,int y,int width,int height,int flags);
 
 //======================================================
 // 函数名称：Ex_ObjGetObj
@@ -1233,7 +1232,7 @@ extern "C" BOOL __stdcall Ex_ObjSetPos (int hObj,int hObjInsertAfter,int x,int y
 // 参数<1>：hObj
 // 参数<2>：nCmd，相关常量 #GW_
 //======================================================
-extern "C" int __stdcall Ex_ObjGetObj (int hObj,int nCmd);
+extern "C" int Ex_ObjGetObj (int hObj,int nCmd);
 
 //======================================================
 // 函数名称：Ex_ObjGetFromID
@@ -1242,7 +1241,7 @@ extern "C" int __stdcall Ex_ObjGetObj (int hObj,int nCmd);
 // 参数<1>：hExDuiOrhObj，如果指定引擎句柄,则全部搜索;如果指定组件句柄,则从该组件的子组件开始搜索.
 // 参数<2>：nID
 //======================================================
-extern "C" int __stdcall Ex_ObjGetFromID (int hExDuiOrhObj,int nID);
+extern "C" int Ex_ObjGetFromID (int hExDuiOrhObj,int nID);
 
 //======================================================
 // 函数名称：Ex_ObjGetFromName
@@ -1251,7 +1250,7 @@ extern "C" int __stdcall Ex_ObjGetFromID (int hExDuiOrhObj,int nID);
 // 参数<1>：hExDuiOrhObj，如果指定引擎句柄,则全部搜索;如果指定组件句柄,则从该组件的子组件开始搜索.
 // 参数<2>：lpwzName
 //======================================================
-extern "C" int __stdcall Ex_ObjGetFromName (int hExDuiOrhObj,int lpwzName);
+extern "C" int Ex_ObjGetFromName (int hExDuiOrhObj,int lpwzName);
 
 //======================================================
 // 函数名称：Ex_ObjFind
@@ -1262,7 +1261,7 @@ extern "C" int __stdcall Ex_ObjGetFromName (int hExDuiOrhObj,int lpwzName);
 // 参数<3>：lpClassName，欲查找的组件类名指针/Ex_ATOM()
 // 参数<4>：lpTitle，欲查找的组件标题
 //======================================================
-extern "C" int __stdcall Ex_ObjFind (int hObjParent,int hObjChildAfter,int lpClassName,int lpTitle);
+extern "C" int Ex_ObjFind (int hObjParent,int hObjChildAfter,int lpClassName,int lpTitle);
 
 //======================================================
 // 函数名称：Ex_ObjEnumChild
@@ -1272,7 +1271,7 @@ extern "C" int __stdcall Ex_ObjFind (int hObjParent,int hObjChildAfter,int lpCla
 // 参数<2>：lpEnumFunc，callback(hObj,lParam).返回1继续枚举,返回0停止枚举.
 // 参数<3>：lParam，附带参数
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjEnumChild (int hObjParent,int lpEnumFunc,int lParam);
+extern "C" BOOL Ex_ObjEnumChild (int hObjParent,int lpEnumFunc,int lParam);
 
 //======================================================
 // 函数名称：Ex_ObjGetText
@@ -1282,7 +1281,7 @@ extern "C" BOOL __stdcall Ex_ObjEnumChild (int hObjParent,int lpEnumFunc,int lPa
 // 参数<2>：lpString，缓冲区指针.
 // 参数<3>：nMaxCount，缓冲区长度.
 //======================================================
-extern "C" int __stdcall Ex_ObjGetText (int hObj,int lpString,int nMaxCount);
+extern "C" int Ex_ObjGetText (int hObj,int lpString,int nMaxCount);
 
 //======================================================
 // 函数名称：Ex_ObjGetTextLength
@@ -1290,7 +1289,7 @@ extern "C" int __stdcall Ex_ObjGetText (int hObj,int lpString,int nMaxCount);
 // 函数说明：获取组件文本长度
 // 参数<1>：hObj
 //======================================================
-extern "C" int __stdcall Ex_ObjGetTextLength (int hObj);
+extern "C" int Ex_ObjGetTextLength (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjSetText
@@ -1300,7 +1299,7 @@ extern "C" int __stdcall Ex_ObjGetTextLength (int hObj);
 // 参数<2>：lpString，指向一个空结束的字符串的指针.
 // 参数<3>：fRedraw，是否重画组件
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetText (int hObj,int lpString,BOOL fRedraw);
+extern "C" BOOL Ex_ObjSetText (int hObj,int lpString,BOOL fRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjSetFont
@@ -1310,7 +1309,7 @@ extern "C" BOOL __stdcall Ex_ObjSetText (int hObj,int lpString,BOOL fRedraw);
 // 参数<2>：hFont，_font_createxxx
 // 参数<3>：fRedraw
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetFont (int hObj,int hFont,BOOL fRedraw);
+extern "C" BOOL Ex_ObjSetFont (int hObj,int hFont,BOOL fRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjSetFontFromFamily
@@ -1322,7 +1321,7 @@ extern "C" BOOL __stdcall Ex_ObjSetFont (int hObj,int hFont,BOOL fRedraw);
 // 参数<4>：dwFontstyle，-1 为默认风格
 // 参数<5>：fRedraw
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetFontFromFamily (int hObj,int lpszFontfamily,int dwFontsize,int dwFontstyle,BOOL fRedraw);
+extern "C" BOOL Ex_ObjSetFontFromFamily (int hObj,int lpszFontfamily,int dwFontsize,int dwFontstyle,BOOL fRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjGetFont
@@ -1330,7 +1329,7 @@ extern "C" BOOL __stdcall Ex_ObjSetFontFromFamily (int hObj,int lpszFontfamily,i
 // 函数说明：获取字体。用户不应该销毁该字体对象
 // 参数<1>：hObj
 //======================================================
-extern "C" int __stdcall Ex_ObjGetFont (int hObj);
+extern "C" int Ex_ObjGetFont (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjSetColor
@@ -1341,7 +1340,7 @@ extern "C" int __stdcall Ex_ObjGetFont (int hObj);
 // 参数<3>：dwColor
 // 参数<4>：fRedraw，是否重画
 //======================================================
-extern "C" int __stdcall Ex_ObjSetColor (int hObj,int nIndex,int dwColor,BOOL fRedraw);
+extern "C" int Ex_ObjSetColor (int hObj,int nIndex,int dwColor,BOOL fRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjGetColor
@@ -1350,7 +1349,7 @@ extern "C" int __stdcall Ex_ObjSetColor (int hObj,int nIndex,int dwColor,BOOL fR
 // 参数<1>：hObj
 // 参数<2>：nIndex，相关常量 COLOR_EX_
 //======================================================
-extern "C" int __stdcall Ex_ObjGetColor (int hObj,int nIndex);
+extern "C" int Ex_ObjGetColor (int hObj,int nIndex);
 
 //======================================================
 // 函数名称：Ex_ObjGetBackgroundImage
@@ -1359,7 +1358,7 @@ extern "C" int __stdcall Ex_ObjGetColor (int hObj,int nIndex);
 // 参数<1>：handle
 // 参数<2>：lpBackgroundImage，相关结构 EX_BACKGROUNDIMAGEINFO
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjGetBackgroundImage (int handle,int lpBackgroundImage);
+extern "C" BOOL Ex_ObjGetBackgroundImage (int handle,int lpBackgroundImage);
 
 //======================================================
 // 函数名称：Ex_ObjSetBackgroundImage
@@ -1376,7 +1375,7 @@ extern "C" BOOL __stdcall Ex_ObjGetBackgroundImage (int handle,int lpBackgroundI
 // 参数<9>：dwAlpha，透明度(0-255)
 // 参数<10>：fUpdate，是否立即刷新
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetBackgroundImage (int handle,int lpImage,int dwImageLen,int X,int Y,int dwRepeat,int lpGird,int dwFlags,int dwAlpha,BOOL fUpdate);
+extern "C" BOOL Ex_ObjSetBackgroundImage (int handle,int lpImage,int dwImageLen,int X,int Y,int dwRepeat,int lpGird,int dwFlags,int dwAlpha,BOOL fUpdate);
 
 //======================================================
 // 函数名称：Ex_ObjSetBackgroundPlayState
@@ -1387,7 +1386,7 @@ extern "C" BOOL __stdcall Ex_ObjSetBackgroundImage (int handle,int lpImage,int d
 // 参数<3>：fResetFrame，是否重置当前帧为首帧.
 // 参数<4>：fUpdate，是否更新背景.
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetBackgroundPlayState (int handle,BOOL fPlayFrames,BOOL fResetFrame,BOOL fUpdate);
+extern "C" BOOL Ex_ObjSetBackgroundPlayState (int handle,BOOL fPlayFrames,BOOL fResetFrame,BOOL fUpdate);
 
 //======================================================
 // 函数名称：Ex_ObjSetTimer
@@ -1396,7 +1395,7 @@ extern "C" BOOL __stdcall Ex_ObjSetBackgroundPlayState (int handle,BOOL fPlayFra
 // 参数<1>：hObj
 // 参数<2>：uElapse
 //======================================================
-extern "C" int __stdcall Ex_ObjSetTimer (int hObj,int uElapse);
+extern "C" int Ex_ObjSetTimer (int hObj,int uElapse);
 
 //======================================================
 // 函数名称：Ex_ObjKillTimer
@@ -1404,7 +1403,7 @@ extern "C" int __stdcall Ex_ObjSetTimer (int hObj,int uElapse);
 // 函数说明：销毁组件时钟
 // 参数<1>：hObj
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjKillTimer (int hObj);
+extern "C" BOOL Ex_ObjKillTimer (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjSetRadius
@@ -1417,7 +1416,7 @@ extern "C" BOOL __stdcall Ex_ObjKillTimer (int hObj);
 // 参数<5>：bottomleft，左下角
 // 参数<6>：fUpdate
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetRadius (int hObj,float topleft,float topright,float bottomright,float bottomleft,BOOL fUpdate);
+extern "C" BOOL Ex_ObjSetRadius (int hObj,float topleft,float topright,float bottomright,float bottomleft,BOOL fUpdate);
 
 //======================================================
 // 函数名称：Ex_ObjTooltipsSetText
@@ -1426,7 +1425,7 @@ extern "C" BOOL __stdcall Ex_ObjSetRadius (int hObj,float topleft,float topright
 // 参数<1>：hObj
 // 参数<2>：lpString
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjTooltipsSetText (int hObj,int lpString);
+extern "C" BOOL Ex_ObjTooltipsSetText (int hObj,int lpString);
 
 //======================================================
 // 函数名称：Ex_ObjTooltipsPop
@@ -1435,7 +1434,7 @@ extern "C" BOOL __stdcall Ex_ObjTooltipsSetText (int hObj,int lpString);
 // 参数<1>：hObj，组件句柄.
 // 参数<2>：lpString，提示文本.该值为0则关闭提示文本
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjTooltipsPop (int hObj,int lpString);
+extern "C" BOOL Ex_ObjTooltipsPop (int hObj,int lpString);
 
 //======================================================
 // 函数名称：Ex_ObjTooltipsPopEx
@@ -1450,7 +1449,7 @@ extern "C" BOOL __stdcall Ex_ObjTooltipsPop (int hObj,int lpString);
 // 参数<7>：nIcon，#气泡图标_
 // 参数<8>：fShow，是否立即显示
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjTooltipsPopEx (int hObj,int lpTitle,int lpText,int x,int y,int dwTime,int nIcon,BOOL fShow);
+extern "C" BOOL Ex_ObjTooltipsPopEx (int hObj,int lpTitle,int lpText,int x,int y,int dwTime,int nIcon,BOOL fShow);
 
 //======================================================
 // 函数名称：Ex_ObjGetFocus
@@ -1458,7 +1457,7 @@ extern "C" BOOL __stdcall Ex_ObjTooltipsPopEx (int hObj,int lpTitle,int lpText,i
 // 函数说明：获取焦点组件
 // 参数<1>：hExDuiOrhObj
 //======================================================
-extern "C" int __stdcall Ex_ObjGetFocus (int hExDuiOrhObj);
+extern "C" int Ex_ObjGetFocus (int hExDuiOrhObj);
 
 //======================================================
 // 函数名称：Ex_ObjSetFocus
@@ -1466,7 +1465,7 @@ extern "C" int __stdcall Ex_ObjGetFocus (int hExDuiOrhObj);
 // 函数说明：设置组件焦点
 // 参数<1>：hObj
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetFocus (int hObj);
+extern "C" BOOL Ex_ObjSetFocus (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjKillFocus
@@ -1474,7 +1473,7 @@ extern "C" BOOL __stdcall Ex_ObjSetFocus (int hObj);
 // 函数说明：销毁组件焦点
 // 参数<1>：hObj
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjKillFocus (int hObj);
+extern "C" BOOL Ex_ObjKillFocus (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjGetProp
@@ -1483,7 +1482,7 @@ extern "C" BOOL __stdcall Ex_ObjKillFocus (int hObj);
 // 参数<1>：hObj
 // 参数<2>：dwKey
 //======================================================
-extern "C" int __stdcall Ex_ObjGetProp (int hObj,int dwKey);
+extern "C" int Ex_ObjGetProp (int hObj,int dwKey);
 
 //======================================================
 // 函数名称：Ex_ObjSetProp
@@ -1493,7 +1492,7 @@ extern "C" int __stdcall Ex_ObjGetProp (int hObj,int dwKey);
 // 参数<2>：dwKey
 // 参数<3>：dwValue
 //======================================================
-extern "C" int __stdcall Ex_ObjSetProp (int hObj,int dwKey,int dwValue);
+extern "C" int Ex_ObjSetProp (int hObj,int dwKey,int dwValue);
 
 //======================================================
 // 函数名称：Ex_ObjRemoveProp
@@ -1502,7 +1501,7 @@ extern "C" int __stdcall Ex_ObjSetProp (int hObj,int dwKey,int dwValue);
 // 参数<1>：hObj
 // 参数<2>：dwKey
 //======================================================
-extern "C" int __stdcall Ex_ObjRemoveProp (int hObj,int dwKey);
+extern "C" int Ex_ObjRemoveProp (int hObj,int dwKey);
 
 //======================================================
 // 函数名称：Ex_ObjEnumProps
@@ -1512,7 +1511,7 @@ extern "C" int __stdcall Ex_ObjRemoveProp (int hObj,int dwKey);
 // 参数<2>：lpfnCbk，bool enum(hObj,dwKey,dwValue,param)
 // 参数<3>：param
 //======================================================
-extern "C" int __stdcall Ex_ObjEnumProps (int hObj,int lpfnCbk,int param);
+extern "C" int Ex_ObjEnumProps (int hObj,int lpfnCbk,int param);
 
 //======================================================
 // 函数名称：Ex_ObjInitPropList
@@ -1521,7 +1520,7 @@ extern "C" int __stdcall Ex_ObjEnumProps (int hObj,int lpfnCbk,int param);
 // 参数<1>：hObj
 // 参数<2>：nPropCount，-1为哈希表模式,0为不存储属性,正数为属性个数(每个4字节)
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjInitPropList (int hObj,int nPropCount);
+extern "C" BOOL Ex_ObjInitPropList (int hObj,int nPropCount);
 
 //======================================================
 // 函数名称：Ex_ObjMove
@@ -1534,7 +1533,7 @@ extern "C" BOOL __stdcall Ex_ObjInitPropList (int hObj,int nPropCount);
 // 参数<5>：height
 // 参数<6>：bRepaint
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjMove (int hObj,int x,int y,int width,int height,BOOL bRepaint);
+extern "C" BOOL Ex_ObjMove (int hObj,int x,int y,int width,int height,BOOL bRepaint);
 
 //======================================================
 // 函数名称：Ex_ObjSetUIState
@@ -1546,7 +1545,7 @@ extern "C" BOOL __stdcall Ex_ObjMove (int hObj,int x,int y,int width,int height,
 // 参数<4>：lprcRedraw
 // 参数<5>：fRedraw
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetUIState (int hObj,int dwState,BOOL fRemove,int lprcRedraw,BOOL fRedraw);
+extern "C" BOOL Ex_ObjSetUIState (int hObj,int dwState,BOOL fRemove,int lprcRedraw,BOOL fRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjGetUIState
@@ -1554,7 +1553,7 @@ extern "C" BOOL __stdcall Ex_ObjSetUIState (int hObj,int dwState,BOOL fRemove,in
 // 函数说明：获取组件状态
 // 参数<1>：hObj
 //======================================================
-extern "C" int __stdcall Ex_ObjGetUIState (int hObj);
+extern "C" int Ex_ObjGetUIState (int hObj);
 
 //======================================================
 // 函数名称：Ex_ObjLoadFromLayout
@@ -1565,7 +1564,7 @@ extern "C" int __stdcall Ex_ObjGetUIState (int hObj);
 // 参数<3>：lpLayout，布局资源指针
 // 参数<4>：cbLayout，布局资源长度
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjLoadFromLayout (int handle,int hRes,int lpLayout,int cbLayout);
+extern "C" BOOL Ex_ObjLoadFromLayout (int handle,int hRes,int lpLayout,int cbLayout);
 
 //======================================================
 // 函数名称：Ex_ObjGetFromNodeID
@@ -1573,7 +1572,7 @@ extern "C" BOOL __stdcall Ex_ObjLoadFromLayout (int handle,int hRes,int lpLayout
 // 参数<1>：hExDUIOrObj
 // 参数<2>：nNodeID
 //======================================================
-extern "C" int __stdcall Ex_ObjGetFromNodeID (int hExDUIOrObj,int nNodeID);
+extern "C" int Ex_ObjGetFromNodeID (int hExDUIOrObj,int nNodeID);
 
 //======================================================
 // 函数名称：Ex_ObjGetRectEx
@@ -1582,7 +1581,7 @@ extern "C" int __stdcall Ex_ObjGetFromNodeID (int hExDUIOrObj,int nNodeID);
 // 参数<2>：lpRect
 // 参数<3>：nType
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjGetRectEx (int hObj,int lpRect,int nType);
+extern "C" BOOL Ex_ObjGetRectEx (int hObj,int lpRect,int nType);
 
 //======================================================
 // 函数名称：Ex_ObjPointTransform
@@ -1592,7 +1591,7 @@ extern "C" BOOL __stdcall Ex_ObjGetRectEx (int hObj,int lpRect,int nType);
 // 参数<3>：ptX，in/out
 // 参数<4>：ptY，in/out
 //======================================================
-extern "C" void __stdcall Ex_ObjPointTransform (int hObjSrc,int hObjDst,int ptX,int ptY);
+extern "C" void Ex_ObjPointTransform (int hObjSrc,int hObjDst,int ptX,int ptY);
 
 //======================================================
 // 函数名称：Ex_ObjEnableEventBubble
@@ -1601,7 +1600,7 @@ extern "C" void __stdcall Ex_ObjPointTransform (int hObjSrc,int hObjDst,int ptX,
 // 参数<1>：hObj
 // 参数<2>：fEnable
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjEnableEventBubble (int hObj,BOOL fEnable);
+extern "C" BOOL Ex_ObjEnableEventBubble (int hObj,BOOL fEnable);
 
 //======================================================
 // 函数名称：Ex_ObjGetClassInfo
@@ -1610,7 +1609,7 @@ extern "C" BOOL __stdcall Ex_ObjEnableEventBubble (int hObj,BOOL fEnable);
 // 参数<1>：hObj
 // 参数<2>：lpClassInfo，相关结构 EX_CLASSINFO
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjGetClassInfo (int hObj,int lpClassInfo);
+extern "C" BOOL Ex_ObjGetClassInfo (int hObj,int lpClassInfo);
 
 //======================================================
 // 函数名称：Ex_ObjGetClassInfoEx
@@ -1619,14 +1618,14 @@ extern "C" BOOL __stdcall Ex_ObjGetClassInfo (int hObj,int lpClassInfo);
 // 参数<1>：wzClassName，wzClassName/AtomClassName
 // 参数<2>：lpClassInfo，相关结构 EX_CLASSINFO
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
+extern "C" BOOL Ex_ObjGetClassInfoEx (int wzClassName,int lpClassInfo);
 
 //======================================================
 // 函数名称：_canvas_destroy
 // 返回类型：逻辑型
 // 参数<1>：hCanvas
 //======================================================
-extern "C" BOOL __stdcall _canvas_destroy (int hCanvas);
+extern "C" BOOL _canvas_destroy (int hCanvas);
 
 //======================================================
 // 函数名称：_canvas_createfromobj
@@ -1638,7 +1637,7 @@ extern "C" BOOL __stdcall _canvas_destroy (int hCanvas);
 // 参数<4>：dwFlags，CVF_
 // 参数<5>：nError
 //======================================================
-extern "C" int __stdcall _canvas_createfromobj (int hObj,int uWidth,int uHeight,int dwFlags,int nError);
+extern "C" int _canvas_createfromobj (int hObj,int uWidth,int uHeight,int dwFlags,int nError);
 
 //======================================================
 // 函数名称：_canvas_createfromexdui
@@ -1649,7 +1648,7 @@ extern "C" int __stdcall _canvas_createfromobj (int hObj,int uWidth,int uHeight,
 // 参数<3>：height
 // 参数<4>：dwFlags，CVF_
 //======================================================
-extern "C" int __stdcall _canvas_createfromexdui (int hExDui,int width,int height,int dwFlags);
+extern "C" int _canvas_createfromexdui (int hExDui,int width,int height,int dwFlags);
 
 //======================================================
 // 函数名称：_canvas_resize
@@ -1660,7 +1659,7 @@ extern "C" int __stdcall _canvas_createfromexdui (int hExDui,int width,int heigh
 // 参数<3>：height
 // 参数<4>：fCopy
 //======================================================
-extern "C" BOOL __stdcall _canvas_resize (int hCanvas,int width,int height,BOOL fCopy);
+extern "C" BOOL _canvas_resize (int hCanvas,int width,int height,BOOL fCopy);
 
 //======================================================
 // 函数名称：_canvas_getcontext
@@ -1669,7 +1668,7 @@ extern "C" BOOL __stdcall _canvas_resize (int hCanvas,int width,int height,BOOL 
 // 参数<1>：hCanvas
 // 参数<2>：nType，#CVC_
 //======================================================
-extern "C" int __stdcall _canvas_getcontext (int hCanvas,int nType);
+extern "C" int _canvas_getcontext (int hCanvas,int nType);
 
 //======================================================
 // 函数名称：_canvas_begindraw
@@ -1677,7 +1676,7 @@ extern "C" int __stdcall _canvas_getcontext (int hCanvas,int nType);
 // 函数说明：ok
 // 参数<1>：hCanvas
 //======================================================
-extern "C" BOOL __stdcall _canvas_begindraw (int hCanvas);
+extern "C" BOOL _canvas_begindraw (int hCanvas);
 
 //======================================================
 // 函数名称：_canvas_enddraw
@@ -1685,7 +1684,7 @@ extern "C" BOOL __stdcall _canvas_begindraw (int hCanvas);
 // 函数说明：ok
 // 参数<1>：hCanvas
 //======================================================
-extern "C" BOOL __stdcall _canvas_enddraw (int hCanvas);
+extern "C" BOOL _canvas_enddraw (int hCanvas);
 
 //======================================================
 // 函数名称：_canvas_clear
@@ -1694,7 +1693,7 @@ extern "C" BOOL __stdcall _canvas_enddraw (int hCanvas);
 // 参数<1>：hCanvas
 // 参数<2>：lColor
 //======================================================
-extern "C" BOOL __stdcall _canvas_clear (int hCanvas,int lColor);
+extern "C" BOOL _canvas_clear (int hCanvas,int lColor);
 
 //======================================================
 // 函数名称：_canvas_drawline
@@ -1709,7 +1708,7 @@ extern "C" BOOL __stdcall _canvas_clear (int hCanvas,int lColor);
 // 参数<7>：strokeWidth
 // 参数<8>：strokeStyle
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawline (int hCanvas,int hBrush,float X1,float Y1,float X2,float Y2,float strokeWidth,int strokeStyle);
+extern "C" BOOL _canvas_drawline (int hCanvas,int hBrush,float X1,float Y1,float X2,float Y2,float strokeWidth,int strokeStyle);
 
 //======================================================
 // 函数名称：_canvas_drawrect
@@ -1724,7 +1723,7 @@ extern "C" BOOL __stdcall _canvas_drawline (int hCanvas,int hBrush,float X1,floa
 // 参数<7>：strokeWidth
 // 参数<8>：strokeStyle
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float strokeWidth,int strokeStyle);
+extern "C" BOOL _canvas_drawrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float strokeWidth,int strokeStyle);
 
 //======================================================
 // 函数名称：_canvas_fillrect
@@ -1737,7 +1736,7 @@ extern "C" BOOL __stdcall _canvas_drawrect (int hCanvas,int hBrush,float left,fl
 // 参数<5>：right
 // 参数<6>：bottom
 //======================================================
-extern "C" BOOL __stdcall _canvas_fillrect (int hCanvas,int hBrush,float left,float top,float right,float bottom);
+extern "C" BOOL _canvas_fillrect (int hCanvas,int hBrush,float left,float top,float right,float bottom);
 
 //======================================================
 // 函数名称：_canvas_drawroundedrect
@@ -1753,7 +1752,7 @@ extern "C" BOOL __stdcall _canvas_fillrect (int hCanvas,int hBrush,float left,fl
 // 参数<9>：strokeWidth
 // 参数<10>：strokeStyle
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawroundedrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float radiusX,float radiusY,float strokeWidth,int strokeStyle);
+extern "C" BOOL _canvas_drawroundedrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float radiusX,float radiusY,float strokeWidth,int strokeStyle);
 
 //======================================================
 // 函数名称：_canvas_fillroundedrect
@@ -1767,7 +1766,7 @@ extern "C" BOOL __stdcall _canvas_drawroundedrect (int hCanvas,int hBrush,float 
 // 参数<7>：radiusX
 // 参数<8>：radiusY
 //======================================================
-extern "C" BOOL __stdcall _canvas_fillroundedrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float radiusX,float radiusY);
+extern "C" BOOL _canvas_fillroundedrect (int hCanvas,int hBrush,float left,float top,float right,float bottom,float radiusX,float radiusY);
 
 //======================================================
 // 函数名称：_canvas_drawellipse
@@ -1781,7 +1780,7 @@ extern "C" BOOL __stdcall _canvas_fillroundedrect (int hCanvas,int hBrush,float 
 // 参数<7>：strokeWidth
 // 参数<8>：strokeStyle
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawellipse (int hCanvas,int hBrush,float x,float y,float radiusX,float radiusY,float strokeWidth,int strokeStyle);
+extern "C" BOOL _canvas_drawellipse (int hCanvas,int hBrush,float x,float y,float radiusX,float radiusY,float strokeWidth,int strokeStyle);
 
 //======================================================
 // 函数名称：_canvas_fillellipse
@@ -1793,7 +1792,7 @@ extern "C" BOOL __stdcall _canvas_drawellipse (int hCanvas,int hBrush,float x,fl
 // 参数<5>：radiusX
 // 参数<6>：radiusY
 //======================================================
-extern "C" BOOL __stdcall _canvas_fillellipse (int hCanvas,int hBrush,float x,float y,float radiusX,float radiusY);
+extern "C" BOOL _canvas_fillellipse (int hCanvas,int hBrush,float x,float y,float radiusX,float radiusY);
 
 //======================================================
 // 函数名称：_canvas_drawpath
@@ -1804,7 +1803,7 @@ extern "C" BOOL __stdcall _canvas_fillellipse (int hCanvas,int hBrush,float x,fl
 // 参数<4>：strokeWidth
 // 参数<5>：strokeStyle
 //======================================================
-extern "C" int __stdcall _canvas_drawpath (int hCanvas,int hPath,int hBrush,float strokeWidth,int strokeStyle);
+extern "C" int _canvas_drawpath (int hCanvas,int hPath,int hBrush,float strokeWidth,int strokeStyle);
 
 //======================================================
 // 函数名称：_canvas_fillpath
@@ -1813,7 +1812,7 @@ extern "C" int __stdcall _canvas_drawpath (int hCanvas,int hPath,int hBrush,floa
 // 参数<2>：hPath
 // 参数<3>：hBrush
 //======================================================
-extern "C" int __stdcall _canvas_fillpath (int hCanvas,int hPath,int hBrush);
+extern "C" int _canvas_fillpath (int hCanvas,int hPath,int hBrush);
 
 //======================================================
 // 函数名称：_canvas_fillregion
@@ -1822,19 +1821,7 @@ extern "C" int __stdcall _canvas_fillpath (int hCanvas,int hPath,int hBrush);
 // 参数<2>：hRgn
 // 参数<3>：hBrush
 //======================================================
-extern "C" BOOL __stdcall _canvas_fillregion (int hCanvas,int hRgn,int hBrush);
-
-//======================================================
-// 函数名称：_canvas_drawimage
-// 返回类型：逻辑型
-// 函数说明：ok
-// 参数<1>：hCanvas，0
-// 参数<2>：hImage，4
-// 参数<3>：left，8
-// 参数<4>：top，12
-// 参数<5>：alpha，16
-//======================================================
-extern "C" BOOL __stdcall _canvas_drawimage (int hCanvas,int hImage,float left,float top,int alpha);
+extern "C" BOOL _canvas_fillregion (int hCanvas,int hRgn,int hBrush);
 
 //======================================================
 // 函数名称：_canvas_drawimagerect
@@ -1848,7 +1835,7 @@ extern "C" BOOL __stdcall _canvas_drawimage (int hCanvas,int hImage,float left,f
 // 参数<6>：bottom
 // 参数<7>：alpha
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawimagerect (int hCanvas,int hImage,float left,float top,float right,float bottom,int alpha);
+extern "C" BOOL _canvas_drawimagerect (int hCanvas,int hImage,float left,float top,float right,float bottom,int alpha);
 
 //======================================================
 // 函数名称：_canvas_drawimagerectrect
@@ -1866,7 +1853,7 @@ extern "C" BOOL __stdcall _canvas_drawimagerect (int hCanvas,int hImage,float le
 // 参数<10>：srcBottom，36
 // 参数<11>：alpha，40
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawimagerectrect (int hCanvas,int hImage,float dstLeft,float dstTop,float dstRight,float dstBottom,float srcLeft,float srcTop,float srcRight,float srcBottom,int alpha);
+extern "C" BOOL _canvas_drawimagerectrect (int hCanvas,int hImage,float dstLeft,float dstTop,float dstRight,float dstBottom,float srcLeft,float srcTop,float srcRight,float srcBottom,int alpha);
 
 //======================================================
 // 函数名称：_canvas_drawimagefromgrid
@@ -1889,7 +1876,7 @@ extern "C" BOOL __stdcall _canvas_drawimagerectrect (int hCanvas,int hImage,floa
 // 参数<15>：dwFlags，#bif_
 // 参数<16>：dwAlpha
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawimagefromgrid (int hCanvas,int hImage,float dstLeft,float dstTop,float dstRight,float dstBottom,float srcLeft,float srcTop,float srcRight,float srcBottom,float gridPaddingLeft,float gridPaddingTop,float gridPaddingRight,float gridPaddingBottom,int dwFlags,int dwAlpha);
+extern "C" BOOL _canvas_drawimagefromgrid (int hCanvas,int hImage,float dstLeft,float dstTop,float dstRight,float dstBottom,float srcLeft,float srcTop,float srcRight,float srcBottom,float gridPaddingLeft,float gridPaddingTop,float gridPaddingRight,float gridPaddingBottom,int dwFlags,int dwAlpha);
 
 //======================================================
 // 函数名称：_canvas_cliprect
@@ -1901,7 +1888,7 @@ extern "C" BOOL __stdcall _canvas_drawimagefromgrid (int hCanvas,int hImage,floa
 // 参数<4>：right
 // 参数<5>：bottom
 //======================================================
-extern "C" BOOL __stdcall _canvas_cliprect (int hCanvas,int left,int top,int right,int bottom);
+extern "C" BOOL _canvas_cliprect (int hCanvas,int left,int top,int right,int bottom);
 
 //======================================================
 // 函数名称：_canvas_resetclip
@@ -1909,14 +1896,14 @@ extern "C" BOOL __stdcall _canvas_cliprect (int hCanvas,int left,int top,int rig
 // 函数说明：ok
 // 参数<1>：hCanvas
 //======================================================
-extern "C" BOOL __stdcall _canvas_resetclip (int hCanvas);
+extern "C" BOOL _canvas_resetclip (int hCanvas);
 
 //======================================================
 // 函数名称：_canvas_flush
 // 返回类型：逻辑型
 // 参数<1>：hCanvas
 //======================================================
-extern "C" BOOL __stdcall _canvas_flush (int hCanvas);
+extern "C" BOOL _canvas_flush (int hCanvas);
 
 //======================================================
 // 函数名称：_canvas_drawcanvas
@@ -1932,7 +1919,7 @@ extern "C" BOOL __stdcall _canvas_flush (int hCanvas);
 // 参数<9>：dwAlpha
 // 参数<10>：dwCompositeMode，#CV_COMPOSITE_MODE_
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawcanvas (int hCanvas,int sCanvas,int dstLeft,int dstTop,int dstRight,int dstBottom,int srcLeft,int srcTop,int dwAlpha,int dwCompositeMode);
+extern "C" BOOL _canvas_drawcanvas (int hCanvas,int sCanvas,int dstLeft,int dstTop,int dstRight,int dstBottom,int srcLeft,int srcTop,int dwAlpha,int dwCompositeMode);
 
 //======================================================
 // 函数名称：_canvas_getsize
@@ -1942,7 +1929,7 @@ extern "C" BOOL __stdcall _canvas_drawcanvas (int hCanvas,int sCanvas,int dstLef
 // 参数<2>：width
 // 参数<3>：height
 //======================================================
-extern "C" BOOL __stdcall _canvas_getsize (int hCanvas,int width,int height);
+extern "C" BOOL _canvas_getsize (int hCanvas,int width,int height);
 
 //======================================================
 // 函数名称：_canvas_drawtext
@@ -1958,7 +1945,7 @@ extern "C" BOOL __stdcall _canvas_getsize (int hCanvas,int width,int height);
 // 参数<9>：right
 // 参数<10>：bottom
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawtext (int hCanvas,int hFont,int crText,int lpwzText,int dwLen,int dwDTFormat,float left,float top,float right,float bottom);
+extern "C" BOOL _canvas_drawtext (int hCanvas,int hFont,int crText,int lpwzText,int dwLen,int dwDTFormat,float left,float top,float right,float bottom);
 
 //======================================================
 // 函数名称：_canvas_drawtextex
@@ -1978,7 +1965,7 @@ extern "C" BOOL __stdcall _canvas_drawtext (int hCanvas,int hFont,int crText,int
 // 参数<13>：lParam
 // 参数<14>：prclayout
 //======================================================
-extern "C" BOOL __stdcall _canvas_drawtextex (int hCanvas,int hFont,int crText,int lpwzText,int dwLen,int dwDTFormat,float left,float top,float right,float bottom,int iGlowsize,int crShadow,int lParam,int prclayout);
+extern "C" BOOL _canvas_drawtextex (int hCanvas,int hFont,int crText,int lpwzText,int dwLen,int dwDTFormat,float left,float top,float right,float bottom,int iGlowsize,int crShadow,int lParam,int prclayout);
 
 //======================================================
 // 函数名称：_canvas_calctextsize
@@ -1994,21 +1981,21 @@ extern "C" BOOL __stdcall _canvas_drawtextex (int hCanvas,int hFont,int crText,i
 // 参数<9>：lpWidth
 // 参数<10>：lpHeight
 //======================================================
-extern "C" BOOL __stdcall _canvas_calctextsize (int hCanvas,int hFont,int lpwzText,int dwLen,int dwDTFormat,int lParam,float layoutWidth,float layoutHeight,int lpWidth,int lpHeight);
+extern "C" BOOL _canvas_calctextsize (int hCanvas,int hFont,int lpwzText,int dwLen,int dwDTFormat,int lParam,float layoutWidth,float layoutHeight,int lpWidth,int lpHeight);
 
 //======================================================
 // 函数名称：_canvas_getdc
 // 返回类型：整数型
 // 参数<1>：hCanvas
 //======================================================
-extern "C" int __stdcall _canvas_getdc (int hCanvas);
+extern "C" int _canvas_getdc (int hCanvas);
 
 //======================================================
 // 函数名称：_canvas_releasedc
 // 返回类型：逻辑型
 // 参数<1>：hCanvas
 //======================================================
-extern "C" BOOL __stdcall _canvas_releasedc (int hCanvas);
+extern "C" BOOL _canvas_releasedc (int hCanvas);
 
 //======================================================
 // 函数名称：_canvas_blur
@@ -2018,7 +2005,7 @@ extern "C" BOOL __stdcall _canvas_releasedc (int hCanvas);
 // 参数<2>：fDeviation
 // 参数<3>：lprc
 //======================================================
-extern "C" BOOL __stdcall _canvas_blur (int hCanvas,float fDeviation,int lprc);
+extern "C" BOOL _canvas_blur (int hCanvas,float fDeviation,int lprc);
 
 //======================================================
 // 函数名称：_canvas_settransform
@@ -2026,7 +2013,7 @@ extern "C" BOOL __stdcall _canvas_blur (int hCanvas,float fDeviation,int lprc);
 // 参数<1>：hCanvas
 // 参数<2>：pMatrix，0.则重置
 //======================================================
-extern "C" BOOL __stdcall _canvas_settransform (int hCanvas,int pMatrix);
+extern "C" BOOL _canvas_settransform (int hCanvas,int pMatrix);
 
 //======================================================
 // 函数名称：_canvas_rotate_hue
@@ -2035,7 +2022,7 @@ extern "C" BOOL __stdcall _canvas_settransform (int hCanvas,int pMatrix);
 // 参数<1>：hCanvas
 // 参数<2>：fAngle，0-360
 //======================================================
-extern "C" BOOL __stdcall _canvas_rotate_hue (int hCanvas,float fAngle);
+extern "C" BOOL _canvas_rotate_hue (int hCanvas,float fAngle);
 
 //======================================================
 // 函数名称：_img_destroy
@@ -2043,7 +2030,7 @@ extern "C" BOOL __stdcall _canvas_rotate_hue (int hCanvas,float fAngle);
 // 函数说明：销毁图像
 // 参数<1>：hImg
 //======================================================
-extern "C" int __stdcall _img_destroy (int hImg);
+extern "C" int _img_destroy (int hImg);
 
 //======================================================
 // 函数名称：_img_create
@@ -2053,7 +2040,7 @@ extern "C" int __stdcall _img_destroy (int hImg);
 // 参数<2>：height，图像高度
 // 参数<3>：hImg，返回图像指针
 //======================================================
-extern "C" int __stdcall _img_create (int width,int height,int hImg);
+extern "C" int _img_create (int width,int height,int hImg);
 
 //======================================================
 // 函数名称：_img_createfromres
@@ -2063,7 +2050,7 @@ extern "C" int __stdcall _img_create (int width,int height,int hImg);
 // 参数<2>：atomPath
 // 参数<3>：hImg，返回图像指针
 //======================================================
-extern "C" int __stdcall _img_createfromres (int hRes,int atomPath,int hImg);
+extern "C" int _img_createfromres (int hRes,int atomPath,int hImg);
 
 //======================================================
 // 函数名称：_img_createfromhbitmap
@@ -2074,7 +2061,7 @@ extern "C" int __stdcall _img_createfromres (int hRes,int atomPath,int hImg);
 // 参数<3>：fPreAlpha，是否预乘透明通道
 // 参数<4>：hImg，返回图像指针
 //======================================================
-extern "C" int __stdcall _img_createfromhbitmap (int hBitmap,int hPalette,BOOL fPreAlpha,int hImg);
+extern "C" int _img_createfromhbitmap (int hBitmap,int hPalette,BOOL fPreAlpha,int hImg);
 
 //======================================================
 // 函数名称：_img_createfromhicon
@@ -2083,7 +2070,7 @@ extern "C" int __stdcall _img_createfromhbitmap (int hBitmap,int hPalette,BOOL f
 // 参数<1>：hIcon
 // 参数<2>：hImg，返回图像指针
 //======================================================
-extern "C" int __stdcall _img_createfromhicon (int hIcon,int hImg);
+extern "C" int _img_createfromhicon (int hIcon,int hImg);
 
 //======================================================
 // 函数名称：_img_createfrommemory
@@ -2093,7 +2080,7 @@ extern "C" int __stdcall _img_createfromhicon (int hIcon,int hImg);
 // 参数<2>：dwLen，图像长度
 // 参数<3>：hImg，返回图像指针
 //======================================================
-extern "C" int __stdcall _img_createfrommemory (int lpData,int dwLen,int hImg);
+extern "C" int _img_createfrommemory (int lpData,int dwLen,int hImg);
 
 //======================================================
 // 函数名称：_img_createfromstream
@@ -2102,7 +2089,7 @@ extern "C" int __stdcall _img_createfrommemory (int lpData,int dwLen,int hImg);
 // 参数<1>：lpStream
 // 参数<2>：hImg，返回图像指针
 //======================================================
-extern "C" int __stdcall _img_createfromstream (int lpStream,int hImg);
+extern "C" int _img_createfromstream (int lpStream,int hImg);
 
 //======================================================
 // 函数名称：_img_createfromcanvas
@@ -2111,7 +2098,7 @@ extern "C" int __stdcall _img_createfromstream (int lpStream,int hImg);
 // 参数<1>：hCanvas
 // 参数<2>：hImg，返回图像指针
 //======================================================
-extern "C" int __stdcall _img_createfromcanvas (int hCanvas,int hImg);
+extern "C" int _img_createfromcanvas (int hCanvas,int hImg);
 
 //======================================================
 // 函数名称：_img_createfromfile
@@ -2120,7 +2107,7 @@ extern "C" int __stdcall _img_createfromcanvas (int hCanvas,int hImg);
 // 参数<1>：lpwzFilename
 // 参数<2>：hImg，返回图像指针
 //======================================================
-extern "C" int __stdcall _img_createfromfile (int lpwzFilename,int hImg);
+extern "C" int _img_createfromfile (int lpwzFilename,int hImg);
 
 //======================================================
 // 函数名称：_img_savetofile
@@ -2128,7 +2115,7 @@ extern "C" int __stdcall _img_createfromfile (int lpwzFilename,int hImg);
 // 参数<1>：hImg
 // 参数<2>：lpwzFile
 //======================================================
-extern "C" int __stdcall _img_savetofile (int hImg,int lpwzFile);
+extern "C" int _img_savetofile (int hImg,int lpwzFile);
 
 //======================================================
 // 函数名称：_img_savetomemory
@@ -2137,7 +2124,7 @@ extern "C" int __stdcall _img_savetofile (int hImg,int lpwzFile);
 // 参数<1>：hImg
 // 参数<2>：lpBuffer
 //======================================================
-extern "C" int __stdcall _img_savetomemory (int hImg,int lpBuffer);
+extern "C" int _img_savetomemory (int hImg,int lpBuffer);
 
 //======================================================
 // 函数名称：_img_lock
@@ -2149,7 +2136,7 @@ extern "C" int __stdcall _img_savetomemory (int hImg,int lpBuffer);
 // 参数<4>：PixelFormat
 // 参数<5>：lpLockedBitmapData，BITMAPDATA
 //======================================================
-extern "C" int __stdcall _img_lock (int hImg,int lpRectL,int flags,int PixelFormat,int lpLockedBitmapData);
+extern "C" int _img_lock (int hImg,int lpRectL,int flags,int PixelFormat,int lpLockedBitmapData);
 
 //======================================================
 // 函数名称：_img_unlock
@@ -2158,7 +2145,7 @@ extern "C" int __stdcall _img_lock (int hImg,int lpRectL,int flags,int PixelForm
 // 参数<1>：hImg
 // 参数<2>：lpLockedBitmapData
 //======================================================
-extern "C" int __stdcall _img_unlock (int hImg,int lpLockedBitmapData);
+extern "C" int _img_unlock (int hImg,int lpLockedBitmapData);
 
 //======================================================
 // 函数名称：_img_getframedelay
@@ -2168,7 +2155,7 @@ extern "C" int __stdcall _img_unlock (int hImg,int lpLockedBitmapData);
 // 参数<2>：lpDelayAry，指针指向图像帧延时数组。
 // 参数<3>：nFrames，返回总帧数
 //======================================================
-extern "C" int __stdcall _img_getframedelay (int hImg,int lpDelayAry,int nFrames);
+extern "C" int _img_getframedelay (int hImg,int lpDelayAry,int nFrames);
 
 //======================================================
 // 函数名称：_img_getframecount
@@ -2177,7 +2164,7 @@ extern "C" int __stdcall _img_getframedelay (int hImg,int lpDelayAry,int nFrames
 // 参数<1>：hImg
 // 参数<2>：nFrameCount，返回帧数.
 //======================================================
-extern "C" int __stdcall _img_getframecount (int hImg,int nFrameCount);
+extern "C" int _img_getframecount (int hImg,int nFrameCount);
 
 //======================================================
 // 函数名称：_img_selectactiveframe
@@ -2186,7 +2173,7 @@ extern "C" int __stdcall _img_getframecount (int hImg,int nFrameCount);
 // 参数<1>：hImg
 // 参数<2>：nIndex
 //======================================================
-extern "C" int __stdcall _img_selectactiveframe (int hImg,int nIndex);
+extern "C" int _img_selectactiveframe (int hImg,int nIndex);
 
 //======================================================
 // 函数名称：_img_getpixel
@@ -2197,7 +2184,7 @@ extern "C" int __stdcall _img_selectactiveframe (int hImg,int nIndex);
 // 参数<3>：y
 // 参数<4>：color，返回ARGB颜色
 //======================================================
-extern "C" int __stdcall _img_getpixel (int hImg,int x,int y,int color);
+extern "C" int _img_getpixel (int hImg,int x,int y,int color);
 
 //======================================================
 // 函数名称：_img_setpixel
@@ -2208,7 +2195,7 @@ extern "C" int __stdcall _img_getpixel (int hImg,int x,int y,int color);
 // 参数<3>：y
 // 参数<4>：color，argb
 //======================================================
-extern "C" int __stdcall _img_setpixel (int hImg,int x,int y,int color);
+extern "C" int _img_setpixel (int hImg,int x,int y,int color);
 
 //======================================================
 // 函数名称：_img_getsize
@@ -2218,7 +2205,7 @@ extern "C" int __stdcall _img_setpixel (int hImg,int x,int y,int color);
 // 参数<2>：lpWidth
 // 参数<3>：lpHeight
 //======================================================
-extern "C" int __stdcall _img_getsize (int hImg,int lpWidth,int lpHeight);
+extern "C" int _img_getsize (int hImg,int lpWidth,int lpHeight);
 
 //======================================================
 // 函数名称：_img_width
@@ -2226,7 +2213,7 @@ extern "C" int __stdcall _img_getsize (int hImg,int lpWidth,int lpHeight);
 // 函数说明：返回宽度
 // 参数<1>：hImg
 //======================================================
-extern "C" int __stdcall _img_width (int hImg);
+extern "C" int _img_width (int hImg);
 
 //======================================================
 // 函数名称：_img_height
@@ -2234,7 +2221,7 @@ extern "C" int __stdcall _img_width (int hImg);
 // 函数说明：返回高度
 // 参数<1>：hImg
 //======================================================
-extern "C" int __stdcall _img_height (int hImg);
+extern "C" int _img_height (int hImg);
 
 //======================================================
 // 函数名称：_img_copy
@@ -2243,7 +2230,7 @@ extern "C" int __stdcall _img_height (int hImg);
 // 参数<1>：hImg
 // 参数<2>：dstImg，返回新图像指针
 //======================================================
-extern "C" int __stdcall _img_copy (int hImg,int dstImg);
+extern "C" int _img_copy (int hImg,int dstImg);
 
 //======================================================
 // 函数名称：_img_copyrect
@@ -2256,7 +2243,7 @@ extern "C" int __stdcall _img_copy (int hImg,int dstImg);
 // 参数<5>：height
 // 参数<6>：dstImg，返回新图像指针
 //======================================================
-extern "C" int __stdcall _img_copyrect (int hImg,int x,int y,int width,int height,int dstImg);
+extern "C" int _img_copyrect (int hImg,int x,int y,int width,int height,int dstImg);
 
 //======================================================
 // 函数名称：_img_scale
@@ -2267,7 +2254,7 @@ extern "C" int __stdcall _img_copyrect (int hImg,int x,int y,int width,int heigh
 // 参数<3>：dstHeight
 // 参数<4>：dstImg，返回新图像
 //======================================================
-extern "C" int __stdcall _img_scale (int hImage,int dstWidth,int dstHeight,int dstImg);
+extern "C" int _img_scale (int hImage,int dstWidth,int dstHeight,int dstImg);
 
 //======================================================
 // 函数名称：_img_rotateflip
@@ -2276,7 +2263,7 @@ extern "C" int __stdcall _img_scale (int hImage,int dstWidth,int dstHeight,int d
 // 参数<1>：hImg
 // 参数<2>：rfType
 //======================================================
-extern "C" int __stdcall _img_rotateflip (int hImg,int rfType);
+extern "C" int _img_rotateflip (int hImg,int rfType);
 
 //======================================================
 // 函数名称：_img_getthumbnail
@@ -2287,28 +2274,28 @@ extern "C" int __stdcall _img_rotateflip (int hImg,int rfType);
 // 参数<3>：thumbHeight
 // 参数<4>：hImgThumbnail，返回缩略图图像指针
 //======================================================
-extern "C" int __stdcall _img_getthumbnail (int hImg,int thumbWidth,int thumbHeight,int hImgThumbnail);
+extern "C" int _img_getthumbnail (int hImg,int thumbWidth,int thumbHeight,int hImgThumbnail);
 
 //======================================================
 // 函数名称：_font_copy
 // 返回类型：整数型
 // 参数<1>：hFont
 //======================================================
-extern "C" int __stdcall _font_copy (int hFont);
+extern "C" int _font_copy (int hFont);
 
 //======================================================
 // 函数名称：_font_destroy
 // 返回类型：逻辑型
 // 参数<1>：hFont
 //======================================================
-extern "C" BOOL __stdcall _font_destroy (int hFont);
+extern "C" BOOL _font_destroy (int hFont);
 
 //======================================================
 // 函数名称：_font_create
 // 返回类型：整数型
 // 函数说明：创建默认字体
 //======================================================
-extern "C" int __stdcall _font_create ();
+extern "C" int _font_create ();
 
 //======================================================
 // 函数名称：_font_createfromfamily
@@ -2317,14 +2304,14 @@ extern "C" int __stdcall _font_create ();
 // 参数<2>：dwFontSize
 // 参数<3>：dwFontStyle
 //======================================================
-extern "C" int __stdcall _font_createfromfamily (int lpwzFontFace,int dwFontSize,int dwFontStyle);
+extern "C" int _font_createfromfamily (int lpwzFontFace,int dwFontSize,int dwFontStyle);
 
 //======================================================
 // 函数名称：_font_createfromlogfont
 // 返回类型：整数型
 // 参数<1>：lpLogfont
 //======================================================
-extern "C" int __stdcall _font_createfromlogfont (int lpLogfont);
+extern "C" int _font_createfromlogfont (int lpLogfont);
 
 //======================================================
 // 函数名称：_font_getlogfont
@@ -2333,40 +2320,40 @@ extern "C" int __stdcall _font_createfromlogfont (int lpLogfont);
 // 参数<1>：hFont
 // 参数<2>：lpLogFont
 //======================================================
-extern "C" BOOL __stdcall _font_getlogfont (int hFont,int lpLogFont);
+extern "C" BOOL _font_getlogfont (int hFont,int lpLogFont);
 
 //======================================================
 // 函数名称：_font_getcontext
 // 返回类型：整数型
 // 参数<1>：hFont
 //======================================================
-extern "C" int __stdcall _font_getcontext (int hFont);
+extern "C" int _font_getcontext (int hFont);
 
 //======================================================
 // 函数名称：_matrix_create
 // 返回类型：整数型
 //======================================================
-extern "C" int __stdcall _matrix_create ();
+extern "C" int _matrix_create ();
 
 //======================================================
 // 函数名称：_matrix_create3d
 // 返回类型：整数型
 //======================================================
-extern "C" int __stdcall _matrix_create3d ();
+extern "C" int _matrix_create3d ();
 
 //======================================================
 // 函数名称：_matrix_destroy
 // 返回类型：逻辑型
 // 参数<1>：pMatrix
 //======================================================
-extern "C" BOOL __stdcall _matrix_destroy (int pMatrix);
+extern "C" BOOL _matrix_destroy (int pMatrix);
 
 //======================================================
 // 函数名称：_matrix_reset
 // 返回类型：逻辑型
 // 参数<1>：pMatrix
 //======================================================
-extern "C" BOOL __stdcall _matrix_reset (int pMatrix);
+extern "C" BOOL _matrix_reset (int pMatrix);
 
 //======================================================
 // 函数名称：_matrix_translate
@@ -2375,7 +2362,7 @@ extern "C" BOOL __stdcall _matrix_reset (int pMatrix);
 // 参数<2>：offsetX
 // 参数<3>：offsetY
 //======================================================
-extern "C" BOOL __stdcall _matrix_translate (int pMatrix,float offsetX,float offsetY);
+extern "C" BOOL _matrix_translate (int pMatrix,float offsetX,float offsetY);
 
 //======================================================
 // 函数名称：_matrix_rotate
@@ -2383,7 +2370,7 @@ extern "C" BOOL __stdcall _matrix_translate (int pMatrix,float offsetX,float off
 // 参数<1>：pMatrix
 // 参数<2>：fAngle
 //======================================================
-extern "C" BOOL __stdcall _matrix_rotate (int pMatrix,float fAngle);
+extern "C" BOOL _matrix_rotate (int pMatrix,float fAngle);
 
 //======================================================
 // 函数名称：_matrix_scale
@@ -2392,14 +2379,14 @@ extern "C" BOOL __stdcall _matrix_rotate (int pMatrix,float fAngle);
 // 参数<2>：scaleX
 // 参数<3>：scaleY
 //======================================================
-extern "C" BOOL __stdcall _matrix_scale (int pMatrix,float scaleX,float scaleY);
+extern "C" BOOL _matrix_scale (int pMatrix,float scaleX,float scaleY);
 
 //======================================================
 // 函数名称：_matrix_reset3d
 // 返回类型：逻辑型
 // 参数<1>：pMatrix
 //======================================================
-extern "C" BOOL __stdcall _matrix_reset3d (int pMatrix);
+extern "C" BOOL _matrix_reset3d (int pMatrix);
 
 //======================================================
 // 函数名称：_matrix_translate3d
@@ -2409,7 +2396,7 @@ extern "C" BOOL __stdcall _matrix_reset3d (int pMatrix);
 // 参数<3>：offsetY
 // 参数<4>：offsetZ
 //======================================================
-extern "C" BOOL __stdcall _matrix_translate3d (int pMatrix,float offsetX,float offsetY,float offsetZ);
+extern "C" BOOL _matrix_translate3d (int pMatrix,float offsetX,float offsetY,float offsetZ);
 
 //======================================================
 // 函数名称：_matrix_rotate3d
@@ -2420,7 +2407,7 @@ extern "C" BOOL __stdcall _matrix_translate3d (int pMatrix,float offsetX,float o
 // 参数<4>：z
 // 参数<5>：fAngle
 //======================================================
-extern "C" BOOL __stdcall _matrix_rotate3d (int pMatrix,float x,float y,float z,float fAngle);
+extern "C" BOOL _matrix_rotate3d (int pMatrix,float x,float y,float z,float fAngle);
 
 //======================================================
 // 函数名称：_matrix_scale3d
@@ -2430,21 +2417,21 @@ extern "C" BOOL __stdcall _matrix_rotate3d (int pMatrix,float x,float y,float z,
 // 参数<3>：scaleY
 // 参数<4>：scaleZ
 //======================================================
-extern "C" BOOL __stdcall _matrix_scale3d (int pMatrix,float scaleX,float scaleY,float scaleZ);
+extern "C" BOOL _matrix_scale3d (int pMatrix,float scaleX,float scaleY,float scaleZ);
 
 //======================================================
 // 函数名称：_brush_create
 // 返回类型：整数型
 // 参数<1>：argb
 //======================================================
-extern "C" int __stdcall _brush_create (int argb);
+extern "C" int _brush_create (int argb);
 
 //======================================================
 // 函数名称：_brush_destroy
 // 返回类型：整数型
 // 参数<1>：hBrush
 //======================================================
-extern "C" int __stdcall _brush_destroy (int hBrush);
+extern "C" int _brush_destroy (int hBrush);
 
 //======================================================
 // 函数名称：_brush_setcolor
@@ -2452,21 +2439,21 @@ extern "C" int __stdcall _brush_destroy (int hBrush);
 // 参数<1>：hBrush
 // 参数<2>：argb
 //======================================================
-extern "C" int __stdcall _brush_setcolor (int hBrush,int argb);
+extern "C" int _brush_setcolor (int hBrush,int argb);
 
 //======================================================
 // 函数名称：_brush_createfromimg
 // 返回类型：整数型
 // 参数<1>：hImg
 //======================================================
-extern "C" int __stdcall _brush_createfromimg (int hImg);
+extern "C" int _brush_createfromimg (int hImg);
 
 //======================================================
 // 函数名称：_brush_createfromcanvas
 // 返回类型：整数型
 // 参数<1>：hCanvas
 //======================================================
-extern "C" int __stdcall _brush_createfromcanvas (int hCanvas);
+extern "C" int _brush_createfromcanvas (int hCanvas);
 
 //======================================================
 // 函数名称：_brush_settransform
@@ -2474,7 +2461,7 @@ extern "C" int __stdcall _brush_createfromcanvas (int hCanvas);
 // 参数<1>：hBrush
 // 参数<2>：matrix
 //======================================================
-extern "C" int __stdcall _brush_settransform (int hBrush,int matrix);
+extern "C" int _brush_settransform (int hBrush,int matrix);
 
 //======================================================
 // 函数名称：_path_destroy
@@ -2482,7 +2469,7 @@ extern "C" int __stdcall _brush_settransform (int hBrush,int matrix);
 // 函数说明：销毁路径
 // 参数<1>：hPath
 //======================================================
-extern "C" int __stdcall _path_destroy (int hPath);
+extern "C" int _path_destroy (int hPath);
 
 //======================================================
 // 函数名称：_path_create
@@ -2492,7 +2479,7 @@ extern "C" int __stdcall _path_destroy (int hPath);
 // 参数<2>：dwFlags，EPF_
 // 参数<3>：hPath
 //======================================================
-extern "C" int __stdcall _path_create (int brushmode,int dwFlags,int hPath);
+extern "C" int _path_create (int brushmode,int dwFlags,int hPath);
 
 //======================================================
 // 函数名称：_path_reset
@@ -2500,7 +2487,7 @@ extern "C" int __stdcall _path_create (int brushmode,int dwFlags,int hPath);
 // 函数说明：重置路径
 // 参数<1>：hPath
 //======================================================
-extern "C" int __stdcall _path_reset (int hPath);
+extern "C" int _path_reset (int hPath);
 
 //======================================================
 // 函数名称：_path_getbounds
@@ -2509,7 +2496,7 @@ extern "C" int __stdcall _path_reset (int hPath);
 // 参数<1>：hPath
 // 参数<2>：lpBounds，RECTF
 //======================================================
-extern "C" int __stdcall _path_getbounds (int hPath,int lpBounds);
+extern "C" int _path_getbounds (int hPath,int lpBounds);
 
 //======================================================
 // 函数名称：_path_open
@@ -2517,7 +2504,7 @@ extern "C" int __stdcall _path_getbounds (int hPath,int lpBounds);
 // 函数说明：打开路径
 // 参数<1>：hPath
 //======================================================
-extern "C" int __stdcall _path_open (int hPath);
+extern "C" int _path_open (int hPath);
 
 //======================================================
 // 函数名称：_path_close
@@ -2525,7 +2512,7 @@ extern "C" int __stdcall _path_open (int hPath);
 // 函数说明：关闭路径
 // 参数<1>：hPath
 //======================================================
-extern "C" int __stdcall _path_close (int hPath);
+extern "C" int _path_close (int hPath);
 
 //======================================================
 // 函数名称：_path_beginfigure
@@ -2533,7 +2520,7 @@ extern "C" int __stdcall _path_close (int hPath);
 // 函数说明：开始新图形
 // 参数<1>：hPath
 //======================================================
-extern "C" int __stdcall _path_beginfigure (int hPath);
+extern "C" int _path_beginfigure (int hPath);
 
 //======================================================
 // 函数名称：_path_endfigure
@@ -2542,7 +2529,7 @@ extern "C" int __stdcall _path_beginfigure (int hPath);
 // 参数<1>：hPath
 // 参数<2>：bCloseFigure，是否需要闭合图形
 //======================================================
-extern "C" int __stdcall _path_endfigure (int hPath,BOOL bCloseFigure);
+extern "C" int _path_endfigure (int hPath,BOOL bCloseFigure);
 
 //======================================================
 // 函数名称：_path_hittest
@@ -2552,7 +2539,7 @@ extern "C" int __stdcall _path_endfigure (int hPath,BOOL bCloseFigure);
 // 参数<2>：x
 // 参数<3>：y
 //======================================================
-extern "C" BOOL __stdcall _path_hittest (int hPath,float x,float y);
+extern "C" BOOL _path_hittest (int hPath,float x,float y);
 
 //======================================================
 // 函数名称：_path_addline
@@ -2564,22 +2551,7 @@ extern "C" BOOL __stdcall _path_hittest (int hPath,float x,float y);
 // 参数<4>：x2
 // 参数<5>：y2
 //======================================================
-extern "C" int __stdcall _path_addline (int hPath,float x1,float y1,float x2,float y2);
-
-//======================================================
-// 函数名称：_path_addarc
-// 返回类型：整数型
-// 函数说明：添加弧
-// 参数<1>：hPath
-// 参数<2>：x1，起始坐标X
-// 参数<3>：y1，起始坐标Y
-// 参数<4>：x2，终点坐标X
-// 参数<5>：y2，终点坐标Y
-// 参数<6>：radiusX，半径X
-// 参数<7>：radiusY，半径Y
-// 参数<8>：fClockwise，是否顺时针
-//======================================================
-extern "C" int __stdcall _path_addarc (int hPath,float x1,float y1,float x2,float y2,float radiusX,float radiusY,BOOL fClockwise);
+extern "C" int _path_addline (int hPath,float x1,float y1,float x2,float y2);
 
 //======================================================
 // 函数名称：_path_addrect
@@ -2591,7 +2563,7 @@ extern "C" int __stdcall _path_addarc (int hPath,float x1,float y1,float x2,floa
 // 参数<4>：right
 // 参数<5>：bottom
 //======================================================
-extern "C" int __stdcall _path_addrect (int hPath,float left,float top,float right,float bottom);
+extern "C" int _path_addrect (int hPath,float left,float top,float right,float bottom);
 
 //======================================================
 // 函数名称：_path_addroundedrect
@@ -2608,14 +2580,14 @@ extern "C" int __stdcall _path_addrect (int hPath,float left,float top,float rig
 // 参数<9>：radiusBottomRight
 // 参数<10>：unit
 //======================================================
-extern "C" int __stdcall _path_addroundedrect (int hPath,float left,float top,float right,float bottom,float radiusTopLeft,float radiusTopRight,float radiusBottomLeft,float radiusBottomRight,int unit);
+extern "C" int _path_addroundedrect (int hPath,float left,float top,float right,float bottom,float radiusTopLeft,float radiusTopRight,float radiusBottomLeft,float radiusBottomRight,int unit);
 
 //======================================================
 // 函数名称：_rgn_destroy
 // 返回类型：逻辑型
 // 参数<1>：hRgn
 //======================================================
-extern "C" BOOL __stdcall _rgn_destroy (int hRgn);
+extern "C" BOOL _rgn_destroy (int hRgn);
 
 //======================================================
 // 函数名称：_rgn_createfromrect
@@ -2625,7 +2597,7 @@ extern "C" BOOL __stdcall _rgn_destroy (int hRgn);
 // 参数<3>：right
 // 参数<4>：bottom
 //======================================================
-extern "C" int __stdcall _rgn_createfromrect (float left,float top,float right,float bottom);
+extern "C" int _rgn_createfromrect (float left,float top,float right,float bottom);
 
 //======================================================
 // 函数名称：_rgn_createfromroundrect
@@ -2637,7 +2609,7 @@ extern "C" int __stdcall _rgn_createfromrect (float left,float top,float right,f
 // 参数<5>：radiusX
 // 参数<6>：radiusY
 //======================================================
-extern "C" int __stdcall _rgn_createfromroundrect (float left,float top,float right,float bottom,float radiusX,float radiusY);
+extern "C" int _rgn_createfromroundrect (float left,float top,float right,float bottom,float radiusX,float radiusY);
 
 //======================================================
 // 函数名称：_rgn_combine
@@ -2648,7 +2620,7 @@ extern "C" int __stdcall _rgn_createfromroundrect (float left,float top,float ri
 // 参数<4>：dstOffsetX
 // 参数<5>：dstOffsetY
 //======================================================
-extern "C" int __stdcall _rgn_combine (int hRgnSrc,int hRgnDst,int nCombineMode,int dstOffsetX,int dstOffsetY);
+extern "C" int _rgn_combine (int hRgnSrc,int hRgnDst,int nCombineMode,int dstOffsetX,int dstOffsetY);
 
 //======================================================
 // 函数名称：_rgn_hittest
@@ -2657,7 +2629,7 @@ extern "C" int __stdcall _rgn_combine (int hRgnSrc,int hRgnDst,int nCombineMode,
 // 参数<2>：x
 // 参数<3>：y
 //======================================================
-extern "C" BOOL __stdcall _rgn_hittest (int hRgn,float x,float y);
+extern "C" BOOL _rgn_hittest (int hRgn,float x,float y);
 
 //======================================================
 // 函数名称：Ex_ObjScrollGetControl
@@ -2666,7 +2638,7 @@ extern "C" BOOL __stdcall _rgn_hittest (int hRgn,float x,float y);
 // 参数<1>：hObj
 // 参数<2>：nBar，相关常量 #SB_
 //======================================================
-extern "C" int __stdcall Ex_ObjScrollGetControl (int hObj,int nBar);
+extern "C" int Ex_ObjScrollGetControl (int hObj,int nBar);
 
 //======================================================
 // 函数名称：Ex_ObjScrollSetInfo
@@ -2681,7 +2653,7 @@ extern "C" int __stdcall Ex_ObjScrollGetControl (int hObj,int nBar);
 // 参数<7>：nPos
 // 参数<8>：fRedraw
 //======================================================
-extern "C" int __stdcall Ex_ObjScrollSetInfo (int hObj,int fnBar,int fMask,int nMin,int nMax,int nPage,int nPos,BOOL fRedraw);
+extern "C" int Ex_ObjScrollSetInfo (int hObj,int fnBar,int fMask,int nMin,int nMax,int nPage,int nPos,BOOL fRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjScrollSetRange
@@ -2693,7 +2665,7 @@ extern "C" int __stdcall Ex_ObjScrollSetInfo (int hObj,int fnBar,int fMask,int n
 // 参数<4>：nMax
 // 参数<5>：bRedraw
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjScrollSetRange (int hObj,int nBar,int nMin,int nMax,BOOL bRedraw);
+extern "C" BOOL Ex_ObjScrollSetRange (int hObj,int nBar,int nMin,int nMax,BOOL bRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjScrollSetPos
@@ -2704,7 +2676,7 @@ extern "C" BOOL __stdcall Ex_ObjScrollSetRange (int hObj,int nBar,int nMin,int n
 // 参数<3>：nPos
 // 参数<4>：bRedraw
 //======================================================
-extern "C" int __stdcall Ex_ObjScrollSetPos (int hObj,int nBar,int nPos,BOOL bRedraw);
+extern "C" int Ex_ObjScrollSetPos (int hObj,int nBar,int nPos,BOOL bRedraw);
 
 //======================================================
 // 函数名称：Ex_ObjScrollGetInfo
@@ -2717,7 +2689,7 @@ extern "C" int __stdcall Ex_ObjScrollSetPos (int hObj,int nBar,int nPos,BOOL bRe
 // 参数<5>：lpnPos
 // 参数<6>：lpnTrackPos
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjScrollGetInfo (int hObj,int fnBar,int lpnMin,int lpnMax,int lpnPos,int lpnTrackPos);
+extern "C" BOOL Ex_ObjScrollGetInfo (int hObj,int fnBar,int lpnMin,int lpnMax,int lpnPos,int lpnTrackPos);
 
 //======================================================
 // 函数名称：Ex_ObjScrollGetPos
@@ -2726,7 +2698,7 @@ extern "C" BOOL __stdcall Ex_ObjScrollGetInfo (int hObj,int fnBar,int lpnMin,int
 // 参数<1>：hObj
 // 参数<2>：nBar
 //======================================================
-extern "C" int __stdcall Ex_ObjScrollGetPos (int hObj,int nBar);
+extern "C" int Ex_ObjScrollGetPos (int hObj,int nBar);
 
 //======================================================
 // 函数名称：Ex_ObjScrollGetTrackPos
@@ -2735,7 +2707,7 @@ extern "C" int __stdcall Ex_ObjScrollGetPos (int hObj,int nBar);
 // 参数<1>：hObj
 // 参数<2>：nBar
 //======================================================
-extern "C" int __stdcall Ex_ObjScrollGetTrackPos (int hObj,int nBar);
+extern "C" int Ex_ObjScrollGetTrackPos (int hObj,int nBar);
 
 //======================================================
 // 函数名称：Ex_ObjScrollGetRange
@@ -2746,7 +2718,7 @@ extern "C" int __stdcall Ex_ObjScrollGetTrackPos (int hObj,int nBar);
 // 参数<3>：lpnMinPos
 // 参数<4>：lpnMaxPos
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjScrollGetRange (int hObj,int nBar,int lpnMinPos,int lpnMaxPos);
+extern "C" BOOL Ex_ObjScrollGetRange (int hObj,int nBar,int lpnMinPos,int lpnMaxPos);
 
 //======================================================
 // 函数名称：Ex_ObjScrollShow
@@ -2756,7 +2728,7 @@ extern "C" BOOL __stdcall Ex_ObjScrollGetRange (int hObj,int nBar,int lpnMinPos,
 // 参数<2>：wBar，支持SB_BOTH
 // 参数<3>：fShow
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjScrollShow (int hObj,int wBar,BOOL fShow);
+extern "C" BOOL Ex_ObjScrollShow (int hObj,int wBar,BOOL fShow);
 
 //======================================================
 // 函数名称：Ex_ObjScrollEnable
@@ -2766,7 +2738,7 @@ extern "C" BOOL __stdcall Ex_ObjScrollShow (int hObj,int wBar,BOOL fShow);
 // 参数<2>：wSB，支持SB_BOTH
 // 参数<3>：wArrows，相关常量 ESB_
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjScrollEnable (int hObj,int wSB,int wArrows);
+extern "C" BOOL Ex_ObjScrollEnable (int hObj,int wSB,int wArrows);
 
 //======================================================
 // 函数名称：_easing_curve_load
@@ -2774,14 +2746,14 @@ extern "C" BOOL __stdcall Ex_ObjScrollEnable (int hObj,int wSB,int wArrows);
 // 参数<1>：lpCurveInfo
 // 参数<2>：cbCurveInfo
 //======================================================
-extern "C" int __stdcall _easing_curve_load (int lpCurveInfo,int cbCurveInfo);
+extern "C" int _easing_curve_load (int lpCurveInfo,int cbCurveInfo);
 
 //======================================================
 // 函数名称：_easing_curve_free
 // 返回类型：无返回值
 // 参数<1>：pCurveInfo
 //======================================================
-extern "C" void __stdcall _easing_curve_free (int pCurveInfo);
+extern "C" void _easing_curve_free (int pCurveInfo);
 
 //======================================================
 // 函数名称：_easing_create
@@ -2800,7 +2772,7 @@ extern "C" void __stdcall _easing_curve_free (int pCurveInfo);
 // 参数<12>：param3
 // 参数<13>：param4
 //======================================================
-extern "C" int __stdcall _easing_create (int dwType,int pEasingContext,int dwMode,int pContext,int nTotalTime,int nInterval,int nState,int nStart,int nStop,int param1,int param2,int param3,int param4);
+extern "C" int _easing_create (int dwType,int pEasingContext,int dwMode,int pContext,int nTotalTime,int nInterval,int nState,int nStart,int nStop,int param1,int param2,int param3,int param4);
 
 //======================================================
 // 函数名称：_easing_setstate
@@ -2808,48 +2780,14 @@ extern "C" int __stdcall _easing_create (int dwType,int pEasingContext,int dwMod
 // 参数<1>：pEasing
 // 参数<2>：nState，#EES_
 //======================================================
-extern "C" BOOL __stdcall _easing_setstate (int pEasing,int nState);
+extern "C" BOOL _easing_setstate (int pEasing,int nState);
 
 //======================================================
 // 函数名称：_easing_getstate
 // 返回类型：整数型
 // 参数<1>：pEasing
 //======================================================
-extern "C" int __stdcall _easing_getstate (int pEasing);
-
-//======================================================
-// 函数名称：_imglist_create
-// 返回类型：整数型
-// 参数<1>：nWidth
-// 参数<2>：nHeight
-//======================================================
-extern "C" int __stdcall _imglist_create (int nWidth,int nHeight);
-
-//======================================================
-// 函数名称：_imglist_add
-// 返回类型：整数型
-// 参数<1>：hImageList
-// 参数<2>：lpImage
-// 参数<3>：cbImage
-// 参数<4>：nIndexInsert
-//======================================================
-extern "C" int __stdcall _imglist_add (int hImageList,int lpImage,int cbImage,int nIndexInsert);
-
-//======================================================
-// 函数名称：_imglist_del
-// 返回类型：无返回值
-// 参数<1>：hImageList
-// 参数<2>：nIndex
-//======================================================
-extern "C" void __stdcall _imglist_del (int hImageList,int nIndex);
-
-//======================================================
-// 函数名称：_imglist_get
-// 返回类型：整数型
-// 参数<1>：hImageList
-// 参数<2>：nIndex
-//======================================================
-extern "C" int __stdcall _imglist_get (int hImageList,int nIndex);
+extern "C" int _easing_getstate (int pEasing);
 
 //======================================================
 // 函数名称：_imglist_draw
@@ -2863,58 +2801,14 @@ extern "C" int __stdcall _imglist_get (int hImageList,int nIndex);
 // 参数<7>：nBottom
 // 参数<8>：nAlpha
 //======================================================
-extern "C" BOOL __stdcall _imglist_draw (int hImageList,int nIndex,int hCanvas,int nLeft,int nTop,int nRight,int nBottom,int nAlpha);
-
-//======================================================
-// 函数名称：_imglist_set
-// 返回类型：无返回值
-// 参数<1>：hImageList
-// 参数<2>：nIndex
-// 参数<3>：lpImage
-// 参数<4>：cbImage
-//======================================================
-extern "C" void __stdcall _imglist_set (int hImageList,int nIndex,int lpImage,int cbImage);
+extern "C" BOOL _imglist_draw (int hImageList,int nIndex,int hCanvas,int nLeft,int nTop,int nRight,int nBottom,int nAlpha);
 
 //======================================================
 // 函数名称：_imglist_count
 // 返回类型：整数型
 // 参数<1>：hImageList
 //======================================================
-extern "C" int __stdcall _imglist_count (int hImageList);
-
-//======================================================
-// 函数名称：_imglist_destroy
-// 返回类型：无返回值
-// 参数<1>：hImageList
-//======================================================
-extern "C" void __stdcall _imglist_destroy (int hImageList);
-
-//======================================================
-// 函数名称：_imglist_size
-// 返回类型：无返回值
-// 参数<1>：hImageList
-// 参数<2>：pWidth
-// 参数<3>：pHeight
-//======================================================
-extern "C" void __stdcall _imglist_size (int hImageList,int pWidth,int pHeight);
-
-//======================================================
-// 函数名称：_imglist_addimage
-// 返回类型：整数型
-// 参数<1>：hImageList
-// 参数<2>：hImage
-// 参数<3>：nIndexInsert
-//======================================================
-extern "C" int __stdcall _imglist_addimage (int hImageList,int hImage,int nIndexInsert);
-
-//======================================================
-// 函数名称：_imglist_setimage
-// 返回类型：无返回值
-// 参数<1>：hImageList
-// 参数<2>：nIndex
-// 参数<3>：hImage
-//======================================================
-extern "C" void __stdcall _imglist_setimage (int hImageList,int nIndex,int hImage);
+extern "C" int _imglist_count (int hImageList);
 
 //======================================================
 // 函数名称：Ex_ObjEnableIME
@@ -2922,7 +2816,7 @@ extern "C" void __stdcall _imglist_setimage (int hImageList,int nIndex,int hImag
 // 参数<1>：hObj
 // 参数<2>：fEnable
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjEnableIME (int hObj,BOOL fEnable);
+extern "C" BOOL Ex_ObjEnableIME (int hObj,BOOL fEnable);
 
 //======================================================
 // 函数名称：Ex_ObjSetIMEState
@@ -2930,7 +2824,7 @@ extern "C" BOOL __stdcall Ex_ObjEnableIME (int hObj,BOOL fEnable);
 // 参数<1>：hObjOrExDui
 // 参数<2>：fOpen
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjSetIMEState (int hObjOrExDui,BOOL fOpen);
+extern "C" BOOL Ex_ObjSetIMEState (int hObjOrExDui,BOOL fOpen);
 
 //======================================================
 // 函数名称：Ex_ObjDisableTranslateSpaceAndEnterToClick
@@ -2938,7 +2832,7 @@ extern "C" BOOL __stdcall Ex_ObjSetIMEState (int hObjOrExDui,BOOL fOpen);
 // 参数<1>：hObj
 // 参数<2>：fDisable
 //======================================================
-extern "C" BOOL __stdcall Ex_ObjDisableTranslateSpaceAndEnterToClick (int hObj,BOOL fDisable);
+extern "C" BOOL Ex_ObjDisableTranslateSpaceAndEnterToClick (int hObj,BOOL fDisable);
 
 //======================================================
 // 函数名称：_canvas_setantialias
@@ -2947,7 +2841,7 @@ extern "C" BOOL __stdcall Ex_ObjDisableTranslateSpaceAndEnterToClick (int hObj,B
 // 参数<1>：hCanvas
 // 参数<2>：antialias
 //======================================================
-extern "C" BOOL __stdcall _canvas_setantialias (int hCanvas,BOOL antialias);
+extern "C" BOOL _canvas_setantialias (int hCanvas,BOOL antialias);
 
 //======================================================
 // 函数名称：_canvas_setimageantialias
@@ -2956,7 +2850,7 @@ extern "C" BOOL __stdcall _canvas_setantialias (int hCanvas,BOOL antialias);
 // 参数<1>：hCanvas
 // 参数<2>：antialias
 //======================================================
-extern "C" BOOL __stdcall _canvas_setimageantialias (int hCanvas,BOOL antialias);
+extern "C" BOOL _canvas_setimageantialias (int hCanvas,BOOL antialias);
 
 //======================================================
 // 函数名称：_canvas_settextantialiasmode
@@ -2965,14 +2859,14 @@ extern "C" BOOL __stdcall _canvas_setimageantialias (int hCanvas,BOOL antialias)
 // 参数<1>：hCanvas
 // 参数<2>：textAntialiasMode，0.不抗锯齿 1.抗锯齿 2.ClearType
 //======================================================
-extern "C" BOOL __stdcall _canvas_settextantialiasmode (int hCanvas,int textAntialiasMode);
+extern "C" BOOL _canvas_settextantialiasmode (int hCanvas,int textAntialiasMode);
 
 //======================================================
 // 函数名称：_rgn_createfrompath
 // 返回类型：整数型
 // 参数<1>：hPath
 //======================================================
-extern "C" int __stdcall _rgn_createfrompath (int hPath);
+extern "C" int _rgn_createfrompath (int hPath);
 
 //======================================================
 // 函数名称：_brush_createlinear
@@ -2984,7 +2878,7 @@ extern "C" int __stdcall _rgn_createfrompath (int hPath);
 // 参数<5>：crBegin
 // 参数<6>：crEnd
 //======================================================
-extern "C" int __stdcall _brush_createlinear (float xs,float ys,float xe,float ye,int crBegin,int crEnd);
+extern "C" int _brush_createlinear (float xs,float ys,float xe,float ye,int crBegin,int crEnd);
 
 //======================================================
 // 函数名称：_brush_createlinear_ex
@@ -2996,7 +2890,7 @@ extern "C" int __stdcall _brush_createlinear (float xs,float ys,float xe,float y
 // 参数<5>：arrStopPts
 // 参数<6>：cStopPts
 //======================================================
-extern "C" int __stdcall _brush_createlinear_ex (float xs,float ys,float xe,float ye,int arrStopPts,int cStopPts);
+extern "C" int _brush_createlinear_ex (float xs,float ys,float xe,float ye,int arrStopPts,int cStopPts);
 
 //======================================================
 // 函数名称：_path_beginfigure2
@@ -3006,7 +2900,7 @@ extern "C" int __stdcall _brush_createlinear_ex (float xs,float ys,float xe,floa
 // 参数<2>：x，起始坐标
 // 参数<3>：y，起始坐标
 //======================================================
-extern "C" int __stdcall _path_beginfigure2 (int hPath,float x,float y);
+extern "C" int _path_beginfigure2 (int hPath,float x,float y);
 
 //======================================================
 // 函数名称：_brush_createfromcanvas2
@@ -3014,59 +2908,7 @@ extern "C" int __stdcall _path_beginfigure2 (int hPath,float x,float y);
 // 参数<1>：hCanvas
 // 参数<2>：alpha
 //======================================================
-extern "C" int __stdcall _brush_createfromcanvas2 (int hCanvas,int alpha);
-
-//======================================================
-// 函数名称：Ex_Init
-// 返回类型：逻辑型
-// 函数说明：初始化引擎.
-// 参数<1>：hInstance，(值可为0)
-// 参数<2>：dwGlobalFlags，相关常量:#EXGF_ .(值可为0)
-// 参数<3>：hDefaultCursor，默认鼠标指针.(值可为0)
-// 参数<4>：lpszDefaultClassName，默认窗口类名.(值可为0)
-// 参数<5>：lpDefaultTheme，默认主题包指针.
-// 参数<6>：dwDefaultThemeLen，默认主题包长度.
-// 参数<7>：lpDefaultI18N，默认语言包指针.(值可为0)
-// 参数<8>：dwDefaultI18NLen，默认语言包长度.(值可为0)
-//======================================================
-extern "C" BOOL __stdcall Ex_Init (int hInstance,int dwGlobalFlags,int hDefaultCursor,int lpszDefaultClassName,int lpDefaultTheme,int dwDefaultThemeLen,int lpDefaultI18N,int dwDefaultI18NLen);
-
-//======================================================
-// 函数名称：Ex_UnInit
-// 返回类型：无返回值
-// 函数说明：反初始化引擎
-//======================================================
-extern "C" void __stdcall Ex_UnInit ();
-
-//======================================================
-// 函数名称：Ex_GetLastError
-// 返回类型：整数型
-// 函数说明：获取最后错误代码.相关常量 :#ERROR_EX_
-//======================================================
-extern "C" int __stdcall Ex_GetLastError ();
-
-//======================================================
-// 函数名称：Ex_SetLastError
-// 返回类型：无返回值
-// 函数说明：设置最后错误代码.相关常量 :#ERROR_EX_
-// 参数<1>：nError
-//======================================================
-extern "C" void __stdcall Ex_SetLastError (int nError);
-
-//======================================================
-// 函数名称：Ex_IsDxRender
-// 返回类型：逻辑型
-// 函数说明：是否使用D2D渲染
-//======================================================
-extern "C" BOOL __stdcall Ex_IsDxRender ();
-
-//======================================================
-// 函数名称：Ex_Atom
-// 返回类型：整数型
-// 函数说明：获取字符串唯一原子号
-// 参数<1>：lptstring
-//======================================================
-extern "C" int __stdcall Ex_Atom (int lptstring);
+extern "C" int _brush_createfromcanvas2 (int hCanvas,int alpha);
 
 //======================================================
 // 函数名称：_fmt_int
@@ -3075,7 +2917,7 @@ extern "C" int __stdcall Ex_Atom (int lptstring);
 // 参数<1>：lpValue，字符串指针
 // 参数<2>：lpdwPercentFlags，(out)返回是否为百分比单位
 //======================================================
-extern "C" int __stdcall _fmt_int (int lpValue,int lpdwPercentFlags);
+extern "C" int _fmt_int (int lpValue,int lpdwPercentFlags);
 
 //======================================================
 // 函数名称：_fmt_intary
@@ -3087,7 +2929,7 @@ extern "C" int __stdcall _fmt_int (int lpValue,int lpdwPercentFlags);
 // 参数<4>：fZero，是否清空
 // 参数<5>：lpdwPercentFlags，(out)返回百分比标记位(0-31位)
 //======================================================
-extern "C" int __stdcall _fmt_intary (int lpValue,int lpAry,int nMaxCount,BOOL fZero,int lpdwPercentFlags);
+extern "C" int _fmt_intary (int lpValue,int lpAry,int nMaxCount,BOOL fZero,int lpdwPercentFlags);
 
 //======================================================
 // 函数名称：_fmt_rect
@@ -3097,7 +2939,7 @@ extern "C" int __stdcall _fmt_intary (int lpValue,int lpAry,int nMaxCount,BOOL f
 // 参数<2>：lpRect，矩形指针
 // 参数<3>：lpdwPercentFlags，(out)返回百分比标记位(0-31位)
 //======================================================
-extern "C" BOOL __stdcall _fmt_rect (int lpValue,int lpRect,int lpdwPercentFlags);
+extern "C" BOOL _fmt_rect (int lpValue,int lpRect,int lpdwPercentFlags);
 
 //======================================================
 // 函数名称：_fmt_string
@@ -3108,7 +2950,7 @@ extern "C" BOOL __stdcall _fmt_rect (int lpValue,int lpRect,int lpdwPercentFlags
 // 参数<3>：lpString，(out)
 // 参数<4>：bDispatchI18NCallback，(in/out)
 //======================================================
-extern "C" BOOL __stdcall _fmt_string (int hRes,int lpValue,int lpString,BOOL bDispatchI18NCallback);
+extern "C" BOOL _fmt_string (int hRes,int lpValue,int lpString,BOOL bDispatchI18NCallback);
 
 //======================================================
 // 函数名称：_fmt_color
@@ -3117,7 +2959,7 @@ extern "C" BOOL __stdcall _fmt_string (int hRes,int lpValue,int lpString,BOOL bD
 // 参数<1>：lpValue，字符串指针
 // 参数<2>：lpColor，(out)返回颜色
 //======================================================
-extern "C" BOOL __stdcall _fmt_color (int lpValue,int lpColor);
+extern "C" BOOL _fmt_color (int lpValue,int lpColor);
 
 //======================================================
 // 函数名称：_fmt_bin
@@ -3129,7 +2971,7 @@ extern "C" BOOL __stdcall _fmt_color (int lpValue,int lpColor);
 // 参数<4>：lpLen，(out)返回数据长度
 // 参数<5>：lpFreeBuffer，(out)返回是否需要释放数据
 //======================================================
-extern "C" BOOL __stdcall _fmt_bin (int hRes,int lpValue,int lpBin,int lpLen,BOOL lpFreeBuffer);
+extern "C" BOOL _fmt_bin (int hRes,int lpValue,int lpBin,int lpLen,BOOL lpFreeBuffer);
 
 //======================================================
 // 函数名称：_fmt_getvalue
@@ -3138,7 +2980,7 @@ extern "C" BOOL __stdcall _fmt_bin (int hRes,int lpValue,int lpBin,int lpLen,BOO
 // 参数<1>：lpValue
 // 参数<2>：atomDest
 //======================================================
-extern "C" BOOL __stdcall _fmt_getvalue (int lpValue,int atomDest);
+extern "C" BOOL _fmt_getvalue (int lpValue,int atomDest);
 
 //======================================================
 // 函数名称：_fmt_getatom
@@ -3147,7 +2989,7 @@ extern "C" BOOL __stdcall _fmt_getvalue (int lpValue,int atomDest);
 // 参数<1>：lpValue
 // 参数<2>：lpValueOffset
 //======================================================
-extern "C" int __stdcall _fmt_getatom (int lpValue,int lpValueOffset);
+extern "C" int _fmt_getatom (int lpValue,int lpValueOffset);
 
 //======================================================
 // 函数名称：_fmt_const
@@ -3157,7 +2999,7 @@ extern "C" int __stdcall _fmt_getatom (int lpValue,int lpValueOffset);
 // 参数<3>：values，value
 // 参数<4>：nCount
 //======================================================
-extern "C" BOOL __stdcall _fmt_const (int const,int consts,int values,int nCount);
+extern "C" BOOL _fmt_const (int const,int consts,int values,int nCount);
 
 //======================================================
 // 函数名称：_path_addarc2
@@ -3171,4 +3013,24 @@ extern "C" BOOL __stdcall _fmt_const (int const,int consts,int values,int nCount
 // 参数<6>：startAngle
 // 参数<7>：sweepAngle
 //======================================================
-extern "C" int __stdcall _path_addarc2 (int hPath,float x,float y,float width,float height,float startAngle,float sweepAngle);
+extern "C" int _path_addarc2 (int hPath,float x,float y,float width,float height,float startAngle,float sweepAngle);
+
+//======================================================
+// 函数名称：Ex_ObjEnablePaintingMsg
+// 返回类型：逻辑型
+// 参数<1>：hObj
+// 参数<2>：bEnable
+//======================================================
+extern "C" BOOL Ex_ObjEnablePaintingMsg (int hObj,BOOL bEnable);
+
+//======================================================
+// 函数名称：Ex_ObjGetDropString
+// 返回类型：整数型
+// 函数说明：返回长度,0表示失败
+// 参数<1>：hObj
+// 参数<2>：pDataObject
+// 参数<3>：lpwzBuffer
+// 参数<4>：cchMaxLen
+//======================================================
+extern "C" int Ex_ObjGetDropString (int hObj,int pDataObject,int lpwzBuffer,int cchMaxLen);
+
