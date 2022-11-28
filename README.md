@@ -9,7 +9,6 @@ description: ExDirectUI 4.1 Manual
 它相对其他轻量级UI引擎具有 `高效` `安全` `绚丽` `扩展性强` `跨语言` 等特点。<br>
 使用本引擎提供的布局文件和主题文件机制, 可以快速高效的设计和实现界面的布局, 大大提高软件开发的效率。
 
-[开始阅读](https://docs.exdui.org)
 
 #### 概要
 - 不大量依赖底层API, ExDUI 允许开发者使用不同的绘制引擎 `GDI/GDI+` & `Direct2D`
@@ -21,9 +20,4 @@ description: ExDirectUI 4.1 Manual
 
 ## Github
 
-本文档源码托管在 [https://github.com/ikoude/exdui-doc](https://github.com/ikoude/exdui-doc)<br>
 ExDirectUI最新版 [https://github.com/ikoude/ExDirectUI4.1/releases](https://github.com/ikoude/ExDirectUI4.1/releases)
-> 本文档持续更新中, 欢迎PR
-
-## License
-*Licensed under the WTFPL License*
